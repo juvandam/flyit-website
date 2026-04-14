@@ -1,0 +1,25 @@
+:root {
+  /* Brand Colors - Aerowise aesthetic (Black background) */
+  --primary-color: #000000; /* Deep Black */
+  --primary-light: #111111; 
+  --accent-color: #333333; 
+  --accent-blue: #ffffff; /* White buttons for high contrast */
+  
+  /* Text and Backgrounds */
+  --bg-main: #000000;
+  --bg-light: #0a0a0a;
+  --text-main: #ffffff;
+  --text-muted: #bbbbbb;
+  
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Dimensions & Timing */
+  --header-height: 90px;
+  --transition-speed: 0.3s;
+  
+  /* Utilities */
+  --whatsapp-color: #25D366;
+  --whatsapp-hover: #1EBE5A;
+}
