@@ -58,4 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Language changed to:", e.target.textContent);
         });
     });
+
+    // 5. Inventory Filtering Logic
+    const filterType = document.getElementById('filter-type');
+    const filterMake = document.getElementById('filter-make');
+    const aircraftCards = document.querySelectorAll('.aircraft-card');
+
+    if (filterType && filterMake) {
+        function applyFilters() {
+            const typeValue = filterType.value;
+            const makeValue = filterMake.value;
+
+            aircraftCards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                const cardMake = card.getAttribute('data-make');
+                
+                const typeMatch = typeValue === 'all' || typeValue === cardType;
+                const makeMatch = makeValue === 'all' || makeValue === cardMake;
+
+                if (typeMatch && makeMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        filterType.addEventListener('change', applyFilters);
+        filterMake.addEventListener('change', applyFilters);
+    }
 });
