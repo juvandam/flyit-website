@@ -140,34 +140,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Featured Aircraft Carousel (home)
+    // 6. Featured Aircraft Carousel (home) - compact, 3 visibles, 10 slides
     const carouselTrack = document.getElementById('carouselTrack');
     const carouselPrev = document.getElementById('carouselPrev');
     const carouselNext = document.getElementById('carouselNext');
-    const carouselDots = document.getElementById('carouselDots');
 
-    if (carouselTrack && carouselPrev && carouselNext && carouselDots) {
+    if (carouselTrack && carouselPrev && carouselNext) {
         const slides = carouselTrack.querySelectorAll('.carousel-slide');
         const totalSlides = slides.length;
         let currentIndex = 0;
         let autoplayId = null;
-        const AUTOPLAY_MS = 5000;
+        const AUTOPLAY_MS = 4000;
 
-        // Build dots
-        slides.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.setAttribute('aria-label', `Ir al slide ${i + 1}`);
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i));
-            carouselDots.appendChild(dot);
-        });
+        function getVisibleSlides() {
+            if (window.innerWidth < 600) return 1;
+            if (window.innerWidth < 992) return 2;
+            return 3;
+        }
 
-        const dots = carouselDots.querySelectorAll('button');
+        function getMaxIndex() {
+            return Math.max(0, totalSlides - getVisibleSlides());
+        }
+
+        function updateTransform() {
+            const firstSlide = carouselTrack.querySelector('.carousel-slide');
+            if (!firstSlide) return;
+            const slideWidth = firstSlide.getBoundingClientRect().width;
+            carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
 
         function goToSlide(index) {
-            currentIndex = (index + totalSlides) % totalSlides;
-            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-            dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+            const maxIndex = getMaxIndex();
+            const range = maxIndex + 1;
+            // Permite wrap: al llegar al final vuelve al inicio
+            currentIndex = ((index % range) + range) % range;
+            updateTransform();
         }
 
         function nextSlide() {
@@ -200,17 +207,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Pausar autoplay al hover
-        const carouselSection = carouselTrack.closest('.featured-carousel');
-        if (carouselSection) {
-            carouselSection.addEventListener('mouseenter', stopAutoplay);
-            carouselSection.addEventListener('mouseleave', startAutoplay);
+        const carouselEl = carouselTrack.closest('.featured-carousel');
+        if (carouselEl) {
+            carouselEl.addEventListener('mouseenter', stopAutoplay);
+            carouselEl.addEventListener('mouseleave', startAutoplay);
         }
 
-        // Soporte básico de swipe en mobile
+        // Swipe en mobile
         let touchStartX = 0;
         let touchEndX = 0;
         carouselTrack.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            stopAutoplay();
         }, { passive: true });
         carouselTrack.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
@@ -218,10 +226,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (Math.abs(delta) > 40) {
                 if (delta < 0) nextSlide();
                 else prevSlide();
-                startAutoplay();
             }
+            startAutoplay();
         }, { passive: true });
 
-        startAutoplay();
+        // Reposicionar en resize (respeta breakpoints responsive)
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                // Clamp al nuevo maxIndex por si cambió visibleSlides
+                const maxIndex = getMaxIndex();
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                updateTransform();
+            }, 150);
+        });
+
+        // Inicializar (esperar al siguiente frame para que flex calcule widths)
+        requestAnimationFrame(() => {
+            updateTransform();
+            startAutoplay();
+        });
     }
 });
