@@ -248,4 +248,40 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoplay();
         });
     }
+
+    // 7. Reveal on scroll (Plan de Vuelo timeline + otros elementos con data-reveal)
+    const timelineContainer = document.getElementById('partnersTimeline');
+    const revealEls = document.querySelectorAll('[data-reveal]');
+
+    if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+    } else {
+        // Fallback: mostrar todo si no hay IntersectionObserver
+        revealEls.forEach(el => el.classList.add('revealed'));
+    }
+
+    // Activar animación del merge (Y) y la línea central cuando el timeline entra en viewport
+    if (timelineContainer && 'IntersectionObserver' in window) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    timelineContainer.classList.add('timeline-active');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        timelineObserver.observe(timelineContainer);
+    } else if (timelineContainer) {
+        timelineContainer.classList.add('timeline-active');
+    }
 });

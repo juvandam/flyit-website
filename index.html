@@ -48,7 +48,7 @@
                     <li><a href="#">Administración de aeronaves</a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="index.html#historia" class="nav-link">Historia</a></li>
+            <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
             <li class="nav-item"><a href="#" class="nav-link">News</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
 
@@ -75,6 +75,10 @@
             <h1 class="hero-title">Elevando los<br>Estándares de<br>la Aviación</h1>
             <p class="hero-subtitle">Experiencia, gestión corporativa y un nivel incomparable de profesionalismo en
                 administración y venta de aeronaves.</p>
+            <div class="hero-ctas">
+                <a href="aeronaves.html" class="btn-primary">Aeronaves en Argentina</a>
+                <a href="importacion.html" class="btn-secondary">Aeronaves a Importar</a>
+            </div>
         </div>
     </section>
 
@@ -165,12 +169,6 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-
-        <!-- CTAs debajo del carrusel -->
-        <div class="carousel-ctas">
-            <a href="aeronaves.html" class="btn-primary btn-sm">Aeronaves en Argentina</a>
-            <a href="importacion.html" class="btn-secondary btn-sm">Aeronaves a Importar</a>
-        </div>
     </section>
 
     <section id="servicios" class="section section-gray" style="padding: 100px 4%;">
@@ -199,12 +197,122 @@
         </div>
     </section>
 
-    <section id="historia" class="section section-light" style="padding: 100px 4%;">
+    <section id="nosotros" class="section section-light" style="padding: 100px 4%;">
         <div class="container rich-text">
-            <h2>Nuestra Historia</h2>
-            <p>Nacimos a partir de la pasión aeronáutica, con la misión de brindar un enfoque distinto a la aviación
-                corporativa en Argentina. Fly it se fundó priorizando la excelencia, la transparencia operativa y un
-                servicio al cliente que redefine la experiencia de vuelo privado.</p>
+            <h2>Plan de Vuelo</h2>
+            <p>Fly It nace de la experiencia directa de sus socios en la aviación comercial y como propietarios e
+                importadores de aeronaves. Ese know-how de primera mano es el que hoy ponemos a disposición de nuestros
+                clientes para la <strong>importación</strong> y <strong>administración</strong> de aeronaves en
+                Argentina, con un estándar técnico y un nivel de transparencia que solo se logra cuando quien asesora
+                ya vivió el proceso de adentro.</p>
+        </div>
+
+        <!-- Timeline de los socios -->
+        <div class="partners-timeline" id="partnersTimeline">
+            <!-- Fila superior: los dos socios con su origen distinto -->
+            <div class="partners-heads">
+                <div class="partner-head partner-left" data-reveal>
+                    <div class="partner-photo">
+                        <!-- Reemplazar el src por la foto real de Guillermo -->
+                        <img src="assets/images/logo.png" alt="Guillermo" onerror="this.style.display='none'">
+                        <div class="partner-photo-fallback">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <h3 class="partner-name">Guillermo</h3>
+                    <p class="partner-origin">Comenzó como <strong>técnico aeronáutico</strong>. Esa formación de base
+                        le da el ojo clínico para auditar y poner a punto cualquier aeronave que pasa por nuestras
+                        manos.</p>
+                </div>
+
+                <div class="partner-head partner-right" data-reveal>
+                    <div class="partner-photo">
+                        <!-- Reemplazar el src por la foto real de Julián -->
+                        <img src="assets/images/logo.png" alt="Julián" onerror="this.style.display='none'">
+                        <div class="partner-photo-fallback">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <h3 class="partner-name">Julián</h3>
+                    <p class="partner-origin">Se formó directamente como <strong>piloto</strong> y construyó su carrera
+                        volando equipos ejecutivos y de línea aérea desde el inicio.</p>
+                </div>
+            </div>
+
+            <!-- Conector en Y: las dos ramas convergen -->
+            <div class="timeline-merge" aria-hidden="true">
+                <svg viewBox="0 0 400 100" preserveAspectRatio="none">
+                    <path class="merge-line merge-line-left" d="M 80 0 Q 80 70 200 100" />
+                    <path class="merge-line merge-line-right" d="M 320 0 Q 320 70 200 100" />
+                </svg>
+            </div>
+
+            <!-- Hitos comunes (a partir de que se conocen) -->
+            <div class="timeline-track">
+                <div class="timeline-line"></div>
+
+                <div class="timeline-milestone" data-reveal>
+                    <div class="milestone-dot">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-tag">Chile</span>
+                        <h4>Se cruzan en LATAM</h4>
+                        <p>Coincidieron volando <strong>Airbus A320</strong> en LATAM Chile. Fue el punto de inflexión:
+                            desde ahí el camino lo hicieron juntos.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-reveal>
+                    <div class="milestone-dot">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-tag">Argentina</span>
+                        <h4>Regreso al país</h4>
+                        <p>Volvieron a Argentina para continuar su carrera en <strong>LAN Argentina</strong>, sumando
+                            horas en operación comercial de alto estándar.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-reveal>
+                    <div class="milestone-dot">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-tag">EE.UU. → Argentina</span>
+                        <h4>Primer avión propio</h4>
+                        <p>Compraron su primera aeronave en Estados Unidos y la importaron. Guillermo la
+                            <strong>armó íntegramente</strong>, cuidando cada detalle técnico. Ese proceso fue el
+                            germen de Fly&nbsp;It.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-reveal>
+                    <div class="milestone-dot">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-tag">2020</span>
+                        <h4>Nace Fly&nbsp;It</h4>
+                        <p>Durante la pandemia fundaron la empresa. Vendieron aeronaves e importaron otras para seguir
+                            desarrollando la aviación general en Argentina.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-reveal>
+                    <div class="milestone-dot">
+                        <i class="fas fa-arrow-up-right-dots"></i>
+                    </div>
+                    <div class="milestone-content">
+                        <span class="milestone-tag">Hoy</span>
+                        <h4>Capitanes de A320</h4>
+                        <p>Ambos se reinsertaron en la línea aérea y hoy son <strong>Capitanes de Airbus A320</strong>,
+                            acumulando <strong>más de 15 años</strong> en el rubro. Esa experiencia es la que respalda
+                            cada operación de Fly&nbsp;It.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -235,9 +343,9 @@
             <div class="footer-col">
                 <h4>Servicios</h4>
                 <ul>
-                    <li><a href="importacion.html">Importación</a></li>
-                    <li><a href="aeronaves.html">Venta de Aeronaves</a></li>
-                    <li><a href="#">Charter Corporativo</a></li>
+                    <li><a href="importacion.html">Importación de aeronaves</a></li>
+                    <li><a href="aeronaves.html">Aeronaves en venta en Argentina</a></li>
+                    <li><a href="#">Administración de aeronaves</a></li>
                 </ul>
             </div>
             <div class="footer-col">
