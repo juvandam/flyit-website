@@ -59,26 +59,47 @@
     <!-- Main Content: Inventory Carousel Grid -->
     <main class="section section-gray">
         <div class="container">
-            <!-- Filter Bar -->
-            <div class="inventory-filters" style="background: #111111; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <select id="filter-type" style="padding: 10px; background: #222; color: white; border: 1px solid #333; border-radius: 4px; flex: 1; min-width: 150px;">
-                    <option value="all">Todas las categorías</option>
-                    <option value="piston">Pistón</option>
-                    <option value="turboprop">Turboprop</option>
-                    <option value="jet">Jet</option>
-                </select>
-                <select id="filter-make" style="padding: 10px; background: #222; color: white; border: 1px solid #333; border-radius: 4px; flex: 1; min-width: 150px;">
-                    <option value="all">Todas las marcas</option>
-                    <option value="cessna">Cessna</option>
-                    <option value="beechcraft">Beechcraft</option>
-                    <option value="embraer">Embraer</option>
-                </select>
-            </div>
+        <div class="container">
+            <div class="inventory-layout">
+                <!-- Sidebar Filters -->
+                <aside class="inventory-sidebar">
+                    <h3>Filtrar Inventario</h3>
+                    
+                    <div class="filter-group">
+                        <label for="filter-type">Categoría</label>
+                        <select id="filter-type">
+                            <option value="all">Todas</option>
+                            <option value="monomotor piston">Monomotor Pistón</option>
+                            <option value="bimotor piston">Bimotor Pistón</option>
+                            <option value="turbohelice">Turbohélice</option>
+                            <option value="jets">Jets</option>
+                        </select>
+                    </div>
 
-            <div class="inventory-grid" id="aircraft-grid">
+                    <div class="filter-group">
+                        <label for="filter-make">Fabricante</label>
+                        <select id="filter-make">
+                            <option value="all">Todos</option>
+                            <option value="cessna">Cessna</option>
+                            <option value="piper">Piper</option>
+                            <option value="beechcraft">Beechcraft</option>
+                            <option value="embraer">Embraer</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-model">Modelo</label>
+                        <select id="filter-model" disabled>
+                            <option value="all">Seleccione fabricante primero</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Inventory Grid -->
+                <div class="inventory-grid" id="aircraft-grid">
 
                 <!-- Card 1: Cessna 150J -->
-                <div class="aircraft-card" data-type="piston" data-make="cessna" onclick="window.location.href='cessna-150j.html'" style="cursor: pointer;">
+                <div class="aircraft-card" data-type="monomotor piston" data-make="cessna" data-model="150j" onclick="window.location.href='cessna-150j.html'" style="cursor: pointer;">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Vende Dueño Directo</span>
                         <img src="assets/images/cessna150j.jpg" alt="Cessna 150J">
@@ -102,109 +123,106 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="aircraft-card" data-type="jet" data-make="cessna">
+                <!-- Card 2: Citation XLS -->
+                <div class="aircraft-card" data-type="jets" data-make="cessna" data-model="citation xls">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Available</span>
-                        <!-- Replace src with actual aircraft photo -->
                         <img src="assets/images/cessna.png" alt="Cessna Citation XLS">
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Cessna Citation XLS</h3>
-                        <p class="aircraft-desc">Excelente estado, siempre mantenido en taller certificado. Interior renovado en 2023.</p>
                         
-                        <div class="specs-grid">
-                            <div class="spec-item">
-                                <span class="spec-label">Año</span>
-                                <span class="spec-value">2008</span>
-                            </div>
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
                                 <span class="spec-value">4,150 TT</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Ubicación</span>
-                                <span class="spec-value">Buenos Aires</span>
+                                <span class="spec-label">Total Landings</span>
+                                <span class="spec-value">3,120</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Precio</span>
-                                <span class="spec-value">Consultar</span>
+                                <span class="spec-label">Programa Motor</span>
+                                <span class="spec-value">PowerAdvantage+</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Interior</span>
+                                <span class="spec-value">Renovado 2023</span>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/+5491158120277?text=Consulta%20sobre%20Cessna%20Citation%20XLS" target="_blank" class="btn-card">Consultar</a>
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="aircraft-card" data-type="turboprop" data-make="beechcraft">
+                <!-- Card 3: King Air -->
+                <div class="aircraft-card" data-type="turbohelice" data-make="beechcraft" data-model="king air 250">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge" style="background:#5e6b82;">Sale pending</span>
-                        <!-- Replace src -->
                         <img src="assets/images/kingair.png" alt="Beechcraft King Air 250">
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Beechcraft King Air 250</h3>
-                        <p class="aircraft-desc">Aviónica Pro Line Fusion, motores bajo programa. Único dueño, impecable registro.</p>
                         
-                        <div class="specs-grid">
-                            <div class="spec-item">
-                                <span class="spec-label">Año</span>
-                                <span class="spec-value">2015</span>
-                            </div>
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
                                 <span class="spec-value">1,820 TT</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Ubicación</span>
-                                <span class="spec-value">San Fernando</span>
+                                <span class="spec-label">Total Landings</span>
+                                <span class="spec-value">1,500</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Aviónica</span>
+                                <span class="spec-value">Pro Line Fusion</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Precio</span>
-                                <span class="spec-value">Consultar</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/+5491158120277?text=Consulta%20sobre%20King%20Air%20250" target="_blank" class="btn-card">Consultar</a>
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="aircraft-card" data-type="jet" data-make="embraer">
+                <!-- Card 4: Phenom 300 -->
+                <div class="aircraft-card" data-type="jets" data-make="embraer" data-model="phenom 300">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Available</span>
-                        <!-- Replace src -->
                         <img src="https://via.placeholder.com/800x600/cbd5e1/475569?text=Embraer+Phenom+300" alt="Embraer Phenom 300">
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Embraer Phenom 300</h3>
-                        <p class="aircraft-desc">El jet ligero más vendido. Rendimiento superior y cabina espaciosa para 8 pasajeros.</p>
                         
-                        <div class="specs-grid">
-                            <div class="spec-item">
-                                <span class="spec-label">Año</span>
-                                <span class="spec-value">2012</span>
-                            </div>
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
                                 <span class="spec-value">2,400 TT</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Ubicación</span>
-                                <span class="spec-value">Argentina</span>
+                                <span class="spec-label">Total Landings</span>
+                                <span class="spec-value">1,950</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Pasajeros</span>
+                                <span class="spec-value">8 Pax</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Precio</span>
-                                <span class="spec-value">Consultar</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
                             </div>
                         </div>
 
-                        <a href="https://wa.me/+5491158120277?text=Consulta%20sobre%20Phenom%20300" target="_blank" class="btn-card">Consultar</a>
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
                     </div>
                 </div>
 
             </div>
+            </div> <!-- Close inventory-layout -->
         </div>
     </main>
 

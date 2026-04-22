@@ -59,32 +59,84 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Inventory Filtering Logic
+    // 5. Inventory Advanced Filtering Logic
     const filterType = document.getElementById('filter-type');
     const filterMake = document.getElementById('filter-make');
+    const filterModel = document.getElementById('filter-model');
     const aircraftCards = document.querySelectorAll('.aircraft-card');
 
-    if (filterType && filterMake) {
+    if (filterType && filterMake && filterModel) {
+        // Database of models per manufacturer
+        const modelsByMake = {
+            'cessna': [
+                { value: '150j', text: '150J' },
+                { value: 'citation xls', text: 'Citation XLS' }
+            ],
+            'beechcraft': [
+                { value: 'king air 250', text: 'King Air 250' }
+            ],
+            'embraer': [
+                { value: 'phenom 300', text: 'Phenom 300' }
+            ],
+            'piper': [] // Ready for future additions
+        };
+
+        // Update models dropdown when manufacturer changes
+        filterMake.addEventListener('change', () => {
+            const selectedMake = filterMake.value;
+            
+            // Reset and clear model dropdown
+            filterModel.innerHTML = '<option value="all">Todos los modelos</option>';
+            
+            if (selectedMake !== 'all' && modelsByMake[selectedMake] && modelsByMake[selectedMake].length > 0) {
+                // Populate options
+                modelsByMake[selectedMake].forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model.value;
+                    option.textContent = model.text;
+                    filterModel.appendChild(option);
+                });
+                filterModel.disabled = false;
+            } else {
+                // Disable if no specific manufacturer is selected
+                filterModel.innerHTML = '<option value="all">Seleccione fabricante primero</option>';
+                filterModel.disabled = true;
+            }
+
+            applyFilters();
+        });
+
         function applyFilters() {
             const typeValue = filterType.value;
             const makeValue = filterMake.value;
+            const modelValue = filterModel.disabled ? 'all' : filterModel.value;
 
             aircraftCards.forEach(card => {
                 const cardType = card.getAttribute('data-type');
                 const cardMake = card.getAttribute('data-make');
+                const cardModel = card.getAttribute('data-model');
                 
                 const typeMatch = typeValue === 'all' || typeValue === cardType;
                 const makeMatch = makeValue === 'all' || makeValue === cardMake;
+                const modelMatch = modelValue === 'all' || modelValue === cardModel;
 
-                if (typeMatch && makeMatch) {
+                // Simple fade animation for filtering
+                if (typeMatch && makeMatch && modelMatch) {
                     card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
                 } else {
-                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
                 }
             });
         }
 
         filterType.addEventListener('change', applyFilters);
-        filterMake.addEventListener('change', applyFilters);
+        filterModel.addEventListener('change', applyFilters);
+
+        // Initial setup
+        aircraftCards.forEach(card => {
+            card.style.transition = 'opacity 0.3s ease';
+        });
     }
 });
