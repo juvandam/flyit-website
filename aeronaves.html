@@ -101,12 +101,13 @@
                 <div class="aircraft-card" data-type="monomotor piston" data-make="cessna" data-model="150j" onclick="window.location.href='cessna-150j.html'" style="cursor: pointer;">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Vende Dueño Directo</span>
-                        <img src="assets/images/cessna150j.jpg" alt="Cessna 150J">
+                        <img src="assets/images/cessna150j.jpg" alt="Cessna 150J" class="img-primary">
+                        <img src="assets/images/cessna150j_int1.jpg" alt="Cessna 150J Interior" class="img-hover">
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Cessna 150J</h3>
                         <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Matrícula: LV-JXB | Año: 1969</p>
-                        
+
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">TTAF</span>
@@ -122,31 +123,48 @@
                     </div>
                 </div>
 
-                <!-- Card 2: Citation XLS -->
+                <!-- Card 2: Citation XLS (JET) -->
                 <div class="aircraft-card" data-type="jets" data-make="cessna" data-model="citation xls">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Available</span>
-                        <img src="assets/images/cessna.png" alt="Cessna Citation XLS">
+                        <img src="assets/images/cessna.png" alt="Cessna Citation XLS" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/citation-xls-int.jpg" alt="Interior Citation XLS" class="img-hover"> -->
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Cessna Citation XLS</h3>
-                        
+
+                        <!-- Specs con iconos: jets -->
+                        <div class="jet-specs-icons">
+                            <div class="jet-spec-icon" title="Pilotos requeridos">
+                                <i class="fas fa-user-tie"></i>
+                                <span class="jet-spec-value">2</span>
+                                <span class="jet-spec-label">Pilotos</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Asientos de pasajeros">
+                                <i class="fas fa-chair"></i>
+                                <span class="jet-spec-value">9</span>
+                                <span class="jet-spec-label">Pax</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Velocidad máxima">
+                                <i class="fas fa-gauge-high"></i>
+                                <span class="jet-spec-value">441 kt</span>
+                                <span class="jet-spec-label">V. Máx</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Autonomía">
+                                <i class="fas fa-route"></i>
+                                <span class="jet-spec-value">1,858 nm</span>
+                                <span class="jet-spec-label">Range</span>
+                            </div>
+                        </div>
+
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
                                 <span class="spec-value">4,150 TT</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">Total Landings</span>
-                                <span class="spec-value">3,120</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Programa Motor</span>
-                                <span class="spec-value">PowerAdvantage+</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Interior</span>
-                                <span class="spec-value">Renovado 2023</span>
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
                             </div>
                         </div>
 
@@ -154,16 +172,16 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <!-- Card 3: King Air -->
+                <!-- Card 3: King Air 250 -->
                 <div class="aircraft-card" data-type="turbohelice" data-make="beechcraft" data-model="king air 250">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge" style="background:#5e6b82;">Sale pending</span>
-                        <img src="assets/images/kingair.png" alt="Beechcraft King Air 250">
+                        <img src="assets/images/kingair.png" alt="Beechcraft King Air 250" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/kingair-int.jpg" alt="Interior King Air" class="img-hover"> -->
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Beechcraft King Air 250</h3>
-                        
+
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
@@ -187,28 +205,44 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <!-- Card 4: Phenom 300 -->
+                <!-- Card 4: Phenom 300 (JET) -->
                 <div class="aircraft-card" data-type="jets" data-make="embraer" data-model="phenom 300">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Available</span>
-                        <img src="https://via.placeholder.com/800x600/cbd5e1/475569?text=Embraer+Phenom+300" alt="Embraer Phenom 300">
+                        <img src="https://via.placeholder.com/800x600/cbd5e1/475569?text=Embraer+Phenom+300" alt="Embraer Phenom 300" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/phenom300-int.jpg" alt="Interior Phenom 300" class="img-hover"> -->
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Embraer Phenom 300</h3>
-                        
+
+                        <!-- Specs con iconos: jets -->
+                        <div class="jet-specs-icons">
+                            <div class="jet-spec-icon" title="Pilotos requeridos">
+                                <i class="fas fa-user-tie"></i>
+                                <span class="jet-spec-value">2</span>
+                                <span class="jet-spec-label">Pilotos</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Asientos de pasajeros">
+                                <i class="fas fa-chair"></i>
+                                <span class="jet-spec-value">8</span>
+                                <span class="jet-spec-label">Pax</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Velocidad máxima">
+                                <i class="fas fa-gauge-high"></i>
+                                <span class="jet-spec-value">464 kt</span>
+                                <span class="jet-spec-label">V. Máx</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Autonomía">
+                                <i class="fas fa-route"></i>
+                                <span class="jet-spec-value">2,010 nm</span>
+                                <span class="jet-spec-label">Range</span>
+                            </div>
+                        </div>
+
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
                                 <span class="spec-label">Horas Totales</span>
                                 <span class="spec-value">2,400 TT</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Total Landings</span>
-                                <span class="spec-value">1,950</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Pasajeros</span>
-                                <span class="spec-value">8 Pax</span>
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Precio</span>

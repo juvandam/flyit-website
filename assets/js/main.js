@@ -139,4 +139,89 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transition = 'opacity 0.3s ease';
         });
     }
+
+    // 6. Featured Aircraft Carousel (home)
+    const carouselTrack = document.getElementById('carouselTrack');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    const carouselDots = document.getElementById('carouselDots');
+
+    if (carouselTrack && carouselPrev && carouselNext && carouselDots) {
+        const slides = carouselTrack.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+        let autoplayId = null;
+        const AUTOPLAY_MS = 5000;
+
+        // Build dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.setAttribute('aria-label', `Ir al slide ${i + 1}`);
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        });
+
+        const dots = carouselDots.querySelectorAll('button');
+
+        function goToSlide(index) {
+            currentIndex = (index + totalSlides) % totalSlides;
+            carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayId = setInterval(nextSlide, AUTOPLAY_MS);
+        }
+
+        function stopAutoplay() {
+            if (autoplayId) {
+                clearInterval(autoplayId);
+                autoplayId = null;
+            }
+        }
+
+        carouselPrev.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay();
+        });
+        carouselNext.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay();
+        });
+
+        // Pausar autoplay al hover
+        const carouselSection = carouselTrack.closest('.featured-carousel');
+        if (carouselSection) {
+            carouselSection.addEventListener('mouseenter', stopAutoplay);
+            carouselSection.addEventListener('mouseleave', startAutoplay);
+        }
+
+        // Soporte básico de swipe en mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        carouselTrack.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        carouselTrack.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const delta = touchEndX - touchStartX;
+            if (Math.abs(delta) > 40) {
+                if (delta < 0) nextSlide();
+                else prevSlide();
+                startAutoplay();
+            }
+        }, { passive: true });
+
+        startAutoplay();
+    }
 });

@@ -75,8 +75,40 @@
             <h1 class="hero-title">Elevando los<br>Estándares de<br>la Aviación</h1>
             <p class="hero-subtitle">Experiencia, gestión corporativa y un nivel incomparable de profesionalismo en
                 administración y venta de aeronaves.</p>
-            <a href="aeronaves.html" class="btn-primary">Ver Inventario</a>
+            <div class="hero-ctas">
+                <a href="aeronaves.html" class="btn-primary">Aeronaves en Argentina</a>
+                <a href="importacion.html" class="btn-secondary">Aeronaves a Importar</a>
+            </div>
         </div>
+    </section>
+
+    <!-- Featured Aircraft Carousel -->
+    <section class="featured-carousel" aria-label="Aeronaves destacadas">
+        <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+                <img src="assets/images/cessna150j.jpg" alt="Cessna 150J">
+                <div class="carousel-caption">Cessna 150J &middot; Argentina</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/images/cessna.png" alt="Cessna Citation XLS">
+                <div class="carousel-caption">Cessna Citation XLS &middot; Jet Ejecutivo</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/images/kingair.png" alt="Beechcraft King Air 250">
+                <div class="carousel-caption">Beechcraft King Air 250 &middot; Turbohélice</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="assets/images/hero-bg.png" alt="Embraer Phenom 300">
+                <div class="carousel-caption">Embraer Phenom 300 &middot; Jet Liviano</div>
+            </div>
+        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
     <section id="servicios" class="section section-gray" style="padding: 100px 4%;">
