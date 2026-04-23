@@ -32,6 +32,7 @@
                 <ul class="submenu">
                     <li><a href="importacion.html">Importación de aeronaves</a></li>
                     <li><a href="aeronaves.html">Aeronaves en venta en Argentina</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
                     <li><a href="#">Administración de aeronaves</a></li>
                 </ul>
             </li>
@@ -50,9 +51,17 @@
         </button>
     </header>
 
-    <!-- Page Header con imagen de fondo -->
+    <!-- Page Header con video de fondo (fallback a imagen) -->
+    <!--
+        Para activar el video: subir un .mp4 (10-20s, sin audio) a assets/videos/
+        Sugerencias de nombre: jet-landing.mp4, jet-approach.mp4
+        Mientras no exista el archivo, se muestra el poster (hero-bg.png).
+    -->
     <section class="page-header page-header-hero">
-        <img src="assets/images/hero-bg.png" alt="" class="page-header-bg" aria-hidden="true">
+        <video class="page-header-bg" autoplay muted loop playsinline
+               poster="assets/images/hero-bg.png" aria-hidden="true">
+            <source src="assets/videos/jet-landing.mp4" type="video/mp4">
+        </video>
         <div class="page-header-overlay"></div>
         <div class="page-header-content">
             <h1>Importación de Aeronaves</h1>
@@ -100,6 +109,7 @@
                 <ul>
                     <li><a href="importacion.html">Importación de aeronaves</a></li>
                     <li><a href="aeronaves.html">Aeronaves en venta en Argentina</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
                     <li><a href="#">Administración de aeronaves</a></li>
                 </ul>
             </div>
