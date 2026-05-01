@@ -140,114 +140,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Featured Aircraft Carousel (home) - compact, 3 visibles, 10 slides
-    const carouselTrack = document.getElementById('carouselTrack');
-    const carouselPrev = document.getElementById('carouselPrev');
-    const carouselNext = document.getElementById('carouselNext');
+    // 6. Featured Aircraft Carousels
+    const carousels = document.querySelectorAll('.featured-carousel');
+    
+    carousels.forEach(carousel => {
+        const carouselTrack = carousel.querySelector('.carousel-track');
+        const carouselPrev = carousel.querySelector('.carousel-prev');
+        const carouselNext = carousel.querySelector('.carousel-next');
 
-    if (carouselTrack && carouselPrev && carouselNext) {
-        const slides = carouselTrack.querySelectorAll('.carousel-slide');
-        const totalSlides = slides.length;
-        let currentIndex = 0;
-        let autoplayId = null;
-        const AUTOPLAY_MS = 4000;
+        if (carouselTrack && carouselPrev && carouselNext) {
+            const slides = carouselTrack.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+            let currentIndex = 0;
+            let autoplayId = null;
+            const AUTOPLAY_MS = 4000;
 
-        function getVisibleSlides() {
-            if (window.innerWidth < 600) return 1;
-            if (window.innerWidth < 992) return 2;
-            return 3;
-        }
-
-        function getMaxIndex() {
-            return Math.max(0, totalSlides - getVisibleSlides());
-        }
-
-        function updateTransform() {
-            const firstSlide = carouselTrack.querySelector('.carousel-slide');
-            if (!firstSlide) return;
-            const slideWidth = firstSlide.getBoundingClientRect().width;
-            carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        }
-
-        function goToSlide(index) {
-            const maxIndex = getMaxIndex();
-            const range = maxIndex + 1;
-            // Permite wrap: al llegar al final vuelve al inicio
-            currentIndex = ((index % range) + range) % range;
-            updateTransform();
-        }
-
-        function nextSlide() {
-            goToSlide(currentIndex + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(currentIndex - 1);
-        }
-
-        function startAutoplay() {
-            stopAutoplay();
-            autoplayId = setInterval(nextSlide, AUTOPLAY_MS);
-        }
-
-        function stopAutoplay() {
-            if (autoplayId) {
-                clearInterval(autoplayId);
-                autoplayId = null;
+            function getVisibleSlides() {
+                if (window.innerWidth < 600) return 1;
+                if (window.innerWidth < 992) return 2;
+                return 3;
             }
-        }
 
-        carouselPrev.addEventListener('click', () => {
-            prevSlide();
-            startAutoplay();
-        });
-        carouselNext.addEventListener('click', () => {
-            nextSlide();
-            startAutoplay();
-        });
-
-        // Pausar autoplay al hover
-        const carouselEl = carouselTrack.closest('.featured-carousel');
-        if (carouselEl) {
-            carouselEl.addEventListener('mouseenter', stopAutoplay);
-            carouselEl.addEventListener('mouseleave', startAutoplay);
-        }
-
-        // Swipe en mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        carouselTrack.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            stopAutoplay();
-        }, { passive: true });
-        carouselTrack.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            const delta = touchEndX - touchStartX;
-            if (Math.abs(delta) > 40) {
-                if (delta < 0) nextSlide();
-                else prevSlide();
+            function getMaxIndex() {
+                return Math.max(0, totalSlides - getVisibleSlides());
             }
-            startAutoplay();
-        }, { passive: true });
 
-        // Reposicionar en resize (respeta breakpoints responsive)
-        let resizeTimer = null;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                // Clamp al nuevo maxIndex por si cambió visibleSlides
+            function updateTransform() {
+                const firstSlide = carouselTrack.querySelector('.carousel-slide');
+                if (!firstSlide) return;
+                const slideWidth = firstSlide.getBoundingClientRect().width;
+                carouselTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            function goToSlide(index) {
                 const maxIndex = getMaxIndex();
-                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                const range = maxIndex + 1;
+                currentIndex = ((index % range) + range) % range;
                 updateTransform();
-            }, 150);
-        });
+            }
 
-        // Inicializar (esperar al siguiente frame para que flex calcule widths)
-        requestAnimationFrame(() => {
-            updateTransform();
-            startAutoplay();
-        });
-    }
+            function nextSlide() { goToSlide(currentIndex + 1); }
+            function prevSlide() { goToSlide(currentIndex - 1); }
+
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayId = setInterval(nextSlide, AUTOPLAY_MS);
+            }
+
+            function stopAutoplay() {
+                if (autoplayId) {
+                    clearInterval(autoplayId);
+                    autoplayId = null;
+                }
+            }
+
+            carouselPrev.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+            carouselNext.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+            carouselTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoplay();
+            }, { passive: true });
+            carouselTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const delta = touchEndX - touchStartX;
+                if (Math.abs(delta) > 40) {
+                    if (delta < 0) nextSlide();
+                    else prevSlide();
+                }
+                startAutoplay();
+            }, { passive: true });
+
+            let resizeTimer = null;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    const maxIndex = getMaxIndex();
+                    if (currentIndex > maxIndex) currentIndex = maxIndex;
+                    updateTransform();
+                }, 150);
+            });
+
+            requestAnimationFrame(() => {
+                updateTransform();
+                startAutoplay();
+            });
+        }
+    });
 
     // 7. Reveal on scroll (Plan de Vuelo timeline + otros elementos con data-reveal)
     const timelineContainer = document.getElementById('partnersTimeline');

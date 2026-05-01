@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeronaves en Venta en Argentina | Fly It</title>
+    <meta name="description" content="Catálogo exclusivo de aeronaves en venta en Argentina. Encuentre jet ejecutivos, turboprops y aviones a pistón.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Catálogo de Aeronaves en Venta | Fly It">
+    <meta property="og:description" content="Inventario exclusivo de jets y turboprops en venta en Argentina y el exterior.">
+    <meta property="og:image" content="assets/images/cessna.png">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="index.html#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><a href="index.html#servicio-importacion">Importación de aeronaves</a></li>
+                    <li><a href="index.html#servicio-administracion">Administración de aeronaves</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+            
+            <a href="vender.html" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Vende tu Aeronave</a>
+
+            <div class="lang-switcher">
+                <button class="active">ES</button>
+                <button>EN</button>
+            </div>
+        </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Aeronaves a Importar</h1>
+        <p style="margin-bottom: 15px;">Catálogo internacional y proceso llave en mano.</p>
+        <p class="promo-text">No te preocupes, nosotros te acompañaremos en todo el <a href="importacion.html" style="color: white; text-decoration: underline; font-weight: bold;">proceso de importación</a>.</p>
+    </section>
+
+    <!-- Main Content: Inventory Carousel Grid -->
+    <main class="section section-gray" style="padding-top: 30px;">
+        <div class="container">
+
+            <!-- Banner: Cross-link -->
+            <div class="vender-banner">
+                <div class="vender-banner-text">
+                    <h3>¿Buscás opciones locales?</h3>
+                    <p>También contamos con un inventario exclusivo de aeronaves ya radicadas en el país.</p>
+                </div>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="aeronaves.html" class="btn-primary">Ver catálogo en Argentina</a>
+                </div>
+            </div>
+
+            <div class="inventory-layout">
+                <!-- Sidebar Filters -->
+                <aside class="inventory-sidebar">
+                    <h3>Filtrar Inventario</h3>
+                    
+                    <div class="filter-group">
+                        <label for="filter-type">Categoría</label>
+                        <select id="filter-type">
+                            <option value="all">Todas</option>
+                            <option value="monomotor piston">Monomotor Pistón</option>
+                            <option value="bimotor piston">Bimotor Pistón</option>
+                            <option value="turbohelice">Turbohélice</option>
+                            <option value="jets">Jets</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-make">Fabricante</label>
+                        <select id="filter-make">
+                            <option value="all">Todos</option>
+                            <option value="cessna">Cessna</option>
+                            <option value="piper">Piper</option>
+                            <option value="beechcraft">Beechcraft</option>
+                            <option value="embraer">Embraer</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-model">Modelo</label>
+                        <select id="filter-model" disabled>
+                            <option value="all">Seleccione fabricante primero</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Inventory Grid -->
+                <div class="inventory-grid" id="aircraft-grid">
+
+                <!-- Card 1: Cessna 150J -->
+                <div class="aircraft-card" data-type="monomotor piston" data-make="cessna" data-model="150j" onclick="window.location.href='cessna-150j.html'" style="cursor: pointer;">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge">Vende Dueño Directo</span>
+                        <img src="assets/images/cessna150j.jpg" alt="Cessna 150J" class="img-primary">
+                        <img src="assets/images/cessna150j_int1.jpg" alt="Cessna 150J Interior" class="img-hover">
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna 150J</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Matrícula: LV-JXB | Año: 1969</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value">6,270</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">USD 68k</span>
+                            </div>
+                        </div>
+
+                        <a href="cessna-150j.html" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Citation XLS (JET) -->
+                <div class="aircraft-card" data-type="jets" data-make="cessna" data-model="citation xls">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge">Available</span>
+                        <img src="assets/images/cessna.png" alt="Cessna Citation XLS" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/citation-xls-int.jpg" alt="Interior Citation XLS" class="img-hover"> -->
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna Citation XLS</h3>
+
+                        <!-- Specs con iconos: jets -->
+                        <div class="jet-specs-icons">
+                            <div class="jet-spec-icon" title="Pilotos requeridos">
+                                <img src="assets/images/icon-pilot.png" alt="Pilot" style="width: 16px; height: 16px; margin-bottom: 5px; filter: invert(0);">
+                                <span class="jet-spec-value">2</span>
+                                <span class="jet-spec-label">Pilotos</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Asientos de pasajeros">
+                                <img src="assets/images/icon-pax.png" alt="Pax" style="width: 16px; height: 16px; margin-bottom: 5px; filter: invert(0);">
+                                <span class="jet-spec-value">9</span>
+                                <span class="jet-spec-label">Pax</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Velocidad máxima">
+                                <i class="fas fa-gauge-high"></i>
+                                <span class="jet-spec-value">441 kt</span>
+                                <span class="jet-spec-label">V. Máx</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Autonomía">
+                                <i class="fas fa-route"></i>
+                                <span class="jet-spec-value">1,858 nm</span>
+                                <span class="jet-spec-label">Range</span>
+                            </div>
+                        </div>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Horas Totales</span>
+                                <span class="spec-value">4,150 TT</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: King Air 250 -->
+                <div class="aircraft-card" data-type="turbohelice" data-make="beechcraft" data-model="king air 250">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background:#5e6b82;">Sale pending</span>
+                        <img src="assets/images/kingair.png" alt="Beechcraft King Air 250" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/kingair-int.jpg" alt="Interior King Air" class="img-hover"> -->
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Beechcraft King Air 250</h3>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Horas Totales</span>
+                                <span class="spec-value">1,820 TT</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Total Landings</span>
+                                <span class="spec-value">1,500</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Aviónica</span>
+                                <span class="spec-value">Pro Line Fusion</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Phenom 300 (JET) -->
+                <div class="aircraft-card" data-type="jets" data-make="embraer" data-model="phenom 300">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge">Available</span>
+                        <img src="https://via.placeholder.com/800x600/cbd5e1/475569?text=Embraer+Phenom+300" alt="Embraer Phenom 300" class="img-primary">
+                        <!-- Agregar segunda foto: <img src="assets/images/phenom300-int.jpg" alt="Interior Phenom 300" class="img-hover"> -->
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Embraer Phenom 300</h3>
+
+                        <!-- Specs con iconos: jets -->
+                        <div class="jet-specs-icons">
+                            <div class="jet-spec-icon" title="Pilotos requeridos">
+                                <img src="assets/images/icon-pilot.png" alt="Pilot" style="width: 16px; height: 16px; margin-bottom: 5px; filter: invert(0);">
+                                <span class="jet-spec-value">2</span>
+                                <span class="jet-spec-label">Pilotos</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Asientos de pasajeros">
+                                <img src="assets/images/icon-pax.png" alt="Pax" style="width: 16px; height: 16px; margin-bottom: 5px; filter: invert(0);">
+                                <span class="jet-spec-value">8</span>
+                                <span class="jet-spec-label">Pax</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Velocidad máxima">
+                                <i class="fas fa-gauge-high"></i>
+                                <span class="jet-spec-value">464 kt</span>
+                                <span class="jet-spec-label">V. Máx</span>
+                            </div>
+                            <div class="jet-spec-icon" title="Autonomía">
+                                <i class="fas fa-route"></i>
+                                <span class="jet-spec-value">2,010 nm</span>
+                                <span class="jet-spec-label">Range</span>
+                            </div>
+                        </div>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Horas Totales</span>
+                                <span class="spec-value">2,400 TT</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">Consultar</span>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
+                    </div>
+                </div>
+
+            </div>
+            </div> <!-- Close inventory-layout -->
+        </div>
+    </main>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" style="display: block; margin-bottom: 20px;">
+                    <img src="assets/images/logo.png" alt="Logo de la empresa" style="height: 40px; object-fit: contain;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><a href="importacion.html">Importación de aeronaves</a></li>
+                    <li><a href="administracion.html">Administración de aeronaves</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Oficinas</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Hangar 5, aeródromo de Morón.</li>
+                    <li>Buenos Aires, Argentina.</li>
+                    <li><i class="fas fa-envelope" style="margin-right:8px;"></i> info@flyit.com.ar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aviation Services. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

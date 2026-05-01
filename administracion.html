@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Aeronaves | Fly It</title>
+    <meta name="description" content="Servicio integral de administración de aeronaves. Mantenimiento, tripulación y operaciones bajo los más altos estándares de la industria aeronáutica.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Administración de Aeronaves | Fly It">
+    <meta property="og:description" content="Gestión corporativa, técnica y operativa para proteger su activo.">
+    <meta property="og:image" content="assets/images/hero-bg.png">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="index.html#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><a href="index.html#servicio-importacion">Importación de aeronaves</a></li>
+                    <li><a href="index.html#servicio-administracion">Administración de aeronaves</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+            
+            <a href="vender.html" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Vende tu Aeronave</a>
+
+            <div class="lang-switcher">
+                <button class="active">ES</button>
+                <button>EN</button>
+            </div>
+        </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Page Header con video de fondo (fallback a imagen) -->
+    <!--
+        Para activar el video: subir un .mp4 (10-20s, sin audio) a assets/videos/
+        Sugerencias de nombre: jet-landing.mp4, jet-approach.mp4
+        Mientras no exista el archivo, se muestra el poster (hero-bg.png).
+    -->
+    <section class="page-header page-header-hero">
+        <video class="page-header-bg" autoplay muted loop playsinline
+               poster="assets/images/hero-bg.png" aria-hidden="true">
+            <source src="assets/videos/jet-landing.mp4" type="video/mp4">
+        </video>
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <h1>Administración de Aeronaves</h1>
+            <p>Operación, mantenimiento y logística diaria en manos de profesionales.</p>
+        </div>
+    </section>
+
+    <!-- Main Content (Aerobrazil structure influence) -->
+    <main class="section section-light">
+        <div class="container rich-text">
+            <h2>Protegemos su activo con estándares de línea aérea</h2>
+            <p>Delegue la complejidad de operar una aeronave. Nuestro equipo de gestión asume el control absoluto de las operaciones de vuelo, la logística, el mantenimiento programado y el cumplimiento normativo.</p>
+            
+            <ul>
+                <li><strong>Gestión Operativa:</strong> Coordinación de vuelos, permisos de sobrevuelo, slots, handling y catering. Su aeronave lista para despegar cuando lo necesite.</li>
+                <li><strong>Supervisión Técnica:</strong> Seguimiento estricto del programa de mantenimiento (CAMP/CESCOM/Traxxall), auditoría de facturación de talleres y control de componentes con vencimiento.</li>
+                <li><strong>Tripulaciones:</strong> Selección, entrenamiento en simulador (FlightSafety/CAE) y gestión de pilotos altamente capacitados bajo estándares comerciales.</li>
+                <li><strong>Administración Contable:</strong> Reportes mensuales transparentes de gastos fijos y variables, pago a proveedores y optimización de recursos.</li>
+            </ul>
+
+            <br/>
+            <h2>Eficiencia y Seguridad</h2>
+            <p>Ser dueños de una aeronave no debería ser un problema. Nosotros absorbemos la burocracia y la complejidad técnica, garantizando que su patrimonio mantenga su valor de mercado y opere siempre en un marco de seguridad total.</p>
+            
+            <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+                <a href="https://wa.me/+5491158120277" target="_blank" class="btn-primary">Contactar un Asesor</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" style="display: block; margin-bottom: 20px;">
+                    <img src="assets/images/logo.png" alt="Logo de la empresa" style="height: 40px; object-fit: contain;">
+                </a>
+                <p>Nuestra misión es proveer soluciones integrales de aviación con transparencia, ética y eficiencia operacional.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><a href="importacion.html">Importación de aeronaves</a></li>
+                    <li><a href="administracion.html">Administración de aeronaves</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Oficinas</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Hangar 5, aeródromo de Morón.</li>
+                    <li>Buenos Aires, Argentina.</li>
+                    <li><i class="fas fa-envelope" style="margin-right:8px;"></i> info@flyit.com.ar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aviation Services. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
