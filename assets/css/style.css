@@ -150,8 +150,9 @@ a {
     display: block;
     padding: 15px 20px;
     color: #cbd5e1;
-    font-size: 0.85rem;
-    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    font-family: var(--font-base);
     text-transform: none;
     letter-spacing: normal;
 }
