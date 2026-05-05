@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de Aeronaves | Fly It</title>
-    <meta name="description" content="Servicio integral de administración de aeronaves. Mantenimiento, tripulación y operaciones bajo los más altos estándares de la industria aeronáutica.">
-    
+    <meta name="description" content="Administración integral y propiedad compartida de turboprops ejecutivos (King Air 200, Piper Meridian). Tripulación, hangar, mantenimiento y operación bajo estándar de línea aérea.">
+
     <!-- Open Graph SEO -->
     <meta property="og:title" content="Administración de Aeronaves | Fly It">
-    <meta property="og:description" content="Gestión corporativa, técnica y operativa para proteger su activo.">
-    <meta property="og:image" content="assets/images/hero-bg.png">
+    <meta property="og:description" content="Propiedad compartida y administración integral en turboprops. Tripulación profesional, hangar, seguros y mantenimiento.">
+    <meta property="og:image" content="assets/images/kingair.png">
     <meta property="og:type" content="website">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -33,13 +34,15 @@
                     <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
                     <li><a href="index.html#servicio-importacion">Importación de aeronaves</a></li>
                     <li><a href="index.html#servicio-administracion">Administración de aeronaves</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
                 </ul>
             </li>
             <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
             <li class="nav-item"><a href="#" class="nav-link">News</a></li>
             <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
-            
-            <a href="vender.html" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Vende tu Aeronave</a>
+
+            <a href="vender.html" class="btn-secondary"
+                style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Vende tu Aeronave</a>
 
             <div class="lang-switcher">
                 <button class="active">ES</button>
@@ -53,49 +56,316 @@
         </button>
     </header>
 
-    <!-- Page Header con video de fondo (fallback a imagen) -->
+    <!-- Page Header -->
     <!--
-        Para activar el video: subir un .mp4 (10-20s, sin audio) a assets/videos/
-        Sugerencias de nombre: jet-landing.mp4, jet-approach.mp4
-        Mientras no exista el archivo, se muestra el poster (hero-bg.png).
+        REEMPLAZAR: subí una foto horizontal del King Air 200 / Piper Meridian a:
+        assets/images/admin-hero.jpg  (recomendado 1920x1080)
+        Mientras no exista, se muestra hero-bg.png como fallback.
     -->
     <section class="page-header page-header-hero">
-        <video class="page-header-bg" autoplay muted loop playsinline
-               poster="assets/images/hero-bg.png" aria-hidden="true">
-            <source src="assets/videos/jet-landing.mp4" type="video/mp4">
-        </video>
+        <img src="assets/images/hero-bg.png" alt="" class="page-header-bg" aria-hidden="true">
         <div class="page-header-overlay"></div>
         <div class="page-header-content">
             <h1>Administración de Aeronaves</h1>
-            <p>Operación, mantenimiento y logística diaria en manos de profesionales.</p>
+            <p>Tu aeronave, sin la operación encima. Propiedad compartida en turboprops y gestión integral.</p>
         </div>
     </section>
 
-    <!-- Main Content (Aerobrazil structure influence) -->
-    <main class="section section-light">
-        <div class="container rich-text">
-            <h2>Protegemos su activo con estándares de línea aérea</h2>
-            <p>Delegue la complejidad de operar una aeronave. Nuestro equipo de gestión asume el control absoluto de las operaciones de vuelo, la logística, el mantenimiento programado y el cumplimiento normativo.</p>
-            
-            <ul>
-                <li><strong>Gestión Operativa:</strong> Coordinación de vuelos, permisos de sobrevuelo, slots, handling y catering. Su aeronave lista para despegar cuando lo necesite.</li>
-                <li><strong>Supervisión Técnica:</strong> Seguimiento estricto del programa de mantenimiento (CAMP/CESCOM/Traxxall), auditoría de facturación de talleres y control de componentes con vencimiento.</li>
-                <li><strong>Tripulaciones:</strong> Selección, entrenamiento en simulador (FlightSafety/CAE) y gestión de pilotos altamente capacitados bajo estándares comerciales.</li>
-                <li><strong>Administración Contable:</strong> Reportes mensuales transparentes de gastos fijos y variables, pago a proveedores y optimización de recursos.</li>
-            </ul>
-
-            <br/>
-            <h2>Eficiencia y Seguridad</h2>
-            <p>Ser dueños de una aeronave no debería ser un problema. Nosotros absorbemos la burocracia y la complejidad técnica, garantizando que su patrimonio mantenga su valor de mercado y opere siempre en un marco de seguridad total.</p>
-            
-            <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
-                <a href="https://wa.me/+5491158120277" target="_blank" class="btn-primary">Contactar un Asesor</a>
+    <main>
+        <!-- Intro -->
+        <section class="section section-light">
+            <div class="container rich-text">
+                <h2>Volar sin tener que administrar</h2>
+                <p>Ser propietario de una aeronave es operar una pequeña aerolínea: hangar, seguros, mantenimiento, tripulación, contadores, ANAC, vencimientos. La cuenta termina dominando lo que tendría que ser una herramienta. Por eso ofrecemos dos formatos de administración pensados para que vos volés y nosotros nos ocupemos del resto.</p>
             </div>
-        </div>
+        </section>
+
+        <!-- Cómo funciona la propiedad compartida -->
+        <section class="section section-gray admin-section">
+            <div class="container">
+                <div class="admin-section-head">
+                    <span class="admin-eyebrow">Modelo destacado</span>
+                    <h2>Propiedad compartida en turboprops</h2>
+                    <p class="admin-lead">Adaptamos al mercado local el modelo de <em>fractional ownership</em> que opera con éxito en Estados Unidos (NetJets) y Brasil (Prime You): copropiedad real de una aeronave entre tres socios, gestión integral por nuestra parte, y el turboprop como equipo ideal para Argentina y la región.</p>
+                </div>
+
+                <!-- Diagrama: 3 copropietarios → 1 aeronave -->
+                <div class="ownership-diagram" aria-hidden="true">
+                    <div class="ownership-owners">
+                        <div class="ownership-owner">
+                            <div class="ownership-icon"><i class="fas fa-user-tie"></i></div>
+                            <span>Copropietario 1</span>
+                            <small>~25 hs/mes</small>
+                        </div>
+                        <div class="ownership-owner">
+                            <div class="ownership-icon"><i class="fas fa-user-tie"></i></div>
+                            <span>Copropietario 2</span>
+                            <small>~25 hs/mes</small>
+                        </div>
+                        <div class="ownership-owner">
+                            <div class="ownership-icon"><i class="fas fa-user-tie"></i></div>
+                            <span>Copropietario 3</span>
+                            <small>~25 hs/mes</small>
+                        </div>
+                    </div>
+                    <div class="ownership-merge">
+                        <svg viewBox="0 0 400 80" preserveAspectRatio="none">
+                            <path d="M 50 0 Q 50 50 200 80" />
+                            <path d="M 200 0 L 200 80" />
+                            <path d="M 350 0 Q 350 50 200 80" />
+                        </svg>
+                    </div>
+                    <div class="ownership-aircraft">
+                        <div class="ownership-aircraft-icon"><i class="fas fa-plane"></i></div>
+                        <span>Una aeronave compartida</span>
+                        <small>~75 horas mensuales · gestión integral por Fly It</small>
+                    </div>
+                </div>
+
+                <!-- Cómo funciona en pasos -->
+                <div class="admin-steps">
+                    <div class="admin-step">
+                        <div class="admin-step-num">01</div>
+                        <h4>Adquirís una fracción</h4>
+                        <p>Te convertís en copropietario formal de una aeronave junto a otros dos socios. La inversión inicial es una fracción de lo que costaría comprarla solo, y la titularidad queda inscripta a tu nombre.</p>
+                    </div>
+                    <div class="admin-step">
+                        <div class="admin-step-num">02</div>
+                        <h4>Tenés tus horas garantizadas</h4>
+                        <p>Cada condómino dispone de aproximadamente 25 horas mensuales de vuelo. Reservas con anticipación corta y sin disputarte la agenda con el resto.</p>
+                    </div>
+                    <div class="admin-step">
+                        <div class="admin-step-num">03</div>
+                        <h4>Pagás solo lo que volás</h4>
+                        <p>Los costos se dividen en dos: una <strong>cuota fija mensual</strong> que cubre hangar, seguros, tripulación y administración; y un <strong>valor por hora volada</strong> que cubre combustible, lubricantes y mantenimiento variable.</p>
+                    </div>
+                    <div class="admin-step">
+                        <div class="admin-step-num">04</div>
+                        <h4>Si no volás, podés alquilar tus horas</h4>
+                        <p>Las horas que no uses pueden colocarse en el servicio de taxi aéreo. Convertís parte del costo fijo en un ingreso que reduce la cuota mensual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Por qué turboprops -->
+        <section class="section section-light admin-section">
+            <div class="container rich-text">
+                <h2>¿Por qué turboprops y no jets?</h2>
+                <p>Para la mayoría de las misiones reales en Argentina y la región, un turboprop ejecutivo entrega lo mismo que un jet liviano y cuesta bastante menos de operar.</p>
+            </div>
+
+            <div class="container admin-grid-3">
+                <div class="admin-feature">
+                    <i class="fas fa-money-bill-trend-up"></i>
+                    <h4>Costo operativo competitivo</h4>
+                    <p>Un King Air o un Meridian cuestan operativamente entre un 40% y un 60% menos por hora que un jet liviano equivalente, manteniendo cabina ejecutiva y velocidad útil.</p>
+                </div>
+                <div class="admin-feature">
+                    <i class="fas fa-mountain"></i>
+                    <h4>Acceso a pistas cortas</h4>
+                    <p>Operan en aeródromos de pista corta y no pavimentada que un jet no puede usar: te dejan más cerca del destino real, en muchos casos sin escala intermedia.</p>
+                </div>
+                <div class="admin-feature">
+                    <i class="fas fa-route"></i>
+                    <h4>Autonomía regional</h4>
+                    <p>Con autonomías de 1.000 a 1.600 nm cubren prácticamente toda Argentina, Uruguay, Chile y sur de Brasil sin reabastecer.</p>
+                </div>
+                <div class="admin-feature">
+                    <i class="fas fa-screwdriver-wrench"></i>
+                    <h4>Mantenimiento accesible</h4>
+                    <p>Repuestos y soporte técnico disponibles en el mercado local. Menos dependencia de talleres del exterior, menos tiempo en piso.</p>
+                </div>
+                <div class="admin-feature">
+                    <i class="fas fa-snowflake"></i>
+                    <h4>Cabina presurizada</h4>
+                    <p>Vuelo arriba del clima, confort de jet ejecutivo, sin la complejidad operativa ni el costo de un turbofán.</p>
+                </div>
+                <div class="admin-feature">
+                    <i class="fas fa-shield-halved"></i>
+                    <h4>Seguridad probada</h4>
+                    <p>Plataformas con décadas de operación mundial, sistemas redundantes y excelentes records de seguridad operacional.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flota turboprop -->
+        <section class="section section-gray admin-section">
+            <div class="container">
+                <div class="admin-section-head">
+                    <span class="admin-eyebrow">Flota recomendada</span>
+                    <h2>Las aeronaves del programa</h2>
+                </div>
+
+                <div class="admin-fleet">
+                    <!-- King Air 200 -->
+                    <div class="admin-fleet-card">
+                        <div class="admin-fleet-image">
+                            <!--
+                                REEMPLAZAR: foto real de Beechcraft King Air 200 a
+                                assets/images/kingair200.jpg
+                                Mientras no exista, se muestra kingair.png como fallback.
+                            -->
+                            <img src="assets/images/kingair.png" alt="Beechcraft King Air 200">
+                            <span class="admin-fleet-badge">Bimotor turbohélice</span>
+                        </div>
+                        <div class="admin-fleet-body">
+                            <h3>Beechcraft King Air 200</h3>
+                            <p class="admin-fleet-tagline">El caballo de batalla de la aviación ejecutiva regional. Cabina amplia, dos motores y autonomía sobrada para Argentina y países limítrofes.</p>
+                            <div class="admin-fleet-specs">
+                                <div><span>Pasajeros</span><strong>7-9</strong></div>
+                                <div><span>Crucero</span><strong>289 kt</strong></div>
+                                <div><span>Autonomía</span><strong>1.580 nm</strong></div>
+                                <div><span>Pista mín.</span><strong>~900 m</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Piper Meridian -->
+                    <div class="admin-fleet-card">
+                        <div class="admin-fleet-image">
+                            <!--
+                                REEMPLAZAR: foto real de Piper Meridian a
+                                assets/images/piper-meridian.jpg
+                                Mientras no exista, aparece el placeholder.
+                            -->
+                            <img src="assets/images/piper-meridian.jpg" alt="Piper Meridian"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="admin-fleet-placeholder" style="display:none;">
+                                <i class="fas fa-plane"></i>
+                                <span>Foto pendiente</span>
+                            </div>
+                            <span class="admin-fleet-badge">Monomotor turbohélice</span>
+                        </div>
+                        <div class="admin-fleet-body">
+                            <h3>Piper M-Class (Meridian / M500)</h3>
+                            <p class="admin-fleet-tagline">El single-engine turboprop más popular del mercado. Costo operativo bajo, cabina ejecutiva para 4-5 pasajeros y aviónica de última generación.</p>
+                            <div class="admin-fleet-specs">
+                                <div><span>Pasajeros</span><strong>4-5</strong></div>
+                                <div><span>Crucero</span><strong>260 kt</strong></div>
+                                <div><span>Autonomía</span><strong>1.000 nm</strong></div>
+                                <div><span>Pista mín.</span><strong>~700 m</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beneficios -->
+        <section class="section section-light admin-section">
+            <div class="container">
+                <div class="admin-section-head">
+                    <span class="admin-eyebrow">Lo que recibís</span>
+                    <h2>Beneficios del modelo</h2>
+                </div>
+
+                <div class="admin-benefits">
+                    <div class="admin-benefit">
+                        <i class="fas fa-handshake-angle"></i>
+                        <h4>Cero burocracia</h4>
+                        <p>ANAC, aduana, vencimientos, contratos con tripulación, hangar, seguros: todo lo gestionamos nosotros. Vos no ves un papel.</p>
+                    </div>
+                    <div class="admin-benefit">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>Tripulación profesional</h4>
+                        <p>Pilotos con habilitación de tipo, recurrent training en simulador (FlightSafety / CAE), briefings personalizados según tu misión.</p>
+                    </div>
+                    <div class="admin-benefit">
+                        <i class="fas fa-sliders"></i>
+                        <h4>Costos predecibles</h4>
+                        <p>Cuota fija + costo por hora. Sin sorpresas: lo que pagás cada mes es lo que sabés que pagás cada mes.</p>
+                    </div>
+                    <div class="admin-benefit">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h4>Capital liberado</h4>
+                        <p>Lo que no inmovilizás en una aeronave entera lo destinás a otros activos. Disfrutás del avión sin renunciar al resto.</p>
+                    </div>
+                    <div class="admin-benefit">
+                        <i class="fas fa-arrows-rotate"></i>
+                        <h4>Horas no usadas → ingresos</h4>
+                        <p>Las horas que no consumís pueden colocarse en taxi aéreo. Tu costo fijo se compensa parcialmente solo.</p>
+                    </div>
+                    <div class="admin-benefit">
+                        <i class="fas fa-shield"></i>
+                        <h4>Mantenimiento monitoreado</h4>
+                        <p>Programas tipo CAMP / CESCOM / Traxxall, inspecciones planificadas y auditoría de facturación de talleres. Sin paradas inesperadas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Administración de aeronave propia -->
+        <section class="section section-gray admin-section">
+            <div class="container rich-text">
+                <h2>¿Ya tenés tu propia aeronave?</h2>
+                <p>Si ya sos dueño y solo te falta la operación, también podemos hacernos cargo. Tomamos la administración integral de tu aeronave bajo el mismo estándar que aplicamos en la propiedad compartida:</p>
+                <ul>
+                    <li><strong>Gestión Operativa:</strong> coordinación de vuelos, permisos de sobrevuelo, slots, handling, catering. Tu aeronave lista para despegar cuando la necesites.</li>
+                    <li><strong>Supervisión Técnica:</strong> seguimiento del programa de mantenimiento (CAMP / CESCOM / Traxxall), auditoría de facturación de talleres y control de componentes con vencimiento.</li>
+                    <li><strong>Tripulaciones:</strong> selección, entrenamiento en simulador y gestión de pilotos altamente capacitados bajo estándar comercial.</li>
+                    <li><strong>Administración Contable:</strong> reportes mensuales transparentes de gastos fijos y variables, pago a proveedores y optimización de recursos.</li>
+                </ul>
+                <p>Vos seguís siendo dueño exclusivo y conservás el valor de mercado de tu aeronave; nosotros nos ocupamos de que opere.</p>
+                <a href="https://wa.me/+5491158120277?text=Hola,%20quiero%20info%20sobre%20administraci%C3%B3n%20de%20mi%20aeronave%20con%20Fly%20It." target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 24px;">Hablar con un asesor</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section-light admin-section">
+            <div class="container">
+                <div class="admin-section-head">
+                    <span class="admin-eyebrow">Preguntas frecuentes</span>
+                    <h2>Lo que más nos preguntan</h2>
+                </div>
+
+                <div class="admin-faq">
+                    <details>
+                        <summary>¿Mi nombre figura en la matrícula?</summary>
+                        <p>Sí. La copropiedad se inscribe formalmente: tu fracción de la aeronave queda registrada a tu nombre (o el de tu sociedad). No es un esquema de uso, es propiedad real.</p>
+                    </details>
+                    <details>
+                        <summary>¿Cómo se reservan los vuelos?</summary>
+                        <p>Trabajamos con un sistema de reservas por ventanas. Con anticipación razonable (típicamente 48–72 hs) la disponibilidad está garantizada para tu cuota mensual. Para vuelos de último momento hay un sistema de prioridades y compensación entre condóminos.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué pasa si necesito más horas que mi cuota mensual?</summary>
+                        <p>Podés volar horas extra al costo variable más un overhead acordado. Si tu uso supera consistentemente las 25 horas mensuales, conviene evaluar pasarte a una fracción mayor o a propiedad exclusiva con administración.</p>
+                    </details>
+                    <details>
+                        <summary>¿Y si quiero salir del programa?</summary>
+                        <p>Tu fracción es vendible. Te ayudamos a colocarla con otro condómino interesado, sin penalidades por salida. La aeronave conserva su valor de mercado.</p>
+                    </details>
+                    <details>
+                        <summary>¿La tripulación es fija o rota?</summary>
+                        <p>Trabajamos con un pool acotado de pilotos habilitados en cada aeronave, con quienes vas a familiarizarte. No es una tripulación distinta cada vuelo.</p>
+                    </details>
+                    <details>
+                        <summary>¿Qué seguros incluye?</summary>
+                        <p>Casco y responsabilidad civil ilimitada, contratados con aseguradoras de primera línea. Los detalles se especifican en el contrato de copropiedad.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="section section-light admin-cta">
+            <div class="container">
+                <div class="admin-cta-box">
+                    <h2>¿Querés ver los números?</h2>
+                    <p>Te armamos una propuesta personalizada con cuota fija estimada, costo por hora y proyección de uso según el perfil de misión. Sin compromiso.</p>
+                    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+                        <a href="https://wa.me/+5491158120277?text=Hola,%20quiero%20una%20propuesta%20de%20propiedad%20compartida%20de%20Fly%20It." target="_blank" rel="noopener noreferrer" class="btn-primary">Pedir propuesta</a>
+                        <a href="aeronaves.html" class="btn-secondary" style="color:#1a2b3c; border-color:#1a2b3c;">Ver aeronaves disponibles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -107,6 +377,11 @@
                     <img src="assets/images/logo.png" alt="Logo de la empresa" style="height: 40px; object-fit: contain;">
                 </a>
                 <p>Nuestra misión es proveer soluciones integrales de aviación con transparencia, ética y eficiencia operacional.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/flyit.argentina" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4>Servicios</h4>
