@@ -952,6 +952,57 @@ a {
     background-color: var(--bg-light);
 }
 
+/* Section pale: fondo gris claro / texto oscuro (alternancia con section-light) */
+.section-pale {
+    background-color: #f5f7fa;
+    color: #1a2b3c;
+}
+.section-pale h1,
+.section-pale h2,
+.section-pale h3,
+.section-pale h4,
+.section-pale h5,
+.section-pale h6,
+.section-pale .rich-text h2,
+.section-pale .rich-text h3 {
+    color: #1a2b3c;
+}
+.section-pale p,
+.section-pale .rich-text p {
+    color: #4a5568;
+}
+.section-pale li,
+.section-pale .rich-text li {
+    color: #2d3748;
+}
+.section-pale strong {
+    color: #1a2b3c;
+}
+.section-pale em {
+    color: #2d3748;
+}
+.section-pale a:not(.btn-primary):not(.btn-secondary):not(.btn-card):not(.btn-discreet) {
+    color: #1a73e8;
+}
+/* Creds-box dentro de section-pale */
+.section-pale .creds-box {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 3px solid var(--accent-blue);
+}
+.section-pale .creds-box h4 {
+    color: #1a2b3c;
+}
+.section-pale .creds-list li {
+    color: #4a5568;
+}
+.section-pale .creds-list strong {
+    color: #1a2b3c;
+}
+.section-pale .creds-list li > i {
+    color: #1a2b3c;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
