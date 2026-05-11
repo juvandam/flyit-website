@@ -2441,9 +2441,15 @@ a {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Fix for mobile parallax (iOS Safari bug) */
+/* Fix for mobile parallax (iOS Safari bug) and Mobile Backgrounds */
 @media (max-width: 768px) {
     .parallax-window, .hero {
         background-attachment: scroll !important;
+    }
+    
+    .hero {
+        /* Mobile specific background */
+        background-image: url('../images/fotos_aeronaves_web/jet_airplane.jpg') !important;
+        background-position: center center;
     }
 }
