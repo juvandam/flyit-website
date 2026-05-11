@@ -191,7 +191,7 @@ a {
     justify-content: flex-start;
     text-align: left;
     color: white;
-    background-image: url('../images/fotos_aeronaves_web/jet_airplane.jpg');
+    background-image: url('../images/fotos_aeronaves_web/avion_privado.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2439,4 +2439,11 @@ a {
     background-attachment: fixed;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Fix for mobile parallax (iOS Safari bug) */
+@media (max-width: 768px) {
+    .parallax-window, .hero {
+        background-attachment: scroll !important;
+    }
 }
