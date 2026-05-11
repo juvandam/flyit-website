@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vende tu Aeronave | Fly It</title>
     <meta name="description" content="Publica y vende tu aeronave con Fly It. Asesoría, tasación de mercado y un proceso de venta transparente con alcance nacional e internacional.">
+    <meta name="keywords" content="vender aeronave, tasación de aviones, venta de jets privados, broker aeronáutico argentina, consignación de aeronaves">
 
     <!-- Open Graph SEO -->
     <meta property="og:title" content="Vende tu Aeronave | Fly It">
@@ -56,152 +57,54 @@
     </header>
 
     <!-- Page Header con imagen de fondo -->
-    <section class="page-header page-header-hero">
-        <img src="assets/images/hero-bg.png" alt="" class="page-header-bg" aria-hidden="true">
-        <div class="page-header-overlay"></div>
+    <section class="page-header page-header-hero" style="min-height: 40vh;">
+        <img src="assets/images/fotos_aeronaves_web/avion_venta_bimotor.jpg" alt="" class="page-header-bg" aria-hidden="true" style="object-position: center;">
+        <div class="page-header-overlay" style="background: rgba(0,0,0,0.5);"></div>
         <div class="page-header-content">
             <h1>Vende tu Aeronave</h1>
-            <p>Tasación de mercado, gestión integral y alcance a compradores reales.</p>
+            <p>Conecta con compradores reales y deja la gestión en manos expertas.</p>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="section section-light">
-        <div class="container vender-layout">
+        <div class="container" style="max-width: 600px; margin: 0 auto;">
+            <div class="vender-form-wrapper" style="text-align: center; padding: 50px 40px; background: white; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); font-weight: 800; font-size: 1.8rem; margin-bottom: 10px;">Contanos sobre tu aeronave</h3>
+                <p class="vender-form-sub" style="margin-bottom: 30px; color: #666;">Completá los datos y te contactamos a la brevedad.</p>
 
-            <!-- Columna izquierda: propuesta de valor -->
-            <aside class="vender-pitch rich-text">
-                <h2>Publicá con quienes entienden el mercado</h2>
-                <p>En Fly It sabemos qué busca cada comprador porque nosotros mismos compramos e importamos aeronaves.
-                    Ese conocimiento de adentro es lo que hace que tu aeronave llegue al cliente indicado y se venda al
-                    valor que corresponde.</p>
-
-                <ul class="vender-benefits">
-                    <li><i class="fas fa-search-dollar"></i>
-                        <div>
-                            <strong>Tasación real de mercado</strong>
-                            <p>Valuación técnica y comercial con benchmarks locales e internacionales.</p>
-                        </div>
-                    </li>
-                    <li><i class="fas fa-camera-retro"></i>
-                        <div>
-                            <strong>Presentación profesional</strong>
-                            <p>Armamos el dossier técnico, sesión de fotos y ficha para el catálogo.</p>
-                        </div>
-                    </li>
-                    <li><i class="fas fa-globe-americas"></i>
-                        <div>
-                            <strong>Alcance nacional e internacional</strong>
-                            <p>Difusión en Argentina, red regional y contactos off-market.</p>
-                        </div>
-                    </li>
-                    <li><i class="fas fa-handshake"></i>
-                        <div>
-                            <strong>Cierre sin sorpresas</strong>
-                            <p>Acompañamiento legal, fiscal y de transferencia hasta la entrega.</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <!-- CTA WhatsApp alternativo -->
-                <a href="https://wa.me/+5491158120277?text=Hola,%20quiero%20vender%20mi%20aeronave%20a%20trav%C3%A9s%20de%20Fly%20It."
-                    target="_blank" rel="noopener noreferrer" class="btn-wa-alt">
-                    <i class="fab fa-whatsapp"></i>
-                    ¿Preferís contactarnos por WhatsApp?
-                </a>
-            </aside>
-
-            <!-- Columna derecha: formulario -->
-            <div class="vender-form-wrapper">
-                <h3>Contanos sobre tu aeronave</h3>
-                <p class="vender-form-sub">Completá los datos y te contactamos en menos de 24hs.</p>
-
-                <!--
-                    FORMULARIO: usa FormSubmit (https://formsubmit.co/) sin signup.
-                    Cambia la URL de action por: https://formsubmit.co/TU_EMAIL
-                    La primera vez que se envía, FormSubmit te manda un email de confirmación para activarlo.
-                -->
-                <form class="vender-form" action="https://formsubmit.co/info@flyit.com.ar" method="POST">
-                    <!-- FormSubmit: config -->
+                <form class="vender-form" action="https://formsubmit.co/ventas@flyit.com.ar" method="POST" style="text-align: left;">
                     <input type="hidden" name="_subject" value="Nueva consulta: Vende tu Aeronave">
                     <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://flyit.com.ar/vender.html?sent=1">
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-nombre">Nombre completo *</label>
-                            <input id="f-nombre" name="Nombre" type="text" required autocomplete="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="f-email">Email *</label>
-                            <input id="f-email" name="Email" type="email" required autocomplete="email">
-                        </div>
+                    
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="f-nombre" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #333;">Nombre completo *</label>
+                        <input id="f-nombre" name="Nombre" type="text" required autocomplete="name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="f-email" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #333;">Email *</label>
+                        <input id="f-email" name="Email" type="email" required autocomplete="email" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-telefono">Teléfono / WhatsApp</label>
-                            <input id="f-telefono" name="Telefono" type="tel" autocomplete="tel">
-                        </div>
-                        <div class="form-group">
-                            <label for="f-matricula">Matrícula</label>
-                            <input id="f-matricula" name="Matricula" type="text" placeholder="Ej: LV-XXX">
-                        </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="f-telefono" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #333;">Teléfono / WhatsApp *</label>
+                        <input id="f-telefono" name="Telefono" type="tel" required autocomplete="tel" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="f-modelo" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #333;">Modelo de aeronave *</label>
+                        <input id="f-modelo" name="Modelo" type="text" required placeholder="Ej: Citation XLS, King Air 250" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-fabricante">Fabricante *</label>
-                            <input id="f-fabricante" name="Fabricante" type="text" required
-                                placeholder="Cessna, Beechcraft, Embraer...">
-                        </div>
-                        <div class="form-group">
-                            <label for="f-modelo">Modelo *</label>
-                            <input id="f-modelo" name="Modelo" type="text" required
-                                placeholder="Ej: Citation XLS, King Air 250">
-                        </div>
+                    <div class="form-group" style="margin-bottom: 30px;">
+                        <label for="f-comentarios" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #333;">Detalles adicionales</label>
+                        <textarea id="f-comentarios" name="Comentarios" rows="4" placeholder="Contanos sobre el estado general, equipamiento, o cualquier otro detalle." style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body); resize: vertical;"></textarea>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-ano">Año *</label>
-                            <input id="f-ano" name="Anio" type="number" min="1950" max="2030" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="f-ttaf">Horas totales (TTAF)</label>
-                            <input id="f-ttaf" name="TTAF" type="text" placeholder="Ej: 2,400">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="f-precio">Precio pretendido (USD)</label>
-                            <input id="f-precio" name="Precio" type="text" placeholder="Consultar o monto">
-                        </div>
-                        <div class="form-group">
-                            <label for="f-ubicacion">Ubicación actual</label>
-                            <input id="f-ubicacion" name="Ubicacion" type="text"
-                                placeholder="Ciudad / Aeródromo">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="f-comentarios">Detalles adicionales</label>
-                        <textarea id="f-comentarios" name="Comentarios" rows="5"
-                            placeholder="Contanos sobre el estado general, aviónica, mantenimiento reciente, motivos de venta, etc."></textarea>
-                    </div>
-
-                    <div class="form-group form-checkbox">
-                        <input id="f-acepto" name="Acepto" type="checkbox" required>
-                        <label for="f-acepto">Acepto ser contactado por Fly It para avanzar con la venta.</label>
-                    </div>
-
-                    <button type="submit" class="btn-primary">Enviar consulta</button>
-                    <p class="form-note">Te respondemos en menos de 24hs. No compartimos tus datos con terceros.</p>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 1rem;">Enviar consulta</button>
                 </form>
             </div>
-
         </div>
     </main>
 
