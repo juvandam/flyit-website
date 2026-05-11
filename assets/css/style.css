@@ -191,7 +191,7 @@ a {
     justify-content: flex-start;
     text-align: left;
     color: white;
-    background-image: url('../images/fotos_aeronaves_web/avion_privado.jpg');
+    background-image: url('../images/fotos_aeronaves_web/jet_airplane.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -2449,7 +2449,7 @@ a {
     
     .hero {
         /* Mobile specific background */
-        background-image: url('../images/fotos_aeronaves_web/jet_airplane.jpg') !important;
+        background-image: url('../images/fotos_aeronaves_web/avion_privado.jpg') !important;
         background-position: center center;
     }
 }
