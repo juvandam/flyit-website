@@ -268,4 +268,92 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (timelineContainer) {
         timelineContainer.classList.add('timeline-active');
     }
-});
+
+    // 8. Form Submission AJAX
+    const forms = document.querySelectorAll('form[action^="https://formsubmit.co/"]');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+            const originalBtnText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                form.innerHTML = `<div style="text-align: center; padding: 20px; color: #1a2b3c; font-weight: 600; font-size: 1.1rem; background: rgba(37, 211, 102, 0.1); border-radius: 8px;">
+                                    <i class="fas fa-check-circle" style="font-size: 2.5rem; color: #25D366; margin-bottom: 15px;"></i><br>
+                                    Gracias por escribirnos. Nos pondremos en contacto a la brevedad.
+                                  </div>`;
+            })
+            .catch(error => {
+                btn.textContent = 'Error al enviar. Intenta de nuevo.';
+                btn.disabled = false;
+                setTimeout(() => {
+                    btn.textContent = originalBtnText;
+                }, 3000);
+            });
+        });
+    });
+
+    // 9. Dynamic Hero
+    const hero = document.querySelector('.hero');
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    
+    if (hero && heroTitle && heroSubtitle) {
+        const isMobile = window.innerWidth <= 768;
+        
+        const slides = [
+            {
+                bg: isMobile ? 'url("assets/images/fotos_aeronaves_web/aviacion_privada.jpg")' : 'url("assets/images/fotos_aeronaves_web/jet_airplane.jpg")',
+                title: 'Elevando los<br>Estándares de<br>la Aviación',
+                text: 'Experiencia, gestión corporativa y un nivel incomparable de profesionalismo en administración y venta de aeronaves.'
+            },
+            {
+                bg: isMobile ? 'url("assets/images/fotos_aeronaves_web/aeronave_turbohelice.jpg")' : 'url("assets/images/fotos_aeronaves_web/avion_venta_King.jpg")',
+                title: 'Encuentra tu<br>próxima aeronave',
+                text: 'Acceda a nuestro catálogo exclusivo.<br>Conectamos compradores con vendedores<br>de manera eficiente y transparente.'
+            }
+        ];
+
+        let currentSlide = 0;
+        
+        // Initial setup
+        hero.style.backgroundImage = slides[currentSlide].bg;
+        heroTitle.innerHTML = slides[currentSlide].title;
+        heroSubtitle.innerHTML = slides[currentSlide].text;
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            
+            // Fade out
+            heroTitle.style.opacity = '0';
+            heroSubtitle.style.opacity = '0';
+            
+            setTimeout(() => {
+                hero.style.backgroundImage = slides[currentSlide].bg;
+                heroTitle.innerHTML = slides[currentSlide].title;
+                heroSubtitle.innerHTML = slides[currentSlide].text;
+                
+                // Fade in
+                heroTitle.style.opacity = '1';
+                heroSubtitle.style.opacity = '1';
+            }, 500); // Wait for fade out
+            
+        }, 6000);
+
+        // Add transition properties
+        hero.style.transition = 'background-image 1s ease-in-out';
+        heroTitle.style.transition = 'opacity 0.5s ease-in-out';
+        heroSubtitle.style.transition = 'opacity 0.5s ease-in-out';
+    }

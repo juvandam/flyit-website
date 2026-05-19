@@ -1853,12 +1853,15 @@ a {
 
 /* Beneficios grid */
 .admin-benefits {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 28px;
 }
 
 .admin-benefit {
+    flex: 1 1 250px;
+    max-width: 320px;
     padding: 26px 24px;
     background: #fff;
     border: 1px solid rgba(0,0,0,0.06);
