@@ -57,15 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tc) tc.classList.add('timeline-active');
     }
 
-    // FAILSAFE: si por alguna razon el IO no se dispara (carga rapida, race conditions,
-    // o problemas con frames invisibles), revelar todo lo no revelado en 1.5s.
+    // FAILSAFE CONDICIONAL: solo si el IntersectionObserver NO funciono.
+    // Detectamos eso porque despues de 2.5s ningun elemento debio haberse revelado
+    // (al menos los que estan en el viewport inicial deberian disparar el IO).
+    // Si IO funciona, los elementos fuera del viewport esperan al scroll del usuario,
+    // que es exactamente el efecto "aparecer al scrollear" que queremos.
     setTimeout(() => {
         try {
-            document.querySelectorAll('[data-reveal]:not(.revealed)').forEach(el => el.classList.add('revealed'));
-            const tc = document.getElementById('partnersTimeline');
-            if (tc && !tc.classList.contains('timeline-active')) tc.classList.add('timeline-active');
+            const anyRevealed = document.querySelector('[data-reveal].revealed');
+            if (!anyRevealed) {
+                // IO no funciono: revelar todo de una para evitar pagina vacia
+                document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
+                const tc = document.getElementById('partnersTimeline');
+                if (tc) tc.classList.add('timeline-active');
+            }
+            // Si al menos uno fue revealed, IO funciona — dejarlo trabajar en scroll
         } catch(e) {}
-    }, 1500);
+    }, 2500);
 
     // 1. Header Scrolled State
     try {
@@ -351,7 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 9. Dynamic Hero - crossfade rapido + texto deslizando, sincronizado
+    // 9. Dynamic Hero - sincronizado con Web Animations API
+    // Todas las animaciones (texto + imagen) arrancan en el mismo frame y duran lo mismo
     try {
         const hero = document.querySelector('.hero');
         const heroTitle = document.querySelector('.hero-title');
@@ -377,14 +386,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             ];
 
-            // Sacar el background del .hero original — lo manejan dos capas apiladas
-            hero.style.backgroundImage = 'none';
+            const FADE = 500;
+            const ENTER = 500;
 
-            // Timings sincronizados: imagen y texto salen + entran al mismo tiempo
-            const FADE = 400; // duracion del fade-out (imagen y texto)
-            const ENTER = 450; // duracion del fade-in del texto nuevo
-
-            // Crear dos capas de fondo apiladas para crossfade real
+            // Capa de fondo
             const makeLayer = (img) => {
                 const el = document.createElement('div');
                 el.className = 'hero-bg-layer';
@@ -397,94 +402,122 @@ document.addEventListener('DOMContentLoaded', () => {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundAttachment: isMobile ? 'scroll' : 'fixed',
-                    transition: 'opacity ' + FADE + 'ms ease-in-out',
                     zIndex: '0',
-                    pointerEvents: 'none'
+                    pointerEvents: 'none',
+                    opacity: '0'
                 });
                 return el;
             };
 
-            const layerA = makeLayer(slides[0].bg);
-            const layerB = makeLayer(slides[1].bg);
-            layerA.style.opacity = '1';
-            layerB.style.opacity = '0';
-            hero.insertBefore(layerB, hero.firstChild);
-            hero.insertBefore(layerA, hero.firstChild);
+            // Precargar TODAS las imagenes antes de iniciar el ciclo
+            const preloadAll = Promise.all(slides.map(s => new Promise(resolve => {
+                const img = new Image();
+                img.onload = resolve;
+                img.onerror = resolve; // resolver aunque falle
+                img.src = s.bg;
+            })));
 
-            // Precargar la segunda imagen para que la transicion sea instantanea
-            new Image().src = slides[1].bg;
+            preloadAll.then(() => {
+                // Una vez que cargaron, sacamos el background del hero CSS y montamos las capas
+                hero.style.backgroundImage = 'none';
 
-            // Texto: mismo timing que la imagen para sincronizar
-            const textTransitionOut = 'opacity ' + FADE + 'ms ease-in, transform ' + FADE + 'ms ease-in';
-            const textTransitionIn = 'opacity ' + ENTER + 'ms ease-out, transform ' + ENTER + 'ms ease-out';
-            heroTitle.style.transition = textTransitionOut;
-            heroSubtitle.style.transition = textTransitionOut;
-            heroTitle.innerHTML = slides[0].title;
-            heroSubtitle.innerHTML = slides[0].text;
+                const layerA = makeLayer(slides[0].bg);
+                const layerB = makeLayer(slides[1].bg);
+                layerA.style.opacity = '1';
+                hero.insertBefore(layerB, hero.firstChild);
+                hero.insertBefore(layerA, hero.firstChild);
 
-            let currentSlide = 0;
-            let activeLayer = layerA;
-            let standbyLayer = layerB;
+                heroTitle.innerHTML = slides[0].title;
+                heroSubtitle.innerHTML = slides[0].text;
 
-            const animateSlide = () => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                const next = slides[currentSlide];
+                let currentSlide = 0;
+                let activeLayer = layerA;
+                let standbyLayer = layerB;
+                let isAnimating = false;
 
-                // Setear la siguiente imagen en la capa standby antes de revelarla
-                standbyLayer.style.backgroundImage = 'url("' + next.bg + '")';
+                const animateSlide = () => {
+                    if (isAnimating) return;
+                    isAnimating = true;
 
-                // FASE 1 (0 -> FADE ms): texto e imagen desaparecen SINCRONIZADOS
-                heroTitle.style.transition = textTransitionOut;
-                heroSubtitle.style.transition = textTransitionOut;
-                heroTitle.style.opacity = '0';
-                heroTitle.style.transform = 'translateY(-12px)';
-                heroSubtitle.style.opacity = '0';
-                heroSubtitle.style.transform = 'translateY(-12px)';
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    const next = slides[currentSlide];
 
-                requestAnimationFrame(() => {
-                    standbyLayer.style.opacity = '1';
-                    activeLayer.style.opacity = '0';
-                });
+                    // Setear la imagen nueva en la capa standby
+                    standbyLayer.style.backgroundImage = 'url("' + next.bg + '")';
 
-                // FASE 2 (a los FADE ms exactos): la imagen nueva ya esta visible
-                // y el texto esta invisible -> cambiamos contenido y entramos
-                setTimeout(() => {
-                    heroTitle.innerHTML = next.title;
-                    heroSubtitle.innerHTML = next.text;
-                    heroTitle.style.transform = 'translateY(12px)';
-                    heroSubtitle.style.transform = 'translateY(12px)';
+                    // Web Animations API - todas arrancan en el MISMO frame
+                    const FADE_OPTS = { duration: FADE, easing: 'ease-in-out', fill: 'forwards' };
 
-                    // Forzar reflow para que tome la posicion inicial antes de animar
-                    void heroTitle.offsetWidth;
+                    const exitAnims = [
+                        heroTitle.animate(
+                            [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-12px)' }],
+                            FADE_OPTS
+                        ),
+                        heroSubtitle.animate(
+                            [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-12px)' }],
+                            FADE_OPTS
+                        ),
+                        activeLayer.animate(
+                            [{ opacity: 1 }, { opacity: 0 }],
+                            FADE_OPTS
+                        ),
+                        standbyLayer.animate(
+                            [{ opacity: 0 }, { opacity: 1 }],
+                            FADE_OPTS
+                        )
+                    ];
 
-                    // Cambiar a transicion de entrada
-                    heroTitle.style.transition = textTransitionIn;
-                    heroSubtitle.style.transition = textTransitionIn;
+                    Promise.all(exitAnims.map(a => a.finished)).then(() => {
+                        // Persistir el estado final con styles directos
+                        activeLayer.style.opacity = '0';
+                        standbyLayer.style.opacity = '1';
+                        heroTitle.style.opacity = '0';
+                        heroTitle.style.transform = 'translateY(-12px)';
+                        heroSubtitle.style.opacity = '0';
+                        heroSubtitle.style.transform = 'translateY(-12px)';
+                        exitAnims.forEach(a => { try { a.cancel(); } catch(_) {} });
 
-                    // Entrada: fade + slide a posicion final
-                    requestAnimationFrame(() => {
-                        heroTitle.style.opacity = '1';
-                        heroTitle.style.transform = 'translateY(0)';
-                        heroSubtitle.style.opacity = '1';
-                        heroSubtitle.style.transform = 'translateY(0)';
+                        // Cambiar contenido (invisible) y entrar deslizando
+                        heroTitle.innerHTML = next.title;
+                        heroSubtitle.innerHTML = next.text;
+
+                        const ENTER_OPTS = { duration: ENTER, easing: 'ease-out', fill: 'forwards' };
+                        const enterAnims = [
+                            heroTitle.animate(
+                                [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
+                                ENTER_OPTS
+                            ),
+                            heroSubtitle.animate(
+                                [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
+                                ENTER_OPTS
+                            )
+                        ];
+
+                        Promise.all(enterAnims.map(a => a.finished)).then(() => {
+                            heroTitle.style.opacity = '1';
+                            heroTitle.style.transform = 'translateY(0)';
+                            heroSubtitle.style.opacity = '1';
+                            heroSubtitle.style.transform = 'translateY(0)';
+                            enterAnims.forEach(a => { try { a.cancel(); } catch(_) {} });
+
+                            // Swap layers
+                            const tmp = activeLayer;
+                            activeLayer = standbyLayer;
+                            standbyLayer = tmp;
+                            isAnimating = false;
+                        });
                     });
-                }, FADE);
+                };
 
-                // Swap referencias de capas (la que era standby ahora es activa)
-                const tmp = activeLayer;
-                activeLayer = standbyLayer;
-                standbyLayer = tmp;
-            };
-
-            // Pausar cuando la pestaña no esta visible (ahorra recursos)
-            let intervalId = setInterval(animateSlide, 5500);
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    clearInterval(intervalId);
-                    intervalId = null;
-                } else if (!intervalId) {
-                    intervalId = setInterval(animateSlide, 5500);
-                }
+                // Ciclo + pausa cuando la pestaña no es visible
+                let intervalId = setInterval(animateSlide, 5500);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        if (intervalId) { clearInterval(intervalId); intervalId = null; }
+                    } else if (!intervalId) {
+                        intervalId = setInterval(animateSlide, 5500);
+                    }
+                });
             });
         }
     } catch(e) { console.error('Hero animation error:', e); }
