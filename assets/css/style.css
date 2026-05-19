@@ -2452,7 +2452,7 @@ a {
     
     .hero {
         /* Mobile specific background */
-        background-image: url('../images/fotos_aeronaves_web/avion_privado.jpg') !important;
+        background-image: url('../images/fotos_aeronaves_web/aviacion_privada.jpg');
         background-position: center center;
     }
 }
