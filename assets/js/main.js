@@ -396,3 +396,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 6500);
         }
     } catch(e) { console.error('Hero animation error:', e); }
+
+});
