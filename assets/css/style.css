@@ -1557,7 +1557,8 @@ a {
     border-radius: 999px;
 }
 
-.section-light .admin-eyebrow {
+/* Pale = fondo claro: usar texto oscuro */
+.section-pale .admin-eyebrow {
     color: #1a2b3c;
     border-color: rgba(0,0,0,0.12);
 }
@@ -1570,11 +1571,11 @@ a {
 
 .admin-lead {
     font-size: 1.05rem;
-    color: #aaa;
+    color: #d0d0d0;
     line-height: 1.6;
 }
 
-.section-light .admin-lead { color: #4a5568; }
+.section-pale .admin-lead { color: #4a5568; }
 
 /* Diagrama propiedad compartida (3 owners → 1 aeronave) */
 .ownership-diagram {
@@ -2360,28 +2361,30 @@ a {
     transform: translateY(-2px);
 }
 
-/* Outline: secundario (Vende) */
+/* Outline claro: secundario (Vende) — para fondo oscuro del banner */
 .vb-cta-outline {
     background-color: transparent;
-    color: #1a2b3c;
-    border: 1.5px solid #1a2b3c;
+    color: #ffffff;
+    border: 1.5px solid rgba(255,255,255,0.55);
 }
 
 .vb-cta-outline:hover {
-    background-color: #1a2b3c;
+    background-color: rgba(255,255,255,0.10);
+    border-color: #ffffff;
     color: #ffffff;
 }
 
-/* Solid: principal (Catálogo a importar) */
+/* Solid blanco: principal (Catálogo a importar) — alto contraste sobre el banner oscuro */
 .vb-cta-solid {
-    background-color: #1a2b3c;
-    color: #ffffff;
-    border: 1.5px solid #1a2b3c;
+    background-color: #ffffff;
+    color: #1a2b3c;
+    border: 1.5px solid #ffffff;
 }
 
 .vb-cta-solid:hover {
-    background-color: #2d4763;
-    border-color: #2d4763;
+    background-color: #e6e9ee;
+    border-color: #e6e9ee;
+    color: #1a2b3c;
 }
 
 @media (max-width: 600px) {
