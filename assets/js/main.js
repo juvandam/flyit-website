@@ -3,61 +3,124 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Header Scrolled State
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // 0. PRIORITY: Reveal on scroll (movido al inicio para garantizar que se ejecuta)
+    try {
+        const timelineContainer = document.getElementById('partnersTimeline');
+        const revealEls = document.querySelectorAll('[data-reveal]');
 
-    // 2. Mobile Menu Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            // Toggle hamburger icon animation
-            const spans = hamburger.querySelectorAll('span');
-            if (navMenu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+        if (revealEls.length > 0) {
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px 50px 0px' });
+
+                revealEls.forEach(el => revealObserver.observe(el));
             } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                revealEls.forEach(el => el.classList.add('revealed'));
             }
-        });
+        }
+
+        if (timelineContainer) {
+            if ('IntersectionObserver' in window) {
+                const timelineObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            timelineContainer.classList.add('timeline-active');
+                            timelineObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                timelineObserver.observe(timelineContainer);
+            } else {
+                timelineContainer.classList.add('timeline-active');
+            }
+        }
+    } catch(e) {
+        console.error('Reveal error:', e);
+        document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
+        const tc = document.getElementById('partnersTimeline');
+        if (tc) tc.classList.add('timeline-active');
     }
 
+    // FAILSAFE: si por alguna razon el IO no se dispara (carga rapida, race conditions,
+    // o problemas con frames invisibles), revelar todo lo no revelado en 1.5s.
+    setTimeout(() => {
+        try {
+            document.querySelectorAll('[data-reveal]:not(.revealed)').forEach(el => el.classList.add('revealed'));
+            const tc = document.getElementById('partnersTimeline');
+            if (tc && !tc.classList.contains('timeline-active')) tc.classList.add('timeline-active');
+        } catch(e) {}
+    }, 1500);
+
+    // 1. Header Scrolled State
+    try {
+        const header = document.querySelector('.header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+    } catch(e) { console.error('Header scroll error:', e); }
+
+    // 2. Mobile Menu Toggle
+    try {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const spans = hamburger.querySelectorAll('span');
+                if (navMenu.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        }
+    } catch(e) { console.error('Hamburger error:', e); }
+
     // 3. Mobile Submenu Toggle
-    const dropdowns = document.querySelectorAll('.nav-item.dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('.nav-link');
-        link.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('open');
+    try {
+        const dropdowns = document.querySelectorAll('.nav-item.dropdown');
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('.nav-link');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
+                });
             }
         });
-    });
+    } catch(e) { console.error('Submenu error:', e); }
 
     // 4. Language Switcher stub
-    const langBtns = document.querySelectorAll('.lang-switcher button');
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            langBtns.forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            
-            // Here you would implement routing or translation array logic
-            // e.g. if btn.textContent === 'EN', redirect to /en/
-            console.log("Language changed to:", e.target.textContent);
+    try {
+        const langBtns = document.querySelectorAll('.lang-switcher button');
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                console.log("Language changed to:", e.target.textContent);
+            });
         });
-    });
+    } catch(e) { console.error('Lang switcher error:', e); }
 
     // 5. Inventory Advanced Filtering Logic
     try {
@@ -241,52 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } catch(e) { console.error('Carousel error:', e); }
 
-    // 7. Reveal on scroll
-    try {
-        const timelineContainer = document.getElementById('partnersTimeline');
-        const revealEls = document.querySelectorAll('[data-reveal]');
-
-        if (revealEls.length > 0) {
-            if ('IntersectionObserver' in window) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('revealed');
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '0px 0px 50px 0px' });
-
-                revealEls.forEach(el => revealObserver.observe(el));
-            } else {
-                // Fallback for older browsers
-                revealEls.forEach(el => el.classList.add('revealed'));
-            }
-        }
-
-        if (timelineContainer) {
-            if ('IntersectionObserver' in window) {
-                const timelineObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            timelineContainer.classList.add('timeline-active');
-                            timelineObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                timelineObserver.observe(timelineContainer);
-            } else {
-                timelineContainer.classList.add('timeline-active');
-            }
-        }
-    } catch(e) {
-        console.error('Reveal error:', e);
-        // Fail-safe: show everything
-        document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
-        const tc = document.getElementById('partnersTimeline');
-        if (tc) tc.classList.add('timeline-active');
-    }
+    // 7. (Reveal on scroll movido a seccion 0 al inicio + failsafe con setTimeout)
 
     // 8. Form Submission AJAX
     const forms = document.querySelectorAll('form[action^="https://formsubmit.co/"]');
