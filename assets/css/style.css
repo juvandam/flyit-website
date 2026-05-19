@@ -204,12 +204,17 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay */
-    z-index: 0;
+    z-index: 1;
+}
+
+/* Capas de fondo apiladas para crossfade del hero dinamico */
+.hero-bg-layer {
+    will-change: opacity;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 900px;
     padding: 0 4%;
     animation: fadeIn 1.5s ease-out;
@@ -2318,6 +2323,72 @@ a {
 
 .vender-banner .btn-primary {
     flex-shrink: 0;
+}
+
+/* CTAs gemelos del banner: mismo tamaño, distintos colores */
+.vender-banner-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+
+.vb-cta {
+    flex: 1 1 240px;
+    min-width: 240px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    padding: 12px 18px;
+    min-height: 46px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(26,43,60,0.10);
+}
+
+.vb-cta:hover {
+    transform: translateY(-2px);
+}
+
+/* Outline: secundario (Vende) */
+.vb-cta-outline {
+    background-color: transparent;
+    color: #1a2b3c;
+    border: 1.5px solid #1a2b3c;
+}
+
+.vb-cta-outline:hover {
+    background-color: #1a2b3c;
+    color: #ffffff;
+}
+
+/* Solid: principal (Catálogo a importar) */
+.vb-cta-solid {
+    background-color: #1a2b3c;
+    color: #ffffff;
+    border: 1.5px solid #1a2b3c;
+}
+
+.vb-cta-solid:hover {
+    background-color: #2d4763;
+    border-color: #2d4763;
+}
+
+@media (max-width: 600px) {
+    .vb-cta {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
 }
 
 /* Responsive */

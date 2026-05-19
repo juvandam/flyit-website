@@ -342,58 +342,133 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 9. Dynamic Hero
+    // 9. Dynamic Hero - crossfade rapido + texto deslizando, sincronizado
     try {
         const hero = document.querySelector('.hero');
         const heroTitle = document.querySelector('.hero-title');
         const heroSubtitle = document.querySelector('.hero-subtitle');
-        
+
         if (hero && heroTitle && heroSubtitle) {
             const isMobile = window.innerWidth <= 768;
-            
+
             const slides = [
                 {
-                    bg: isMobile ? 'url("assets/images/fotos_aeronaves_web/aviacion_privada.jpg")' : 'url("assets/images/fotos_aeronaves_web/jet_airplane.jpg")',
+                    bg: isMobile
+                        ? 'assets/images/fotos_aeronaves_web/aviacion_privada.jpg'
+                        : 'assets/images/fotos_aeronaves_web/jet_airplane.jpg',
                     title: 'Elevando los<br>Estándares de<br>la Aviación',
                     text: 'Experiencia, gestión corporativa y un nivel incomparable de profesionalismo en administración y venta de aeronaves.'
                 },
                 {
-                    bg: isMobile ? 'url("assets/images/fotos_aeronaves_web/aeronave_turbohelice.jpg")' : 'url("assets/images/fotos_aeronaves_web/avion_venta_King.jpg")',
+                    bg: isMobile
+                        ? 'assets/images/fotos_aeronaves_web/aeronave_turbohelice.jpg'
+                        : 'assets/images/fotos_aeronaves_web/avion_venta_King.jpg',
                     title: 'Encuentra tu<br>próxima aeronave',
                     text: 'Acceda a nuestro catálogo exclusivo.<br>Conectamos compradores con vendedores<br>de manera eficiente y transparente.'
                 }
             ];
 
+            // Sacar el background del .hero original — lo manejan dos capas apiladas
+            hero.style.backgroundImage = 'none';
+
+            // Crear dos capas de fondo apiladas para crossfade real
+            const makeLayer = (img) => {
+                const el = document.createElement('div');
+                el.className = 'hero-bg-layer';
+                Object.assign(el.style, {
+                    position: 'absolute',
+                    inset: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: 'url("' + img + '")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundAttachment: isMobile ? 'scroll' : 'fixed',
+                    transition: 'opacity 500ms ease-in-out',
+                    zIndex: '0',
+                    pointerEvents: 'none'
+                });
+                return el;
+            };
+
+            const layerA = makeLayer(slides[0].bg);
+            const layerB = makeLayer(slides[1].bg);
+            layerA.style.opacity = '1';
+            layerB.style.opacity = '0';
+            // Insertar las capas como primer hijo del hero (detras del overlay y el content)
+            hero.insertBefore(layerB, hero.firstChild);
+            hero.insertBefore(layerA, hero.firstChild);
+
+            // Precargar la segunda imagen para que la transicion sea instantanea
+            new Image().src = slides[1].bg;
+
+            // Estilos sutiles para el texto: deslizamiento + fade
+            const textTransition = 'opacity 350ms ease-out, transform 350ms ease-out';
+            heroTitle.style.transition = textTransition;
+            heroSubtitle.style.transition = textTransition;
+            heroTitle.innerHTML = slides[0].title;
+            heroSubtitle.innerHTML = slides[0].text;
+
             let currentSlide = 0;
-            
-            // Initial setup
-            hero.style.backgroundImage = slides[currentSlide].bg;
-            heroTitle.innerHTML = slides[currentSlide].title;
-            heroSubtitle.innerHTML = slides[currentSlide].text;
+            let activeLayer = layerA;
+            let standbyLayer = layerB;
 
-            // Add transition properties (ensure they are applied)
-            hero.style.transition = 'background-image 1.5s ease-in-out';
-            heroTitle.style.transition = 'opacity 0.6s ease-in-out';
-            heroSubtitle.style.transition = 'opacity 0.6s ease-in-out';
-
-            setInterval(() => {
+            const animateSlide = () => {
                 currentSlide = (currentSlide + 1) % slides.length;
-                
-                // Fade out
+                const next = slides[currentSlide];
+
+                // Setear la siguiente imagen en la capa standby antes de revelarla
+                standbyLayer.style.backgroundImage = 'url("' + next.bg + '")';
+
+                // Texto: salir hacia arriba + fade out
                 heroTitle.style.opacity = '0';
+                heroTitle.style.transform = 'translateY(-12px)';
                 heroSubtitle.style.opacity = '0';
-                
+                heroSubtitle.style.transform = 'translateY(-12px)';
+
+                // Mismo timing: la imagen empieza a hacer crossfade
+                // (mas rapido que antes - 500ms en vez de 1500ms)
+                requestAnimationFrame(() => {
+                    standbyLayer.style.opacity = '1';
+                    activeLayer.style.opacity = '0';
+                });
+
+                // A los 350ms cambiamos el texto (cuando ya esta invisible)
+                // y lo dejamos abajo listo para entrar deslizando
                 setTimeout(() => {
-                    hero.style.backgroundImage = slides[currentSlide].bg;
-                    heroTitle.innerHTML = slides[currentSlide].title;
-                    heroSubtitle.innerHTML = slides[currentSlide].text;
-                    
-                    // Fade in
-                    heroTitle.style.opacity = '1';
-                    heroSubtitle.style.opacity = '1';
-                }, 600); // Wait for fade out
-                
-            }, 6500);
+                    heroTitle.innerHTML = next.title;
+                    heroSubtitle.innerHTML = next.text;
+                    heroTitle.style.transform = 'translateY(12px)';
+                    heroSubtitle.style.transform = 'translateY(12px)';
+
+                    // Forzar reflow para que tome la posicion inicial antes de animar
+                    void heroTitle.offsetWidth;
+
+                    // Entrada: fade + slide a posicion final
+                    requestAnimationFrame(() => {
+                        heroTitle.style.opacity = '1';
+                        heroTitle.style.transform = 'translateY(0)';
+                        heroSubtitle.style.opacity = '1';
+                        heroSubtitle.style.transform = 'translateY(0)';
+                    });
+                }, 350);
+
+                // Swap referencias de capas (la que era standby ahora es activa)
+                const tmp = activeLayer;
+                activeLayer = standbyLayer;
+                standbyLayer = tmp;
+            };
+
+            // Pausar cuando la pestaña no esta visible (ahorra recursos)
+            let intervalId = setInterval(animateSlide, 5500);
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                } else if (!intervalId) {
+                    intervalId = setInterval(animateSlide, 5500);
+                }
+            });
         }
     } catch(e) { console.error('Hero animation error:', e); }
 
