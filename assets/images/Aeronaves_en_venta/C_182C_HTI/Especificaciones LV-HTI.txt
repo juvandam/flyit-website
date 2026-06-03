@@ -1,0 +1,30 @@
+Cessna 182 C (1961)
+230hp
+
+-Garmin g5
+-2 altímetros
+-2 VHF (
+-Fligth com 
+-velocímetro ,variometro , giro direccional, coordinador de  giro, horizonte artificial
+-presión de manifold y RPM
+-VOR 
+-ADF (incompleto)
+-transponder Garmin GTX 327
+-GPS Garmin 296
+-ELT
+-flujometro
+-2 medidores de combustible
+-EGT/CHT
+-indicador de temperatura del carburador
+-indicador de succión y amperímetro
+-presión y temperatura de aceite
+- Ubicación: Buenos Aires
+
+Horas totales: 3692
+Motor: Continental O-470-L
+DURG: 1018hs
+
+Habilitado hasta: Agosto 2026.
+
+
+Precio: USD 90.000

@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-02T22:40:00Z",
+  "prices": {
+    "cessna-182c-hti": {
+      "amount": 90000,
+      "currency": "USD",
+      "lastUpdated": "2026-06-02"
+    },
+    "cessna-150j-jxb": {
+      "amount": 64000,
+      "currency": "USD"
+    },
+    "cessna-172l-jxc": {
+      "amount": 120000,
+      "currency": "USD"
+    },
+    "mooney-m20c-jxk": {
+      "amount": 190000,
+      "currency": "USD"
+    }
+  }
+}

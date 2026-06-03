@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-02T22:40:00Z",
+  "aircraft": [
+    {
+      "id": "cessna-182c-hti",
+      "model": "Cessna 182C",
+      "registration": "LV-HTI",
+      "year": 1961,
+      "category": "monomotor piston",
+      "make": "cessna",
+      "submodel": "182c",
+      "engine": "Continental O-470-L",
+      "horsepower": 230,
+      "totalHours": 3692,
+      "durgHours": 1018,
+      "certificateValid": "2026-08",
+      "location": "Buenos Aires, Argentina",
+      "price": {
+        "amount": 90000,
+        "currency": "USD"
+      },
+      "status": "available",
+      "statusBadge": "Dueño directo",
+      "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en óptimas condiciones. Aviónica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
+      "avionics": [
+        "Garmin G5",
+        "Garmin GTX 327 (Transponder)",
+        "Garmin 296 (GPS)",
+        "2 Altímetros",
+        "2 VHF Comunicaciones",
+        "VOR",
+        "ADF (incompleto)",
+        "ELT",
+        "Flight Com"
+      ],
+      "instrumentation": [
+        "Velocímetro",
+        "Variómetro",
+        "Giro direccional",
+        "Coordinador de giro",
+        "Horizonte artificial",
+        "Presión de manifold",
+        "Medidor RPM",
+        "2 Medidores de combustible",
+        "EGT/CHT",
+        "Indicador de temperatura del carburador",
+        "Indicador de succión y amperímetro",
+        "Presión y temperatura de aceite"
+      ],
+      "images": {
+        "main": "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_detalle.jpeg",
+        "hover": "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_interior1.jpeg",
+        "gallery": [
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_exterior1.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_exterior2.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_exterior3.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_interior1.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_interior2.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_interior3.jpeg",
+          "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_detalle.jpeg"
+        ]
+      },
+      "pageUrl": "cessna-182c-hti.html",
+      "ownerId": "contact-001",
+      "createdDate": "2026-06-02"
+    }
+  ]
+}

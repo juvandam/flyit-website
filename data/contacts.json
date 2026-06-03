@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-06-02T22:40:00Z",
+  "contacts": [
+    {
+      "id": "contact-001",
+      "name": "Tomás Luna",
+      "phone": "+54 9 2975 16-7420",
+      "aircraft": ["cessna-182c-hti"],
+      "role": "owner",
+      "status": "active"
+    }
+  ]
+}
