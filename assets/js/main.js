@@ -151,6 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const modelsByMake = {
                 'cessna': [
                     { value: '150j', text: '150J' },
+                    { value: '172l', text: '172L' },
+                    { value: '182c', text: '182C' },
                     { value: 'citation xls', text: 'Citation XLS' }
                 ],
                 'beechcraft': [
