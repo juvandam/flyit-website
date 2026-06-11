@@ -80,9 +80,36 @@ Meta tags OpenGraph:
 - og:title: SIN matrícula → "Cessna 340 - A Importar"
 - og:description: SIN matrícula
 - og:image: foto del avión (sin blur, ya optimizada)
+- <title>: SIN matrícula → "Cessna 340 - Aeronave a Importar | Fly It"
 
 Motivo: En importación, el cliente no debe saber la matrícula
 Almacenamiento: Matrícula está en datos internos (contacts.json)
+```
+
+### 8. ❌ og:image con ruta relativa (Facebook/WhatsApp no podían validar)
+**Problema:** og:image="assets/images/c340-main.jpg" → Facebook no podía descargar la imagen
+**Solución (CRÍTICO para redes sociales):**
+```
+SIEMPRE usar URL ABSOLUTA en og:image:
+- ❌ MALO: og:image="assets/images/c340-main.jpg"
+- ✅ BIEN: og:image="https://flyit.com.ar/assets/images/c340-06-main.jpg"
+
+Meta tags OpenGraph COMPLETOS:
+- og:title: "Cessna 340 - A Importar | Fly It"
+- og:description: "Cessna 340 año 1973..."
+- og:image: https://flyit.com.ar/assets/images/c340-06-main.jpg (URL ABSOLUTA)
+- og:image:width: 1200
+- og:image:height: 630
+- og:url: https://flyit.com.ar/c340-uruguay.html
+- og:type: product
+
+IMPORTANTE: Después de actualizar, usar Facebook Link Debugger:
+- URL: https://developers.facebook.com/tools/debug/
+- Pegar URL de la página
+- Click "Volver a extraer" para forzar validación
+- WhatsApp tardará hasta 24h en actualizar caché
+
+Motivo: Facebook/WhatsApp necesitan URL completas para descargar y cachear previews
 ```
 
 ---
