@@ -1,14 +1,29 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-06-02T22:40:00Z",
+  "lastUpdated": "2026-06-11T16:32:56.995127Z",
   "contacts": [
     {
       "id": "contact-001",
-      "name": "Tomás Luna",
+      "name": "Tom\u00e1s Luna",
       "phone": "+54 9 2975 16-7420",
-      "aircraft": ["cessna-182c-hti"],
+      "aircraft": [
+        "cessna-182c-hti"
+      ],
       "role": "owner",
       "status": "active"
+    },
+    {
+      "id": "alabe-servicios-aereos",
+      "company": "\u00c1labe Servicios A\u00e9reos SRL",
+      "phone": "+59823228023",
+      "email": "info@alabe.com.uy",
+      "location": "Hangar 5, Mario Cames",
+      "airport": "Aeropuerto A. Adami",
+      "city": "Montevideo",
+      "country": "Uruguay",
+      "aircraft": [
+        "cessna-340-cx-bvc-uruguay"
+      ]
     }
   ]
 }

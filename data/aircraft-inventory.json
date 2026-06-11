@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-06-02T22:40:00Z",
+  "lastUpdated": "2026-06-11T16:32:56.971850Z",
   "aircraft": [
     {
       "id": "cessna-182c-hti",
@@ -21,13 +21,13 @@
         "currency": "USD"
       },
       "status": "available",
-      "statusBadge": "Dueño directo",
-      "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en óptimas condiciones. Aviónica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
+      "statusBadge": "Due\u00f1o directo",
+      "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en \u00f3ptimas condiciones. Avi\u00f3nica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
       "avionics": [
         "Garmin G5",
         "Garmin GTX 327 (Transponder)",
         "Garmin 296 (GPS)",
-        "2 Altímetros",
+        "2 Alt\u00edmetros",
         "2 VHF Comunicaciones",
         "VOR",
         "ADF (incompleto)",
@@ -35,18 +35,18 @@
         "Flight Com"
       ],
       "instrumentation": [
-        "Velocímetro",
-        "Variómetro",
+        "Veloc\u00edmetro",
+        "Vari\u00f3metro",
         "Giro direccional",
         "Coordinador de giro",
         "Horizonte artificial",
-        "Presión de manifold",
+        "Presi\u00f3n de manifold",
         "Medidor RPM",
         "2 Medidores de combustible",
         "EGT/CHT",
         "Indicador de temperatura del carburador",
-        "Indicador de succión y amperímetro",
-        "Presión y temperatura de aceite"
+        "Indicador de succi\u00f3n y amper\u00edmetro",
+        "Presi\u00f3n y temperatura de aceite"
       ],
       "images": {
         "main": "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_detalle.jpeg",
@@ -64,6 +64,40 @@
       "pageUrl": "cessna-182c-hti.html",
       "ownerId": "contact-001",
       "createdDate": "2026-06-02"
+    },
+    {
+      "id": "cessna-340-cx-bvc-uruguay",
+      "model": "Cessna 340",
+      "registration": "CX-BVC",
+      "year": 1973,
+      "category": "bimotor piston",
+      "make": "cessna",
+      "submodel": "340",
+      "engines": "2x Teledyne Continental TSIO-520-NB",
+      "horsepower": 310,
+      "totalHours": 7768.2,
+      "certificateValid": "2027-08",
+      "location": "Montevideo, Uruguay",
+      "country": "Uruguay",
+      "catalog": "import",
+      "price": {
+        "amount": 120000,
+        "currency": "USD"
+      },
+      "status": "available",
+      "statusBadge": "Disponible",
+      "description": "Cessna 340 bimotor en buen estado de mantenimiento. Ubicada en Montevideo, Uruguay. Propietario directo - \u00c1labe Servicios A\u00e9reos. Lista para importaci\u00f3n.",
+      "avionics": [
+        "Equipamiento est\u00e1ndar de navegaci\u00f3n",
+        "Comunicaciones VHF",
+        "Transponder",
+        "ELT"
+      ],
+      "page": "c340-uruguay.html",
+      "images": {
+        "main": "assets/images/c340-main.jpg",
+        "hover": "assets/images/c340-hover.jpg"
+      }
     }
   ]
 }

@@ -15,5 +15,10 @@
       "amount": 190000,
       "currency": "USD"
     }
+  },
+  "cessna-340-cx-bvc-uruguay": {
+    "amount": 120000,
+    "currency": "USD",
+    "updated": "2026-06-11"
   }
 }

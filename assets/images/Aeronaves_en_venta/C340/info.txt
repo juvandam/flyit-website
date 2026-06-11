@@ -1,0 +1,31 @@
+Modelo: Cessna 340
+Año: 1973
+Matrícula: CX-BVC
+Serie: 340-0235
+
+Motorización:
+Motor RH: Teledyne Continental TSIO-520-NB - 1,340.2 HS - Overhaul Remanente: 259.8 HS
+Motor LH: Teledyne Continental TSIO-520-NB - 1,285.5 HS - Overhaul Remanente: 314.5 HS
+
+Hélices:
+Hélice RH: Hartzell PHC-C3YF-2UF - 2,164.6 HS - Vigente hasta 24/11/2027 - Overhaul Remanente: 2,369.2 HS
+Hélice LH: Hartzell PHC-C3YF-2UF - 4,900 HS - Vigente hasta 27/11/2027 - Overhaul Remanente: 1,969.2 HS
+
+Horas Totales: 7,768.2
+HETI: No especificado
+
+Certificado de Aeronavegabilidad: Vigente hasta 05/08/2027
+
+Equipamiento: Aviónica estándar, sistemas de navegación, comunicaciones
+
+Descripción: Cessna 340 bimotor en buen estado de mantenimiento. Ubicada en Montevideo, Uruguay. Propietario directo. Lista para importación.
+
+Ubicación: Montevideo, Uruguay
+País: Uruguay
+
+Precio Base: USD 120,000
+
+Vendedor: Álabe Servicios Aéreos SRL
+Dirección: Hangar 5, Mario Cames, Aeropuerto A. Adami - Montevideo, Uruguay
+Teléfono: +59823228023
+Email: info@alabe.com.uy
