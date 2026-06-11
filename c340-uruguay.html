@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cessna 340 (CX-BVC) - Aeronave a Importar | Fly It</title>
+    <meta name="description" content="Cessna 340 Serie 340-0235 año 1973, matrícula CX-BVC. Bimotor con 7,768 horas totales. Ubicación: Montevideo, Uruguay. Precio: USD 120,000">
+    <!-- Open Graph for Link Previews -->
+    <meta property="og:title" content="Cessna 340 (CX-BVC) - A Importar | Fly It">
+    <meta property="og:description" content="Cessna 340 año 1973 ubicada en Montevideo, Uruguay. Disponible para importar. USD 120,000">
+    <meta property="og:image" content="assets/images/c340-main.jpg">
+    <meta property="og:type" content="product">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .aircraft-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 0;
+        }
+        .aircraft-detail-main {
+            padding-top: 25px !important;
+        }
+        @media (max-width: 992px) {
+            .aircraft-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .gallery-main {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            max-height: 500px;
+            object-fit: contain;
+            background-color: #000;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 10px;
+        }
+        .gallery-thumbs img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            background-color: #000;
+        }
+        .gallery-thumbs img:hover {
+            opacity: 0.7;
+        }
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #111111;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .detail-table th, .detail-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .detail-table th {
+            width: 40%;
+            color: #888;
+            font-weight: 500;
+        }
+        .detail-table td {
+            color: #fff;
+            font-weight: 600;
+        }
+        .price-tag {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--accent-blue);
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo_flyit.svg">
+    <link rel="apple-touch-icon" href="assets/images/logo_flyit.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo_flyit.svg">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo_flyit.svg">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo_flyit.svg" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="index.html#servicios" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><a href="index.html#servicio-importacion">Importación de aeronaves</a></li>
+                    <li><a href="index.html#servicio-administracion">Administración de aeronaves</a></li>
+                    <li><a href="vender.html">Vende tu aeronave</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+            <li class="nav-item"><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+
+            <a href="vender.html" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Vende tu Aeronave</a>
+
+        </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="padding: 120px 4% 20px; text-align: left;">
+        <div class="container">
+            <a href="importar-catalogo.html" style="color: #888; text-decoration: none; margin-bottom: 15px; display: inline-block;">
+                <i class="fas fa-arrow-left"></i> Volver al catálogo
+            </a>
+            <h1 style="font-size: 3rem; margin-bottom: 8px;">Cessna 340</h1>
+            <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 0;">Matrícula: CX-BVC | Año: 1973 | 🇺🇾 Uruguay</p>
+        </div>
+    </section>
+
+    <!-- Aircraft Details Content -->
+    <main class="section section-gray aircraft-detail-main">
+        <div class="container">
+            <div class="aircraft-detail-grid">
+
+                <!-- Left Column: Gallery -->
+                <div class="gallery-section">
+                    <img src="assets/images/c340-main.jpg" id="mainImage" class="gallery-main" alt="Cessna 340">
+                    <div class="gallery-thumbs">
+                        <img src="assets/images/c340-main.jpg" onclick="document.getElementById('mainImage').src=this.src" alt="C340 Principal">
+                        <img src="assets/images/c340-hover.jpg" onclick="document.getElementById('mainImage').src=this.src" alt="C340 Ángulo 2">
+                    </div>
+                </div>
+
+                <!-- Right Column: Specs -->
+                <div class="specs-section">
+                    <div class="location-badge">
+                        <span>🇺🇾</span>
+                        <span>Ubicación: Montevideo, Uruguay</span>
+                    </div>
+
+                    <div class="price-tag">USD 120,000</div>
+
+                    <p style="margin-bottom: 20px; line-height: 1.6; color: #ccc;">
+                        Cessna 340 en buen estado de mantenimiento, ubicada en Montevideo, Uruguay. Lista para ser importada. Contactar directamente con el propietario para más detalles.
+                    </p>
+
+                    <div style="width: 100%; text-align: center; margin-bottom: 30px; padding: 20px; background-color: #1a3a52; border-radius: 8px; border-left: 4px solid var(--accent-blue);">
+                        <p style="color: #fff; font-weight: 600; margin-bottom: 10px;">Interesado en esta aeronave?</p>
+                        <a href="https://wa.me/+5491158120277" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: var(--accent-blue); color: white; text-decoration: none;">
+                            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                        </a>
+                    </div>
+
+                    <h3>Especificaciones Principales</h3>
+                    <table class="detail-table">
+                        <tbody>
+                            <tr>
+                                <th>Modelo</th>
+                                <td>Cessna 340 Serie 340-0235</td>
+                            </tr>
+                            <tr>
+                                <th>Año</th>
+                                <td>1973</td>
+                            </tr>
+                            <tr>
+                                <th>Matrícula</th>
+                                <td>CX-BVC</td>
+                            </tr>
+                            <tr>
+                                <th>Horas Totales (TT)</th>
+                                <td>7,768.2 horas</td>
+                            </tr>
+                            <tr>
+                                <th>Aeronavegabilidad</th>
+                                <td>Vigente hasta 05/08/2027</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 30px;">Motorización</h3>
+                    <table class="detail-table">
+                        <tbody>
+                            <tr>
+                                <th>Motores</th>
+                                <td>2x Teledyne Continental TSIO-520-NB</td>
+                            </tr>
+                            <tr>
+                                <th>Motor RH</th>
+                                <td>1,340.2 HS | Overhaul Remanente: 259.8 HS</td>
+                            </tr>
+                            <tr>
+                                <th>Motor LH</th>
+                                <td>1,285.5 HS | Overhaul Remanente: 314.5 HS</td>
+                            </tr>
+                            <tr>
+                                <th>Hélices</th>
+                                <td>2x Hartzell PHC-C3YF-2UF</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 30px;">Contacto del Vendedor</h3>
+                    <table class="detail-table">
+                        <tbody>
+                            <tr>
+                                <th>Empresa</th>
+                                <td>Álabe Servicios Aéreos SRL</td>
+                            </tr>
+                            <tr>
+                                <th>Ubicación</th>
+                                <td>Hangar 5, Mario Cames<br>Aeropuerto A. Adami<br>Montevideo, Uruguay</td>
+                            </tr>
+                            <tr>
+                                <th>Teléfono / Fax</th>
+                                <td>+59823228023</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>info@alabe.com.uy</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" style="display: block; margin-bottom: 20px;">
+                    <img src="assets/images/logo_flyit.svg" alt="Logo de la empresa" style="height: 40px; object-fit: contain;">
+                </a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="index.html#servicio-venta">Encuentra tu próxima aeronave</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="importacion.html">Importación de aeronaves</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="administracion.html">Administración de aeronaves</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="vender.html">Vende tu aeronave</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Oficinas</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Aeropuerto de Morón</li>
+                    <li>Buenos Aires, Argentina.</li>
+                    <li><i class="fas fa-envelope" style="margin-right:8px;"></i> contacto@flyit.com.ar</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aviation Services. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
