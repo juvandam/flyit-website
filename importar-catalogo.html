@@ -113,14 +113,8 @@
                     <div class="filter-group">
                         <label for="filter-location">Ubicación Actual</label>
                         <select id="filter-location">
-                            <option value="all">Todos los países</option>
+                            <option value="all">Todas las ubicaciones</option>
                             <option value="uruguay">🇺🇾 Uruguay</option>
-                            <option value="paraguay">🇵🇾 Paraguay</option>
-                            <option value="brasil">🇧🇷 Brasil</option>
-                            <option value="argentina">🇦🇷 Argentina</option>
-                            <option value="chile">🇨🇱 Chile</option>
-                            <option value="usa">🇺🇸 USA</option>
-                            <option value="otros">🌍 Otros países</option>
                         </select>
                     </div>
                 </aside>
@@ -178,6 +172,7 @@
                 </div>
 
                 <!-- Card: Cessna 340 (Uruguay) -->
+                <a href="c340-uruguay.html" class="aircraft-card-link" style="text-decoration: none; color: inherit;">
                 <div class="aircraft-card" data-type="bimotor piston" data-make="cessna" data-model="340" data-location="uruguay">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge">Disponible</span>
@@ -186,7 +181,7 @@
                         <img src="assets/images/c340-hover.jpg" alt="Cessna 340 - Interior" class="img-hover">
                     </div>
                     <div class="aircraft-details">
-                        <h3 class="aircraft-title">Cessna 340 - CX-BVC</h3>
+                        <h3 class="aircraft-title">Cessna 340</h3>
 
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
@@ -212,9 +207,10 @@
                             <span class="spec-value">Montevideo, Uruguay</span>
                         </div>
 
-                        <a href="c340-uruguay.html" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Detalles</a>
+                        <div class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent; cursor: pointer;">Consultar Detalles</div>
                     </div>
                 </div>
+                </a>
 
                 <!-- Card 3: King Air 250 -->
                 <div class="aircraft-card" data-type="turbohelice" data-make="beechcraft" data-model="king air 250">
