@@ -109,6 +109,20 @@
                             <option value="all">Seleccione un fabricante</option>
                         </select>
                     </div>
+
+                    <div class="filter-group">
+                        <label for="filter-location">Ubicación Actual</label>
+                        <select id="filter-location">
+                            <option value="all">Todos los países</option>
+                            <option value="uruguay">🇺🇾 Uruguay</option>
+                            <option value="paraguay">🇵🇾 Paraguay</option>
+                            <option value="brasil">🇧🇷 Brasil</option>
+                            <option value="argentina">🇦🇷 Argentina</option>
+                            <option value="chile">🇨🇱 Chile</option>
+                            <option value="usa">🇺🇸 USA</option>
+                            <option value="otros">🌍 Otros países</option>
+                        </select>
+                    </div>
                 </aside>
 
                 <!-- Inventory Grid -->
@@ -160,6 +174,44 @@
                         </div>
 
                         <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Precio</a>
+                    </div>
+                </div>
+
+                <!-- Card: Cessna 340 (Uruguay) -->
+                <div class="aircraft-card" data-type="bimotor piston" data-make="cessna" data-model="340" data-location="uruguay">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge">Disponible</span>
+                        <span class="location-badge">🇺🇾 Uruguay</span>
+                        <img src="assets/images/cessna.png" alt="Cessna 340" class="img-primary">
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna 340 - CX-BVC</h3>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span class="spec-value">1973</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Horas Totales</span>
+                                <span class="spec-value">7,768 TT</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Motores</span>
+                                <span class="spec-value">TSIO-520-NB x2</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: var(--accent-blue);">USD 120,000</span>
+                            </div>
+                        </div>
+
+                        <div class="spec-item" style="margin-bottom: 15px;">
+                            <span class="spec-label">Ubicación</span>
+                            <span class="spec-value">Montevideo, Uruguay</span>
+                        </div>
+
+                        <a href="#" class="btn-card" style="text-align: center; border: 1px solid var(--accent-blue); background: transparent;">Consultar Detalles</a>
                     </div>
                 </div>
 

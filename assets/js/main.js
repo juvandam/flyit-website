@@ -144,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterType = document.getElementById('filter-type');
         const filterMake = document.getElementById('filter-make');
         const filterModel = document.getElementById('filter-model');
+        const filterLocation = document.getElementById('filter-location');
         const aircraftCards = document.querySelectorAll('.aircraft-card');
 
         if (filterType && filterMake && filterModel) {
@@ -193,18 +194,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const typeValue = filterType.value;
                 const makeValue = filterMake.value;
                 const modelValue = filterModel.disabled ? 'all' : filterModel.value;
+                const locationValue = filterLocation ? filterLocation.value : 'all';
 
                 aircraftCards.forEach(card => {
                     const cardType = card.getAttribute('data-type');
                     const cardMake = card.getAttribute('data-make');
                     const cardModel = card.getAttribute('data-model');
-                    
+                    const cardLocation = card.getAttribute('data-location') || 'all';
+
                     const typeMatch = typeValue === 'all' || typeValue === cardType;
                     const makeMatch = makeValue === 'all' || makeValue === cardMake;
                     const modelMatch = modelValue === 'all' || modelValue === cardModel;
+                    const locationMatch = locationValue === 'all' || locationValue === cardLocation;
 
                     // Simple fade animation for filtering
-                    if (typeMatch && makeMatch && modelMatch) {
+                    if (typeMatch && makeMatch && modelMatch && locationMatch) {
                         card.style.display = 'block';
                         setTimeout(() => card.style.opacity = '1', 10);
                     } else {
@@ -216,6 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             filterType.addEventListener('change', applyFilters);
             filterModel.addEventListener('change', applyFilters);
+            if (filterLocation) {
+                filterLocation.addEventListener('change', applyFilters);
+            }
 
             // Initial setup
             aircraftCards.forEach(card => {
