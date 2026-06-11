@@ -95,8 +95,20 @@
       ],
       "page": "c340-uruguay.html",
       "images": {
-        "main": "assets/images/c340-main.jpg",
-        "hover": "assets/images/c340-hover.jpg"
+        "main": "assets/images/c340-06-main.jpg",
+        "hover": "assets/images/c340-10-hover.jpg",
+        "gallery": [
+          "assets/images/c340-01.jpg",
+          "assets/images/c340-02.jpg",
+          "assets/images/c340-03.jpg",
+          "assets/images/c340-04.jpg",
+          "assets/images/c340-05.jpg",
+          "assets/images/c340-06-main.jpg",
+          "assets/images/c340-07.jpg",
+          "assets/images/c340-08.jpg",
+          "assets/images/c340-09.jpg",
+          "assets/images/c340-10-hover.jpg"
+        ]
       }
     }
   ]
