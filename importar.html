@@ -196,30 +196,36 @@
                     </div>
                 </div>
 
-                <!-- Card: Cessna 340 -->
-                <div class="aircraft-card" data-type="bimotor piston" data-make="cessna" data-status="disponible">
+                <!-- Card: Cessna 340 Uruguay -->
+                <div class="aircraft-card" data-type="bimotor piston" data-make="cessna" data-status="disponible" onclick="window.location.href='c340-uruguay.html'" style="cursor: pointer;">
                     <div class="aircraft-image-wrapper">
                         <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
-                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;">
+                        <img src="assets/images/c340-06-main.jpg" alt="Cessna 340" class="img-primary" onerror="this.style.display='none'">
+                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;" id="c340-placeholder">
                             Cessna<br>340
                         </div>
+                        <script>
+                            document.querySelector('.aircraft-card[data-make="cessna"] .img-primary')?.addEventListener('load', function() {
+                                document.getElementById('c340-placeholder')?.remove();
+                            });
+                        </script>
                     </div>
                     <div class="aircraft-details">
                         <h3 class="aircraft-title">Cessna 340</h3>
-                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Bimotor a Pistón • 5-6 Pasajeros</p>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Año: 1973 | 🇺🇾 Uruguay</p>
 
                         <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
                             <div class="spec-item">
-                                <span class="spec-label">Año</span>
-                                <span class="spec-value">1998-2010</span>
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value">7,768 hs</span>
                             </div>
                             <div class="spec-item">
-                                <span class="spec-label">TTAF</span>
-                                <span class="spec-value" style="color: #1a5f7a;">12k-18k</span>
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: #1a5f7a;">USD 120k</span>
                             </div>
                         </div>
 
-                        <a href="index.html#contacto" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Consultar</a>
+                        <a href="c340-uruguay.html" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Ver Detalles</a>
                     </div>
                 </div>
 
