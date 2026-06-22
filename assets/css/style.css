@@ -355,26 +355,6 @@ a {
     transform: scale(1.05);
 }
 
-.camino-icon-small {
-    font-size: 2.5rem;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.camino-importar .camino-icon-small {
-    color: #1a5f7a;
-}
-
-.camino-catalogo .camino-icon-small {
-    color: #2ba84e;
-}
 
 .camino-content h2 {
     font-size: 2rem;
