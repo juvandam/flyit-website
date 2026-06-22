@@ -70,6 +70,105 @@
         </div>
     </section>
 
+    <!-- Catálogo de Aeronaves a Importar -->
+    <section class="section section-light" style="padding: 60px 4%;">
+        <div class="container" style="max-width: 1200px;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 2rem; color: #1a2b3c; margin-bottom: 15px; text-transform: uppercase;">
+                    Opciones Disponibles en Mercado Internacional
+                </h2>
+                <p style="color: #555; font-size: 1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                    Estas aeronaves están actualmente publicadas en mercado internacional. Evaluamos su estado técnico y regulatorio antes de recomendarlas. Si te interesa alguna, iniciamos el proceso de importación.
+                </p>
+            </div>
+
+            <div class="inventory-layout" style="display: grid; grid-template-columns: 250px 1fr; gap: 40px; margin-bottom: 40px;">
+                <!-- Sidebar Filters -->
+                <aside class="inventory-sidebar" style="background: white; padding: 25px; border-radius: 8px; height: fit-content;">
+                    <h3 style="color: #1a2b3c; margin-top: 0;">Filtrar</h3>
+
+                    <div class="filter-group" style="margin-bottom: 20px;">
+                        <label for="filter-type-import" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1a2b3c;">Tipo</label>
+                        <select id="filter-type-import" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                            <option value="all">Todos</option>
+                            <option value="monomotor">Monomotor</option>
+                            <option value="bimotor">Bimotor</option>
+                            <option value="turbohelice">Turbohélice</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-make-import" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1a2b3c;">Fabricante</label>
+                        <select id="filter-make-import" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                            <option value="all">Todos</option>
+                            <option value="beechcraft">Beechcraft</option>
+                            <option value="piper">Piper</option>
+                            <option value="cessna">Cessna</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Grid de Aeronaves -->
+                <div class="inventory-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+                    <!-- Card: Beechcraft King Air 200 -->
+                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+                            Beechcraft King Air 200
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">King Air 200</h3>
+                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">6-8 pasajeros • Turbohélice de largo alcance • Equipamiento moderno</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
+                                <span><strong>Año:</strong> 1998-2005</span>
+                                <span><strong>TTAF:</strong> 15k-25k hs</span>
+                            </div>
+                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Piper Seneca V -->
+                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+                            Piper Seneca V
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">Seneca V</h3>
+                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">4-6 pasajeros • Bimotor a pistón • Mantenimiento accesible</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
+                                <span><strong>Año:</strong> 2000-2015</span>
+                                <span><strong>TTAF:</strong> 8k-12k hs</span>
+                            </div>
+                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
+                        </div>
+                    </div>
+
+                    <!-- Card: Cessna 208 Caravan -->
+                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
+                            Cessna 208 Caravan
+                        </div>
+                        <div style="padding: 20px;">
+                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">Caravan</h3>
+                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">8-9 pasajeros • Turbohélice robusto • Operaciones cortas distancias</p>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
+                                <span><strong>Año:</strong> 1999-2018</span>
+                                <span><strong>TTAF:</strong> 10k-20k hs</span>
+                            </div>
+                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 8px;">
+                <p style="color: #555; margin: 0 0 15px;">¿Buscas un modelo específico que no ves?</p>
+                <a href="index.html#contacto" class="btn-primary" style="background-color: #1a5f7a; padding: 12px 28px; display: inline-block;">
+                    Solicitar Avión Específico
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- El Proceso -->
     <section class="section section-light" style="padding: 80px 4%;">
         <div class="container" style="max-width: 1400px;">
@@ -118,7 +217,7 @@
                     <div style="text-align: center; max-width: 300px;">
                         <div style="background: #2ba84e; border: 2px solid #2ba84e; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 2.5rem; color: white;">✓</div>
                         <h3 style="font-size: 1.2rem; color: white; margin: 0 0 12px; font-weight: 700; background: #2ba84e; padding: 12px; border-radius: 4px;">Listo para Volar</h3>
-                        <p style="color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">Tu avión llega matriculado en Argentina (LV-XXXX), con certificados vigentes y listo para operación civil</p>
+                        <p style="color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">Tu avión llega matriculado en Argentina (LV-XXX), con certificados vigentes y listo para operación civil</p>
                     </div>
                 </div>
             </div>
@@ -272,7 +371,7 @@
                         ¿Cuál es la base legal para operar un avión importado?
                     </summary>
                     <p style="color: #666; margin-top: 15px; line-height: 1.6;">
-                        Una vez importado y matriculado en Argentina (LV-XXXX), operás bajo regulaciones de ANAC y aviación civil argentina. Asesoramos sobre cada opción operacional (privado, charter, escuela, etc).
+                        Una vez importado y matriculado en Argentina (LV-XXX), operás bajo regulaciones de ANAC y aviación civil argentina. Asesoramos sobre cada opción operacional (privado, charter, escuela, etc).
                     </p>
                 </details>
             </div>

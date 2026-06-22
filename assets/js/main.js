@@ -418,8 +418,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     bg: isMobile
                         ? 'assets/images/fotos_aeronaves_web/aviacion_privada.jpg'
                         : 'assets/images/fotos_aeronaves_web/jet_airplane.jpg',
-                    title: 'Elevando los<br>Estándares de<br>la Aviación',
-                    text: 'Experiencia, gestión corporativa y un nivel incomparable de profesionalismo en administración y venta de aeronaves.'
+                    title: 'Importá. Comprá.<br>Vendé.',
+                    text: 'Todas las opciones de aviación profesional en Argentina en un solo lugar. Expertos en importación, catálogo local y administración.'
                 },
                 {
                     bg: isMobile
