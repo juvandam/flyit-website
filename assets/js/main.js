@@ -358,10 +358,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 }));
             })
             .then(data => {
-                form.innerHTML = `<div style="text-align: center; padding: 20px; color: #1a2b3c; font-weight: 600; font-size: 1.1rem; background: rgba(37, 211, 102, 0.1); border-radius: 8px;">
-                                    <i class="fas fa-check-circle" style="font-size: 2.5rem; color: #25D366; margin-bottom: 15px;"></i><br>
-                                    Gracias por escribirnos. Nos pondremos en contacto a la brevedad.
+                form.innerHTML = `<div style="text-align: center; padding: 40px 30px; color: #1a2b3c; font-weight: 600; border-radius: 12px; background: linear-gradient(135deg, rgba(168, 138, 101, 0.08) 0%, rgba(168, 138, 101, 0.04) 100%); border: 2px solid #a88a65;">
+                                    <div style="margin-bottom: 25px; position: relative; height: 80px; display: flex; align-items: center; justify-content: center;">
+                                      <i class="fas fa-plane" style="font-size: 3rem; color: #a88a65; animation: flight-loop 3s infinite ease-in-out;"></i>
+                                    </div>
+                                    <h3 style="margin: 0 0 12px 0; font-size: 1.4rem; color: #1a2b3c; font-family: var(--font-heading); font-weight: 700;">¡Mensaje enviado!</h3>
+                                    <p style="margin: 0; font-size: 0.95rem; color: #555; font-weight: 500; line-height: 1.6;">Gracias por escribirnos. Nos pondremos en contacto a la brevedad.</p>
                                   </div>`;
+
+                // Agregar animación CSS si no existe
+                if (!document.getElementById('flight-animation-style')) {
+                  const style = document.createElement('style');
+                  style.id = 'flight-animation-style';
+                  style.textContent = `
+                    @keyframes flight-loop {
+                      0% {
+                        transform: translate(0, 0) rotate(-25deg);
+                      }
+                      25% {
+                        transform: translate(20px, -20px) rotate(-15deg);
+                      }
+                      50% {
+                        transform: translate(0, -40px) rotate(0deg);
+                      }
+                      75% {
+                        transform: translate(-20px, -20px) rotate(15deg);
+                      }
+                      100% {
+                        transform: translate(0, 0) rotate(-25deg);
+                      }
+                    }
+                  `;
+                  document.head.appendChild(style);
+                }
             })
             .catch(error => {
                 console.error('Form submission error:', error);
