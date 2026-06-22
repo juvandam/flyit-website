@@ -296,81 +296,99 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    padding: calc(var(--header-height) + 60px) 4% 60px;
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 0;
+    background: #000;
+    padding: calc(var(--header-height) + 40px) 4% 40px;
 }
 
 .hero-content-dual {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 30px;
+    max-width: 1400px;
     width: 100%;
     z-index: 2;
     position: relative;
 }
 
 .camino-card {
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    height: 500px;
     border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.camino-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.camino-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 100%);
+    z-index: 2;
+}
+
+.camino-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
     padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: all 0.3s ease;
 }
 
 .camino-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
 }
 
-.camino-importar {
-    border-left: 4px solid #1a5f7a;
+.camino-card:hover .camino-bg {
+    transform: scale(1.05);
 }
 
-.camino-importar:hover {
-    box-shadow: 0 10px 40px rgba(26, 95, 122, 0.15);
+.camino-icon-small {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.camino-catalogo {
-    border-left: 4px solid #2ba84e;
-}
-
-.camino-catalogo:hover {
-    box-shadow: 0 10px 40px rgba(43, 168, 78, 0.15);
-}
-
-.camino-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.camino-importar .camino-icon {
+.camino-importar .camino-icon-small {
     color: #1a5f7a;
 }
 
-.camino-catalogo .camino-icon {
+.camino-catalogo .camino-icon-small {
     color: #2ba84e;
 }
 
-.camino-card h2 {
-    font-size: 1.8rem;
+.camino-content h2 {
+    font-size: 2rem;
     color: white;
     margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.camino-card p {
-    font-size: 1rem;
-    color: #bbb;
+.camino-content p {
+    font-size: 0.95rem;
+    color: #e0e0e0;
     line-height: 1.6;
     margin: 0;
 }
@@ -378,22 +396,20 @@ a {
 .camino-features {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 12px;
 }
 
 .camino-features span {
-    color: #999;
-    font-size: 0.9rem;
+    color: #b0b0b0;
+    font-size: 0.85rem;
     display: flex;
     align-items: center;
     gap: 8px;
+    font-weight: 500;
 }
 
 .camino-features i {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .camino-importar .camino-features i {
@@ -406,48 +422,92 @@ a {
 
 .btn-camino {
     display: inline-block;
-    padding: 14px 28px;
+    padding: 14px 32px;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     text-align: center;
+    width: fit-content;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-importar {
-    background-color: #1a5f7a;
+    background-color: rgba(26, 95, 122, 0.95);
     color: white;
 }
 
 .btn-importar:hover {
-    background-color: #2a7fa0;
+    background-color: rgba(26, 95, 122, 1);
+    border-color: rgba(26, 95, 122, 1);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 95, 122, 0.3);
 }
 
 .btn-catalogo {
-    background-color: #2ba84e;
+    background-color: rgba(43, 168, 78, 0.95);
     color: white;
 }
 
 .btn-catalogo:hover {
-    background-color: #3bc860;
+    background-color: rgba(43, 168, 78, 1);
+    border-color: rgba(43, 168, 78, 1);
     transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(43, 168, 78, 0.3);
 }
 
-@media (max-width: 768px) {
-    .hero-content-dual {
-        grid-template-columns: 1fr;
-        gap: 25px;
+@media (max-width: 992px) {
+    .camino-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .camino-content {
+        padding: 30px;
     }
 
     .camino-card {
-        padding: 30px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-dos-caminos {
+        padding: calc(var(--header-height) + 20px) 4% 20px;
+    }
+
+    .hero-content-dual {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .camino-card {
+        height: 380px;
+    }
+
+    .camino-content {
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .camino-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .camino-content p {
+        font-size: 0.9rem;
+    }
+
+    .camino-icon-small {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
     }
 }
 
