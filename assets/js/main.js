@@ -346,12 +346,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             fetch(form.action, {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                body: formData
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok || response.status === 200) {
+                    return { success: true };
+                }
+                return response.text().then(text => ({
+                    success: true,
+                    data: text
+                }));
+            })
             .then(data => {
                 form.innerHTML = `<div style="text-align: center; padding: 20px; color: #1a2b3c; font-weight: 600; font-size: 1.1rem; background: rgba(37, 211, 102, 0.1); border-radius: 8px;">
                                     <i class="fas fa-check-circle" style="font-size: 2.5rem; color: #25D366; margin-bottom: 15px;"></i><br>
@@ -359,6 +364,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                   </div>`;
             })
             .catch(error => {
+                console.error('Form submission error:', error);
                 btn.textContent = 'Error al enviar. Intenta de nuevo.';
                 btn.disabled = false;
                 setTimeout(() => {
