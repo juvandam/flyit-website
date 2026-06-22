@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Aeronaves | Compra/Venta en Argentina | Fly It</title>
+    <meta name="description" content="Catálogo de aeronaves para compra y venta en Argentina. Plataforma gratuita de pilotos y operadores. Conectamos compradores con vendedores.">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Catálogo de Aeronaves | Fly It">
+    <meta property="og:description" content="Compra, venta o alquiler de aeronaves en Argentina. Plataforma gratuita para la comunidad aeronáutica.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo_flyit.svg">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo_flyit.svg" alt="Logo de la empresa">
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <li class="nav-item"><a href="importar.html" class="nav-link">Importar</a></li>
+            <li class="nav-item"><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+            <li class="nav-item"><a href="index.html#nosotros" class="nav-link">Nosotros</a></li>
+            <li class="nav-item"><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            <a href="publicar-avion.html" class="btn-secondary" style="font-size: 0.8rem; padding: 10px 18px; margin: 0 15px;">Publicar Avión</a>
+        </nav>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="padding: 100px 4% 10px; background-color: #000000; background-image: none;">
+        <h1 style="margin-bottom: 5px; font-size: 2.2rem;" data-reveal>Catálogo de Aeronaves</h1>
+        <p style="margin-top: 0; font-size: 1rem;" data-reveal>En Argentina 🇦🇷 | Plataforma Gratuita</p>
+    </section>
+
+    <!-- Main Content: Inventory Carousel Grid -->
+    <main class="section section-gray" style="padding-top: 15px;">
+        <div class="container">
+
+            <!-- Banner: Publicá tu aeronave / Información -->
+            <div class="vender-banner" style="margin-bottom: 15px; padding: 10px 20px;">
+                <div class="vender-banner-text">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px;">¿Buscás importar un avión?</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;">Visitá nuestro servicio de importación, o publicá tu avión gratis en el catálogo local.</p>
+                </div>
+                <div class="vender-banner-ctas">
+                    <a href="importar.html" class="vb-cta vb-cta-outline">Importar Aeronave</a>
+                    <a href="publicar-avion.html" class="vb-cta vb-cta-solid">Publicar mi Avión</a>
+                </div>
+            </div>
+
+            <div class="inventory-layout">
+                <!-- Sidebar Filters -->
+                <aside class="inventory-sidebar">
+                    <h3>Filtrar Catálogo</h3>
+
+                    <div class="filter-group">
+                        <label for="filter-type">Tipo de Avión</label>
+                        <select id="filter-type">
+                            <option value="all">Todos</option>
+                            <option value="monomotor piston">Monomotor Pistón</option>
+                            <option value="bimotor piston">Bimotor Pistón</option>
+                            <option value="turbohelice">Turbohélice</option>
+                            <option value="jets">Jets</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-make">Fabricante</label>
+                        <select id="filter-make">
+                            <option value="all">Todos</option>
+                            <option value="cessna">Cessna</option>
+                            <option value="mooney">Mooney</option>
+                            <option value="piper">Piper</option>
+                            <option value="beechcraft">Beechcraft</option>
+                            <option value="embraer">Embraer</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-model">Modelo</label>
+                        <select id="filter-model" disabled>
+                            <option value="all">Seleccione un fabricante</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="filter-status">Estado</label>
+                        <select id="filter-status">
+                            <option value="all">Todos</option>
+                            <option value="disponible">Disponible</option>
+                            <option value="negociando">En Negociación</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Inventory Grid -->
+                <div class="inventory-grid" id="aircraft-grid">
+
+                <!-- Card: Cessna 182C -->
+                <div class="aircraft-card" data-type="monomotor piston" data-make="cessna" data-model="182c" data-status="disponible" onclick="window.location.href='cessna-182c-hti.html'" style="cursor: pointer;">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <img src="assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_detalle.jpeg" alt="Cessna 182C" class="img-primary">
+                        <img src="assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_interior1.jpeg" alt="Cessna 182C Interior" class="img-hover">
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna 182C</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Matrícula: LV-HTI | Año: 1961</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value">3,692</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: #1a5f7a;">USD 90k</span>
+                            </div>
+                        </div>
+
+                        <a href="cessna-182c-hti.html" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Card: Cessna 172L -->
+                <div class="aircraft-card" data-type="monomotor piston" data-make="cessna" data-model="172l" data-status="disponible" onclick="window.location.href='cessna-172l.html'" style="cursor: pointer;">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <img src="assets/images/Aeronaves_en_venta/C172_JXC/C172_exterior2.jpg" alt="Cessna 172L" class="img-primary">
+                        <img src="assets/images/Aeronaves_en_venta/C172_JXC/C172_interior.jpg" alt="Cessna 172L Interior" class="img-hover">
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna 172L</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Matrícula: LV-JXC | Año: 1971</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">DURG</span>
+                                <span class="spec-value">20 hs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: #1a5f7a;">USD 120k</span>
+                            </div>
+                        </div>
+
+                        <a href="cessna-172l.html" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Ver Detalles</a>
+                    </div>
+                </div>
+
+                <!-- Card: Mooney M20C -->
+                <div class="aircraft-card" data-type="monomotor piston" data-make="mooney" data-model="m20c" data-status="disponible" onclick="window.location.href='mooney-m20c.html'" style="cursor: pointer;">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <img src="assets/images/Aeronaves_en_venta/Mooney_JXK/Mooney_exterior_volando3.jpg" alt="Mooney M20C" class="img-primary">
+                        <img src="assets/images/Aeronaves_en_venta/Mooney_JXK/Mooney_exterior_aterrizando.jpg" alt="Mooney M20C Aterrizando" class="img-hover">
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Mooney M20C</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Matrícula: LV-JXK | Año: 1981</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value">8,450</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: #1a5f7a;">Consultar</span>
+                            </div>
+                        </div>
+
+                        <a href="mooney-m20c.html" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Ver Detalles</a>
+                    </div>
+                </div>
+
+                </div>
+                <!-- end inventory-grid -->
+
+            </div>
+            <!-- end inventory-layout -->
+
+        </div>
+    </main>
+
+    <!-- Cómo Funciona -->
+    <section class="section section-light" style="padding: 80px 4%;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 style="text-align: center; font-size: 2.5rem; color: #1a2b3c; margin-bottom: 60px; text-transform: uppercase;">
+                Cómo Funciona
+            </h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">
+                        <i class="fas fa-search" style="color: #1a5f7a;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; color: #1a2b3c; margin-bottom: 10px;">Buscá</h3>
+                    <p style="color: #666; line-height: 1.6;">Explorá nuestro catálogo con filtros por tipo, modelo, precio. Encontrá exacto lo que necesitás.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">
+                        <i class="fas fa-envelope" style="color: #2ba84e;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; color: #1a2b3c; margin-bottom: 10px;">Contactá</h3>
+                    <p style="color: #666; line-height: 1.6;">Nos conectamos con el vendedor. Ustedes negocian directamente de forma profesional y confiable.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 20px;">
+                        <i class="fas fa-handshake" style="color: #f39c12;"></i>
+                    </div>
+                    <h3 style="font-size: 1.2rem; color: #1a2b3c; margin-bottom: 10px;">Acuerdo</h3>
+                    <p style="color: #666; line-height: 1.6;">Cierren el trato. Nosotros facilitamos la documentación y coordinamos trámites si es necesario.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/+5491158120277" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" style="display: block; margin-bottom: 20px;">
+                    <img src="assets/images/logo_flyit.svg" alt="Logo de la empresa" style="height: 40px; object-fit: contain;">
+                </a>
+                <p>Plataforma gratuita para la comunidad aeronáutica argentina. Comprá, vendé, alquilá con profesionalismo y confianza.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/flyit.argentina" target="_blank" rel="noopener noreferrer"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Acciones</h4>
+                <ul>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="catalogo.html">Ver Catálogo</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="importar.html">Importar Aeronave</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="publicar-avion.html">Publicar Avión</a></li>
+                    <li><i class="fas fa-plane" style="margin-right: 8px;"></i><a href="administracion.html">Administración</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right:8px;"></i> Aeropuerto de Morón, Buenos Aires</li>
+                    <li><i class="fas fa-envelope" style="margin-right:8px;"></i> contacto@flyit.com.ar</li>
+                    <li><i class="fab fa-whatsapp" style="margin-right:8px;"></i> +54 9 11 5812-0277</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fly It Servicios Aeronáuticos SRL. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
