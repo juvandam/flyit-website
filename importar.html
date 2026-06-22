@@ -71,35 +71,39 @@
     </section>
 
     <!-- Catálogo de Aeronaves a Importar -->
-    <section class="section section-light" style="padding: 60px 4%;">
-        <div class="container" style="max-width: 1200px;">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <h2 style="font-size: 2rem; color: #1a2b3c; margin-bottom: 15px; text-transform: uppercase;">
-                    Opciones Disponibles en Mercado Internacional
-                </h2>
-                <p style="color: #555; font-size: 1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
-                    Estas aeronaves están actualmente publicadas en mercado internacional. Evaluamos su estado técnico y regulatorio antes de recomendarlas. Si te interesa alguna, iniciamos el proceso de importación.
-                </p>
+    <main class="section section-gray" style="padding-top: 15px;">
+        <div class="container">
+
+            <!-- Banner: Información -->
+            <div class="vender-banner" style="margin-bottom: 15px; padding: 10px 20px;">
+                <div class="vender-banner-text">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Opciones Disponibles en Mercado Internacional</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;">Estas aeronaves están disponibles en el mercado internacional. Evaluamos cada una técnica y regulatoriamente antes de recomendarlas.</p>
+                </div>
+                <div class="vender-banner-ctas">
+                    <a href="catalogo.html" class="vb-cta vb-cta-outline">Ver Catálogo Local</a>
+                    <a href="index.html#contacto" class="vb-cta vb-cta-solid">Solicitar Avión</a>
+                </div>
             </div>
 
-            <div class="inventory-layout" style="display: grid; grid-template-columns: 250px 1fr; gap: 40px; margin-bottom: 40px;">
+            <div class="inventory-layout">
                 <!-- Sidebar Filters -->
-                <aside class="inventory-sidebar" style="background: white; padding: 25px; border-radius: 8px; height: fit-content;">
-                    <h3 style="color: #1a2b3c; margin-top: 0;">Filtrar</h3>
+                <aside class="inventory-sidebar">
+                    <h3>Filtrar Catálogo</h3>
 
-                    <div class="filter-group" style="margin-bottom: 20px;">
-                        <label for="filter-type-import" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1a2b3c;">Tipo</label>
-                        <select id="filter-type-import" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                    <div class="filter-group">
+                        <label for="filter-type-import">Tipo de Avión</label>
+                        <select id="filter-type-import">
                             <option value="all">Todos</option>
-                            <option value="monomotor">Monomotor</option>
-                            <option value="bimotor">Bimotor</option>
+                            <option value="monomotor piston">Monomotor Pistón</option>
+                            <option value="bimotor piston">Bimotor Pistón</option>
                             <option value="turbohelice">Turbohélice</option>
                         </select>
                     </div>
 
                     <div class="filter-group">
-                        <label for="filter-make-import" style="display: block; font-weight: 600; margin-bottom: 8px; color: #1a2b3c;">Fabricante</label>
-                        <select id="filter-make-import" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-body);">
+                        <label for="filter-make-import">Fabricante</label>
+                        <select id="filter-make-import">
                             <option value="all">Todos</option>
                             <option value="beechcraft">Beechcraft</option>
                             <option value="piper">Piper</option>
@@ -108,66 +112,98 @@
                     </div>
                 </aside>
 
-                <!-- Grid de Aeronaves -->
-                <div class="inventory-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-                    <!-- Card: Beechcraft King Air 200 -->
-                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
-                            Beechcraft King Air 200
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">King Air 200</h3>
-                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">6-8 pasajeros • Turbohélice de largo alcance • Equipamiento moderno</p>
-                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
-                                <span><strong>Año:</strong> 1998-2005</span>
-                                <span><strong>TTAF:</strong> 15k-25k hs</span>
-                            </div>
-                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
+                <!-- Inventory Grid -->
+                <div class="inventory-grid" id="aircraft-grid-import">
+
+                <!-- Card: Beechcraft King Air 200 -->
+                <div class="aircraft-card" data-type="turbohelice" data-make="beechcraft" data-status="disponible">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;">
+                            Beechcraft<br>King Air 200
                         </div>
                     </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">King Air 200</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Turbohélice Ejecutivo • 6-8 Pasajeros</p>
 
-                    <!-- Card: Piper Seneca V -->
-                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
-                            Piper Seneca V
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">Seneca V</h3>
-                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">4-6 pasajeros • Bimotor a pistón • Mantenimiento accesible</p>
-                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
-                                <span><strong>Año:</strong> 2000-2015</span>
-                                <span><strong>TTAF:</strong> 8k-12k hs</span>
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span class="spec-value">1998-2005</span>
                             </div>
-                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value" style="color: #1a5f7a;">15k-25k</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Card: Cessna 208 Caravan -->
-                    <div class="aircraft-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: all 0.3s ease;">
-                        <div style="height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">
-                            Cessna 208 Caravan
-                        </div>
-                        <div style="padding: 20px;">
-                            <h3 style="font-size: 1.1rem; color: #1a2b3c; margin: 0 0 8px;">Caravan</h3>
-                            <p style="color: #666; font-size: 0.85rem; margin: 0 0 15px; line-height: 1.5;">8-9 pasajeros • Turbohélice robusto • Operaciones cortas distancias</p>
-                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #555; margin-bottom: 15px;">
-                                <span><strong>Año:</strong> 1999-2018</span>
-                                <span><strong>TTAF:</strong> 10k-20k hs</span>
-                            </div>
-                            <a href="index.html#contacto" style="display: inline-block; color: #1a5f7a; font-weight: 600; text-decoration: none; font-size: 0.9rem;">Consultar → </a>
-                        </div>
+                        <a href="index.html#contacto" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Consultar</a>
                     </div>
                 </div>
-            </div>
 
-            <div style="text-align: center; padding: 30px; background: #f8f9fa; border-radius: 8px;">
-                <p style="color: #555; margin: 0 0 15px;">¿Buscas un modelo específico que no ves?</p>
-                <a href="index.html#contacto" class="btn-primary" style="background-color: #1a5f7a; padding: 12px 28px; display: inline-block;">
-                    Solicitar Avión Específico
-                </a>
+                <!-- Card: Piper Seneca V -->
+                <div class="aircraft-card" data-type="bimotor piston" data-make="piper" data-status="disponible">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;">
+                            Piper<br>Seneca V
+                        </div>
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Seneca V</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Bimotor a Pistón • 4-6 Pasajeros</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span class="spec-value">2000-2015</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value" style="color: #1a5f7a;">8k-12k</span>
+                            </div>
+                        </div>
+
+                        <a href="index.html#contacto" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Consultar</a>
+                    </div>
+                </div>
+
+                <!-- Card: Cessna 208 Caravan -->
+                <div class="aircraft-card" data-type="turbohelice" data-make="cessna" data-status="disponible">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;">
+                            Cessna<br>208 Caravan
+                        </div>
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Caravan 208</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Turbohélice Robusto • 8-9 Pasajeros</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">Año</span>
+                                <span class="spec-value">1999-2018</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value" style="color: #1a5f7a;">10k-20k</span>
+                            </div>
+                        </div>
+
+                        <a href="index.html#contacto" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Consultar</a>
+                    </div>
+                </div>
+
+                </div>
+                <!-- end inventory-grid -->
+
             </div>
+            <!-- end inventory-layout -->
+
         </div>
-    </section>
+    </main>
 
     <!-- El Proceso -->
     <section class="section section-light" style="padding: 80px 4%;">
