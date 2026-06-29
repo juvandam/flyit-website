@@ -2556,10 +2556,16 @@ a {
     .parallax-window, .hero {
         background-attachment: scroll !important;
     }
-    
+
     .hero {
         /* Mobile specific background */
         background-image: url('../images/fotos_aeronaves_web/aviacion_privada.jpg');
         background-position: center center;
+    }
+
+    /* Encuentra tu Próxima Aeronave - responsive layout */
+    section.section-pale > .container > div {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
     }
 }
