@@ -113,7 +113,7 @@
     },
     {
       "id": "cessna-310r-import",
-      "model": "Cessna 310R",
+      "model": "Cessna310R",
       "registration": null,
       "year": 1976,
       "category": "bimotor piston",
@@ -150,11 +150,11 @@
       ],
       "page": "c310r-import.html",
       "images": {
-        "main": "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_main.jpg",
-        "hover": "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_hover.jpg",
+        "main": "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_main.jpg",
+        "hover": "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_hover.jpg",
         "gallery": [
-          "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_main.jpg",
-          "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_hover.jpg"
+          "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_main.jpg",
+          "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_hover.jpg"
         ]
       },
       "pageUrl": "c310r-import.html",
