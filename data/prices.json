@@ -14,6 +14,11 @@
     "mooney-m20c-jxk": {
       "amount": 190000,
       "currency": "USD"
+    },
+    "cessna-310r-import": {
+      "amount": 295000,
+      "currency": "EUR",
+      "lastUpdated": "2026-06-30"
     }
   },
   "cessna-340-cx-bvc-uruguay": {

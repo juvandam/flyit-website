@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-06-11T16:32:56.971850Z",
+  "lastUpdated": "2026-06-30T00:00:00Z",
   "aircraft": [
     {
       "id": "cessna-182c-hti",
@@ -21,13 +21,13 @@
         "currency": "USD"
       },
       "status": "available",
-      "statusBadge": "Due\u00f1o directo",
-      "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en \u00f3ptimas condiciones. Avi\u00f3nica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
+      "statusBadge": "Dueño directo",
+      "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en óptimas condiciones. Aviónica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
       "avionics": [
         "Garmin G5",
         "Garmin GTX 327 (Transponder)",
         "Garmin 296 (GPS)",
-        "2 Alt\u00edmetros",
+        "2 Altímetros",
         "2 VHF Comunicaciones",
         "VOR",
         "ADF (incompleto)",
@@ -35,18 +35,18 @@
         "Flight Com"
       ],
       "instrumentation": [
-        "Veloc\u00edmetro",
-        "Vari\u00f3metro",
+        "Velocímetro",
+        "Variómetro",
         "Giro direccional",
         "Coordinador de giro",
         "Horizonte artificial",
-        "Presi\u00f3n de manifold",
+        "Presión de manifold",
         "Medidor RPM",
         "2 Medidores de combustible",
         "EGT/CHT",
         "Indicador de temperatura del carburador",
-        "Indicador de succi\u00f3n y amper\u00edmetro",
-        "Presi\u00f3n y temperatura de aceite"
+        "Indicador de succión y amperímetro",
+        "Presión y temperatura de aceite"
       ],
       "images": {
         "main": "assets/images/Aeronaves_en_venta/C_182C_HTI/Cessna182c_lv_hti_detalle.jpeg",
@@ -86,9 +86,9 @@
       },
       "status": "available",
       "statusBadge": "Disponible",
-      "description": "Cessna 340 bimotor en buen estado de mantenimiento. Ubicada en Montevideo, Uruguay. Propietario directo - \u00c1labe Servicios A\u00e9reos. Lista para importaci\u00f3n.",
+      "description": "Cessna 340 bimotor en buen estado de mantenimiento. Ubicada en Montevideo, Uruguay. Propietario directo - Álabe Servicios Aéreos. Lista para importación.",
       "avionics": [
-        "Equipamiento est\u00e1ndar de navegaci\u00f3n",
+        "Equipamiento estándar de navegación",
         "Comunicaciones VHF",
         "Transponder",
         "ELT"
@@ -110,6 +110,55 @@
           "assets/images/c340-10-hover.jpg"
         ]
       }
+    },
+    {
+      "id": "cessna-310r-import",
+      "model": "Cessna 310R",
+      "registration": null,
+      "year": 1976,
+      "category": "bimotor piston",
+      "make": "cessna",
+      "submodel": "310R",
+      "engines": "2x Continental IO-520-MB",
+      "horsepower": 285,
+      "totalHours": 8825,
+      "engineHoursLeft": 1348,
+      "engineHoursRight": 1249,
+      "propHoursLeft": 1335,
+      "propHoursRight": 1335,
+      "certificateValid": "2026-08",
+      "location": "Para Importar",
+      "country": null,
+      "catalog": "import",
+      "price": {
+        "amount": 295000,
+        "currency": "EUR"
+      },
+      "status": "available",
+      "statusBadge": "Para Importar",
+      "description": "Excelente oportunidad de adquirir un avión bimotor completamente mantenido, equipado con aviónica moderna de Garmin. Revisión completa junio 2026. Entrega mundial por piloto Ferry Flight.",
+      "avionics": [
+        "Garmin MFD/PFD",
+        "2x GTN GPS",
+        "Garmin G5 Backup",
+        "Garmin Virb Camera",
+        "Stormscope Radar",
+        "ARC 400B IFCS Autopilot",
+        "Starlink Antenna",
+        "GDL39",
+        "Complete Engine Monitor"
+      ],
+      "page": "c310r-import.html",
+      "images": {
+        "main": "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_main.jpg",
+        "hover": "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_hover.jpg",
+        "gallery": [
+          "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_main.jpg",
+          "assets/images/Aeronaves_en_venta/Cessna 310R/Cessna310R_exterior_hover.jpg"
+        ]
+      },
+      "pageUrl": "c310r-import.html",
+      "createdDate": "2026-06-30"
     }
   ]
 }
