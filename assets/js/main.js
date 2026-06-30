@@ -154,6 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     { value: '150j', text: '150J' },
                     { value: '172l', text: '172L' },
                     { value: '182c', text: '182C' },
+                    { value: '310r', text: '310R' },
+                    { value: '340', text: '340' },
                     { value: 'citation xls', text: 'Citation XLS' }
                 ],
                 'beechcraft': [
