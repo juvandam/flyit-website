@@ -150,11 +150,13 @@
       ],
       "page": "c310r-import.html",
       "images": {
-        "main": "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_main.jpg",
-        "hover": "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_hover.jpg",
+        "main": "assets/images/c310r-main.jpg",
+        "hover": "assets/images/c310r-hover.jpg",
+        "og": "assets/images/c310r-og.jpg",
         "gallery": [
-          "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_main.jpg",
-          "assets/images/Aeronaves_en_venta/Cessna310R/Cessna310R_exterior_hover.jpg"
+          "assets/images/c310r-main.jpg",
+          "assets/images/c310r-hover.jpg",
+          "assets/images/c310r-og.jpg"
         ]
       },
       "pageUrl": "c310r-import.html",

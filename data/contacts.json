@@ -24,6 +24,16 @@
       "aircraft": [
         "cessna-340-cx-bvc-uruguay"
       ]
+    },
+    {
+      "id": "laurent-fournier-c310r",
+      "name": "Laurent Fournier",
+      "contact_method": "Facebook",
+      "aircraft": [
+        "cessna-310r-import"
+      ],
+      "role": "owner",
+      "status": "active"
     }
   ]
 }
