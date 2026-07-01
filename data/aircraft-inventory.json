@@ -127,8 +127,8 @@
       "propHoursLeft": 1335,
       "propHoursRight": 1335,
       "certificateValid": "2026-08",
-      "location": "Para Importar",
-      "country": null,
+      "location": "Francia",
+      "country": "Francia",
       "catalog": "import",
       "price": {
         "amount": 295000,
