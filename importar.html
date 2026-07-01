@@ -148,6 +148,39 @@
                     </div>
                 </div>
 
+                <!-- Card: Cessna 310R -->
+                <div class="aircraft-card" data-type="bimotor piston" data-make="cessna" data-status="disponible" onclick="window.location.href='c310r-import.html'" style="cursor: pointer;">
+                    <div class="aircraft-image-wrapper">
+                        <span class="status-badge" style="background-color: #2ba84e;">✓ Disponible</span>
+                        <img src="assets/images/c310r-main.jpg" alt="Cessna 310R" class="img-primary" onerror="this.style.display='none'">
+                        <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1a5f7a 0%, #2a7fa0 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; text-align: center; padding: 20px;" id="c310r-placeholder">
+                            Cessna<br>310R
+                        </div>
+                        <script>
+                            document.querySelector('.aircraft-card[data-type="bimotor piston"]')?.addEventListener('load', function() {
+                                document.getElementById('c310r-placeholder')?.remove();
+                            });
+                        </script>
+                    </div>
+                    <div class="aircraft-details">
+                        <h3 class="aircraft-title">Cessna 310R</h3>
+                        <p class="aircraft-desc" style="font-size: 0.9rem; color: #888; margin-bottom: 15px;">Año: 1976 | Para Importar</p>
+
+                        <div class="specs-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="spec-item">
+                                <span class="spec-label">TTAF</span>
+                                <span class="spec-value">8,825 hs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Precio</span>
+                                <span class="spec-value" style="color: #1a5f7a;">EUR 295k</span>
+                            </div>
+                        </div>
+
+                        <a href="c310r-import.html" class="btn-card" style="text-align: center; border: 1px solid #1a5f7a; background: transparent; color: #1a5f7a;">Ver Detalles</a>
+                    </div>
+                </div>
+
                 </div>
                 <!-- end inventory-grid -->
 
