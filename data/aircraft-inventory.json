@@ -150,13 +150,20 @@
       ],
       "page": "c310r-import.html",
       "images": {
-        "main": "assets/images/c310r-main.jpg",
-        "hover": "assets/images/c310r-hover.jpg",
+        "main": "assets/images/c310r-01.jpg",
+        "hover": "assets/images/c310r-02.jpg",
         "og": "assets/images/c310r-og.jpg",
         "gallery": [
-          "assets/images/c310r-main.jpg",
-          "assets/images/c310r-hover.jpg",
-          "assets/images/c310r-og.jpg"
+          "assets/images/c310r-01.jpg",
+          "assets/images/c310r-02.jpg",
+          "assets/images/c310r-03.jpg",
+          "assets/images/c310r-04.jpg",
+          "assets/images/c310r-05.jpg",
+          "assets/images/c310r-06.jpg",
+          "assets/images/c310r-07.jpg",
+          "assets/images/c310r-08.jpg",
+          "assets/images/c310r-09.jpg",
+          "assets/images/c310r-10.jpg"
         ]
       },
       "pageUrl": "c310r-import.html",
