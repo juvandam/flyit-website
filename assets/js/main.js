@@ -233,6 +233,111 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } catch(e) { console.error('Filter logic error:', e); }
 
+    // 5b. Import Page Filtering Logic
+    try {
+        const filterTypeImport = document.getElementById('filter-type-import');
+        const filterMakeImport = document.getElementById('filter-make-import');
+        const filterLocationImport = document.getElementById('filter-location-import');
+        const aircraftGridImport = document.getElementById('aircraft-grid-import');
+
+        if (filterTypeImport && filterMakeImport && aircraftGridImport) {
+            const aircraftCardsImport = aircraftGridImport.querySelectorAll('.aircraft-card');
+
+            function applyImportFilters() {
+                const typeValue = filterTypeImport.value;
+                const makeValue = filterMakeImport.value;
+                const locationValue = filterLocationImport ? filterLocationImport.value : 'all';
+
+                aircraftCardsImport.forEach(card => {
+                    const cardType = card.getAttribute('data-type');
+                    const cardMake = card.getAttribute('data-make');
+                    const cardLocation = card.getAttribute('data-location') || 'all';
+
+                    const typeMatch = typeValue === 'all' || typeValue === cardType;
+                    const makeMatch = makeValue === 'all' || makeValue === cardMake;
+                    const locationMatch = locationValue === 'all' || locationValue === cardLocation;
+
+                    if (typeMatch && makeMatch && locationMatch) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 10);
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            }
+
+            filterTypeImport.addEventListener('change', applyImportFilters);
+            filterMakeImport.addEventListener('change', applyImportFilters);
+            if (filterLocationImport) {
+                filterLocationImport.addEventListener('change', applyImportFilters);
+            }
+
+            aircraftCardsImport.forEach(card => {
+                card.style.transition = 'opacity 0.3s ease';
+            });
+        }
+    } catch(e) { console.error('Import filter logic error:', e); }
+
+    // 5c. Explore Scroll-Spy Nav (home, "Encuentra tu Próxima Aeronave")
+    try {
+        const exploreNav = document.getElementById('exploreNav');
+        const exploreIndicator = document.getElementById('exploreIndicator');
+        const exploreNavItems = document.querySelectorAll('.explore-nav-item');
+        const explorePanels = document.querySelectorAll('.explore-panel');
+
+        if (exploreNav && exploreIndicator && exploreNavItems.length && explorePanels.length) {
+            const navListEl = exploreNav.querySelector('.explore-nav-list');
+
+            function moveIndicatorTo(item) {
+                const navTop = navListEl.getBoundingClientRect().top;
+                const itemRect = item.getBoundingClientRect();
+                exploreIndicator.style.top = (itemRect.top - navTop) + 'px';
+                exploreIndicator.style.height = itemRect.height + 'px';
+            }
+
+            function setActiveNavItem(targetId) {
+                exploreNavItems.forEach(item => {
+                    const isActive = item.getAttribute('data-target') === targetId;
+                    item.classList.toggle('active', isActive);
+                    if (isActive) moveIndicatorTo(item);
+                });
+                explorePanels.forEach(panel => {
+                    panel.classList.toggle('active', panel.id === targetId);
+                });
+            }
+
+            // Init: primer item activo
+            setActiveNavItem(explorePanels[0].id);
+
+            // Click en el nav salta al panel correspondiente
+            exploreNavItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const target = document.getElementById(item.getAttribute('data-target'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+
+            // Scroll-spy: activa el panel más cercano al centro del viewport
+            if ('IntersectionObserver' in window) {
+                const exploreObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setActiveNavItem(entry.target.id);
+                        }
+                    });
+                }, { threshold: 0, rootMargin: '-50% 0px -50% 0px' });
+
+                explorePanels.forEach(panel => exploreObserver.observe(panel));
+            }
+
+            window.addEventListener('resize', () => {
+                const activeItem = document.querySelector('.explore-nav-item.active');
+                if (activeItem) moveIndicatorTo(activeItem);
+            });
+        }
+    } catch(e) { console.error('Explore scroll-spy error:', e); }
+
     // 6. Featured Aircraft Carousels
     try {
         const carousels = document.querySelectorAll('.featured-carousel');

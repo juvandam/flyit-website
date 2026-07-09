@@ -88,33 +88,45 @@
     </section>
 
     <!-- Encuentra tu Próxima Aeronave -->
-    <section class="section section-pale" style="padding: 80px 4%;">
+    <section class="section section-pale explore-section" id="explora">
         <div class="container" style="max-width: 1200px;">
-            <h2 style="text-align: center; font-size: 2.5rem; color: #1a2b3c; margin-bottom: 80px; text-transform: uppercase; font-family: var(--font-heading); font-weight: 800;">
-                Encuentra tu Próxima Aeronave
-            </h2>
+            <h2 class="explore-heading">Encuentra tu Próxima Aeronave</h2>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;">
-                <!-- Opción 1: Importar desde el Exterior -->
-                <div style="padding: 50px 40px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid #1a5f7a; display: flex; flex-direction: column;">
-                    <h3 style="font-size: 1.5rem; color: #1a2b3c; margin: 0 0 15px; font-family: var(--font-heading); font-weight: 700;">Importar desde el Exterior</h3>
-                    <p style="color: #666; font-size: 1rem; line-height: 1.7; margin: 0 0 25px; flex-grow: 1;">
-                        Acceso a mercados internacionales (EE.UU., Europa, y más). Asesoría legal completa, trámites ANAC e inspección técnica.
-                    </p>
-                    <a href="importar.html" style="display: inline-block; background: #1a2b3c; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease; align-self: flex-start;">
-                        Ver Catálogo →
-                    </a>
-                </div>
+            <div class="explore-layout">
+                <!-- Nav lateral con línea de scroll-spy -->
+                <aside class="explore-nav" id="exploreNav">
+                    <div class="explore-nav-line">
+                        <span class="explore-nav-indicator" id="exploreIndicator"></span>
+                    </div>
+                    <ul class="explore-nav-list">
+                        <li class="explore-nav-item active" data-target="explorePanel1">Importar desde el Exterior</li>
+                        <li class="explore-nav-item" data-target="explorePanel2">Mercado Local Argentino</li>
+                    </ul>
+                </aside>
 
-                <!-- Opción 2: Mercado Local -->
-                <div style="padding: 50px 40px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 5px solid #999; display: flex; flex-direction: column;">
-                    <h3 style="font-size: 1.5rem; color: #1a2b3c; margin: 0 0 15px; font-family: var(--font-heading); font-weight: 700;">Mercado Local Argentino</h3>
-                    <p style="color: #666; font-size: 1rem; line-height: 1.7; margin: 0 0 25px; flex-grow: 1;">
-                        Compra y venta de aeronaves en Argentina. Conecta directo con vendedores. Sin comisiones, transparencia total.
-                    </p>
-                    <a href="catalogo.html" style="display: inline-block; background: #1a2b3c; color: white; padding: 14px 32px; border-radius: 4px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s ease; align-self: flex-start;">
-                        Ver Catálogo →
-                    </a>
+                <!-- Paneles -->
+                <div class="explore-panels">
+                    <div class="explore-panel active" id="explorePanel1">
+                        <div class="explore-panel-media">
+                            <img src="assets/images/fotos_aeronaves_web/avion_venta_King.jpg" alt="Importar aeronave desde el exterior">
+                        </div>
+                        <div class="explore-panel-body">
+                            <h3>Importar desde el Exterior</h3>
+                            <p>Acceso a mercados internacionales (EE.UU., Europa, y más). Asesoría legal completa, trámites ANAC e inspección técnica.</p>
+                            <a href="importar.html" class="explore-panel-cta">Ver Catálogo →</a>
+                        </div>
+                    </div>
+
+                    <div class="explore-panel" id="explorePanel2">
+                        <div class="explore-panel-media">
+                            <img src="assets/images/Aeronaves_en_venta/C172_JXC/C172_exterior2.jpg" alt="Aeronaves en el mercado local argentino">
+                        </div>
+                        <div class="explore-panel-body">
+                            <h3>Mercado Local Argentino</h3>
+                            <p>Compra y venta de aeronaves en Argentina. Conecta directo con vendedores. Sin comisiones, transparencia total.</p>
+                            <a href="catalogo.html" class="explore-panel-cta">Ver Catálogo →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
