@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const processMarkers = processTimeline ? processTimeline.querySelectorAll('.process-step-marker') : [];
 
         if (processTimeline && processRunway && processMarkers.length >= 2) {
-            const RUNWAY_THICKNESS = 28;
+            const RUNWAY_THICKNESS = 36;
 
             function positionRunway() {
                 const timelineRect = processTimeline.getBoundingClientRect();
