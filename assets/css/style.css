@@ -2265,10 +2265,26 @@ a {
     opacity: 0.9;
 }
 
-/* Tapa que interrumpe la línea central justo donde pasa cada par de marcas */
-.process-runway-zone-gap {
+/* Tapa que interrumpe la línea central en toda la zona de marcas (umbral + 3 pares) */
+.process-runway-centerline-gap {
     position: absolute;
     background: #454a51;
+}
+
+.process-runway.horizontal .process-runway-centerline-gap {
+    left: 3%;
+    right: 74%;
+    top: 50%;
+    height: 4px;
+    transform: translateY(-50%);
+}
+
+.process-runway.vertical .process-runway-centerline-gap {
+    top: 3%;
+    bottom: 74%;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
 }
 
 .process-runway.horizontal .process-runway-zone-group {
@@ -2292,14 +2308,6 @@ a {
     bottom: 2px;
 }
 
-.process-runway.horizontal .process-runway-zone-gap {
-    left: -5px;
-    width: 10px;
-    top: 50%;
-    height: 4px;
-    transform: translateY(-50%);
-}
-
 .process-runway.vertical .process-runway-zone-group {
     left: 0;
     right: 0;
@@ -2319,14 +2327,6 @@ a {
 
 .process-runway.vertical .process-runway-zone-b {
     right: 2px;
-}
-
-.process-runway.vertical .process-runway-zone-gap {
-    top: -5px;
-    height: 10px;
-    left: 50%;
-    width: 4px;
-    transform: translateX(-50%);
 }
 
 /* Umbral de pista: franjas paralelas (no cruzadas) cerca del paso 1 */
@@ -2376,6 +2376,10 @@ a {
 
 .process-step-body {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -2406,6 +2410,7 @@ a {
     padding: 5px 12px;
     border-radius: 999px;
     margin: 0 auto;
+    margin-top: auto;
 }
 
 @media (max-width: 900px) {
@@ -2423,6 +2428,13 @@ a {
     .process-step-body,
     .process-step-body p {
         text-align: left;
+    }
+    .process-step-body {
+        height: auto;
+        align-items: flex-start;
+    }
+    .process-step-duration {
+        margin: 0;
     }
     .process-step-marker {
         flex-shrink: 0;
