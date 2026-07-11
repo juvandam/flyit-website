@@ -2211,14 +2211,15 @@ a {
 }
 
 /* Pista de aterrizaje esquemática: posicionada dinámicamente por JS entre el centro
-   del primer y último marcador (ver "Explore/Process runway" en main.js) */
+   del primer y último marcador (ver "Explore/Process runway" en main.js).
+   Paleta blanco/gris únicamente, sin dorado, con sombra para que se integre al fondo. */
 .process-runway {
     position: absolute;
     z-index: 0;
-    background: linear-gradient(180deg, #2b2f36, #16181c);
-    border: 6px double #c9a06a;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.45);
+    background: linear-gradient(180deg, #565b62, #34383e);
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 5px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.12);
     overflow: visible;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -2228,6 +2229,7 @@ a {
     opacity: 1;
 }
 
+/* Línea central punteada */
 .process-runway::before {
     content: '';
     position: absolute;
@@ -2251,75 +2253,79 @@ a {
     background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 28px);
 }
 
-/* Marcas de "touchdown zone": pares de barras perpendiculares cerca de cada punta */
-.process-runway-tdz {
+/* Marcas de zona: 3 pares de barras a ambos lados de la línea central, distribuidas a lo largo */
+.process-runway-zone-group {
+    position: absolute;
+}
+
+.process-runway-zone {
     position: absolute;
     background: #fff;
+    opacity: 0.9;
 }
 
-.process-runway.horizontal .process-runway-tdz {
-    top: 15%;
-    bottom: 15%;
-    width: 3px;
+.process-runway.horizontal .process-runway-zone-group {
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 0;
 }
 
-.process-runway.horizontal .process-runway-tdz-start {
-    left: 16%;
+.process-runway.horizontal .process-runway-zone {
+    left: -3px;
+    width: 6px;
+    height: 8px;
 }
 
-.process-runway.horizontal .process-runway-tdz-end {
-    right: 16%;
+.process-runway.horizontal .process-runway-zone-a {
+    top: 3px;
 }
 
-.process-runway.vertical .process-runway-tdz {
-    left: 15%;
-    right: 15%;
-    height: 3px;
+.process-runway.horizontal .process-runway-zone-b {
+    bottom: 3px;
 }
 
-.process-runway.vertical .process-runway-tdz-start {
-    top: 16%;
+.process-runway.vertical .process-runway-zone-group {
+    left: 0;
+    right: 0;
+    top: var(--pos);
+    height: 0;
 }
 
-.process-runway.vertical .process-runway-tdz-end {
-    bottom: 16%;
+.process-runway.vertical .process-runway-zone {
+    top: -3px;
+    height: 6px;
+    width: 8px;
 }
 
-.process-runway-cap {
+.process-runway.vertical .process-runway-zone-a {
+    left: 3px;
+}
+
+.process-runway.vertical .process-runway-zone-b {
+    right: 3px;
+}
+
+/* Umbral de pista: franjas tipo "piano keys" cerca del último paso */
+.process-runway-threshold {
     position: absolute;
-    background: #c9a06a;
+    opacity: 0.9;
 }
 
-.process-runway.horizontal .process-runway-cap {
-    top: -1px;
-    bottom: -1px;
-    width: 16px;
+.process-runway.horizontal .process-runway-threshold {
+    top: 4px;
+    bottom: 4px;
+    left: 84%;
+    right: 5px;
+    background: repeating-linear-gradient(90deg, #fff 0 3px, transparent 3px 6px);
 }
 
-.process-runway.horizontal .process-runway-cap-start {
-    left: -14px;
-    clip-path: polygon(100% 0, 0 50%, 100% 100%);
-}
-
-.process-runway.horizontal .process-runway-cap-end {
-    right: -14px;
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-}
-
-.process-runway.vertical .process-runway-cap {
-    left: -1px;
-    right: -1px;
-    height: 16px;
-}
-
-.process-runway.vertical .process-runway-cap-start {
-    top: -14px;
-    clip-path: polygon(0 100%, 50% 0, 100% 100%);
-}
-
-.process-runway.vertical .process-runway-cap-end {
-    bottom: -14px;
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
+.process-runway.vertical .process-runway-threshold {
+    left: 4px;
+    right: 4px;
+    top: 84%;
+    bottom: 5px;
+    background: repeating-linear-gradient(180deg, #fff 0 3px, transparent 3px 6px);
 }
 
 .process-step {
