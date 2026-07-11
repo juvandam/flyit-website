@@ -310,11 +310,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Init: primer item activo
             setActiveNavItem(explorePanels[0].id);
 
-            // Click en el nav salta al panel correspondiente
+            // Click en el nav salta al panel correspondiente, alineando la foto
+            // debajo del header (evita que "center" corte la imagen en paneles altos)
             exploreNavItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const target = document.getElementById(item.getAttribute('data-target'));
-                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (!target) return;
+                    const media = target.querySelector('.explore-panel-media') || target;
+                    const headerEl = document.querySelector('.header');
+                    const headerHeight = headerEl ? headerEl.offsetHeight : 90;
+                    const mediaTop = media.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({ top: mediaTop - headerHeight - 40, behavior: 'smooth' });
                 });
             });
 
@@ -337,6 +343,50 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     } catch(e) { console.error('Explore scroll-spy error:', e); }
+
+    // 5d. Process Runway (importar.html, "El Proceso Paso a Paso")
+    try {
+        const processTimeline = document.getElementById('processTimeline');
+        const processRunway = processTimeline ? processTimeline.querySelector('.process-runway') : null;
+        const processMarkers = processTimeline ? processTimeline.querySelectorAll('.process-step-marker') : [];
+
+        if (processTimeline && processRunway && processMarkers.length >= 2) {
+            function positionRunway() {
+                const timelineRect = processTimeline.getBoundingClientRect();
+                const first = processMarkers[0].getBoundingClientRect();
+                const last = processMarkers[processMarkers.length - 1].getBoundingClientRect();
+
+                const x1 = first.left + first.width / 2 - timelineRect.left;
+                const y1 = first.top + first.height / 2 - timelineRect.top;
+                const x2 = last.left + last.width / 2 - timelineRect.left;
+                const y2 = last.top + last.height / 2 - timelineRect.top;
+
+                const isHorizontal = Math.abs(x2 - x1) >= Math.abs(y2 - y1);
+
+                if (isHorizontal) {
+                    processRunway.classList.add('horizontal');
+                    processRunway.classList.remove('vertical');
+                    processRunway.style.left = x1 + 'px';
+                    processRunway.style.width = (x2 - x1) + 'px';
+                    processRunway.style.top = (y1 - 7) + 'px';
+                    processRunway.style.height = '14px';
+                } else {
+                    processRunway.classList.add('vertical');
+                    processRunway.classList.remove('horizontal');
+                    processRunway.style.top = y1 + 'px';
+                    processRunway.style.height = (y2 - y1) + 'px';
+                    processRunway.style.left = (x1 - 7) + 'px';
+                    processRunway.style.width = '14px';
+                }
+                processRunway.classList.add('is-ready');
+            }
+
+            positionRunway();
+            window.addEventListener('resize', positionRunway);
+            window.addEventListener('load', positionRunway);
+            setTimeout(positionRunway, 300);
+        }
+    } catch(e) { console.error('Process runway error:', e); }
 
     // 6. Featured Aircraft Carousels
     try {

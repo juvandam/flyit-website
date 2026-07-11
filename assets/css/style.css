@@ -2074,6 +2074,8 @@ a {
     font-size: 1.05rem;
     line-height: 1.35;
     color: #b7bec7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: color 0.35s ease;
 }
 
@@ -2151,15 +2153,6 @@ a {
         gap: 40px;
     }
     .explore-nav {
-        position: static;
-        margin-bottom: 10px;
-    }
-    .explore-nav-list {
-        flex-direction: row;
-        gap: 30px;
-        flex-wrap: wrap;
-    }
-    .explore-nav-line {
         display: none;
     }
     .explore-panels {
@@ -2208,19 +2201,49 @@ a {
 .process-timeline {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
     margin-bottom: 30px;
 }
 
-.process-timeline::before {
+/* Pista de aterrizaje esquemática: posicionada dinámicamente por JS entre el centro
+   del primer y último marcador (ver "Explore/Process runway" en main.js) */
+.process-runway {
+    position: absolute;
+    z-index: 0;
+    background: linear-gradient(180deg, #5b6672, #434c55);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.process-runway.is-ready {
+    opacity: 1;
+}
+
+.process-runway::before {
     content: '';
     position: absolute;
-    top: 34px;
-    left: 12.5%;
-    right: 12.5%;
+}
+
+.process-runway.horizontal::before {
+    top: 50%;
+    left: 4px;
+    right: 4px;
     height: 2px;
-    background: repeating-linear-gradient(90deg, rgba(26,95,122,0.35) 0 8px, transparent 8px 16px);
+    transform: translateY(-50%);
+    background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 28px);
+}
+
+.process-runway.vertical::before {
+    left: 50%;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 28px);
 }
 
 .process-step {
@@ -2272,57 +2295,21 @@ a {
     border-radius: 999px;
 }
 
-.process-final {
-    max-width: 640px;
-    margin: 60px auto 0;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 30px 34px;
-    background: linear-gradient(135deg, #eef7f0, #ffffff);
-    border: 1px solid rgba(43, 168, 78, 0.18);
-    border-radius: 12px;
-}
-
-.process-final-icon {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: #2ba84e;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.4rem;
-}
-
-.process-final-body h3 {
-    font-size: 1.15rem;
-    color: #1a2b3c;
-    margin-bottom: 6px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-}
-
-.process-final-body p {
-    color: #4a5568;
-    font-size: 0.92rem;
-    line-height: 1.55;
-    margin: 0;
-}
-
 @media (max-width: 900px) {
     .process-timeline {
         grid-template-columns: 1fr;
         gap: 34px;
+        padding-left: 4px;
     }
-    .process-timeline::before {
-        display: none;
+    .process-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 22px;
+        text-align: left;
     }
-    .process-final {
-        flex-direction: column;
-        text-align: center;
+    .process-step-marker {
+        flex-shrink: 0;
+        margin: 0;
     }
 }
 
