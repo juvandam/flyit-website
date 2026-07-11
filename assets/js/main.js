@@ -351,6 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const processMarkers = processTimeline ? processTimeline.querySelectorAll('.process-step-marker') : [];
 
         if (processTimeline && processRunway && processMarkers.length >= 2) {
+            const RUNWAY_THICKNESS = 24;
+
             function positionRunway() {
                 const timelineRect = processTimeline.getBoundingClientRect();
                 const first = processMarkers[0].getBoundingClientRect();
@@ -368,15 +370,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     processRunway.classList.remove('vertical');
                     processRunway.style.left = x1 + 'px';
                     processRunway.style.width = (x2 - x1) + 'px';
-                    processRunway.style.top = (y1 - 7) + 'px';
-                    processRunway.style.height = '14px';
+                    processRunway.style.top = (y1 - RUNWAY_THICKNESS / 2) + 'px';
+                    processRunway.style.height = RUNWAY_THICKNESS + 'px';
                 } else {
                     processRunway.classList.add('vertical');
                     processRunway.classList.remove('horizontal');
                     processRunway.style.top = y1 + 'px';
                     processRunway.style.height = (y2 - y1) + 'px';
-                    processRunway.style.left = (x1 - 7) + 'px';
-                    processRunway.style.width = '14px';
+                    processRunway.style.left = (x1 - RUNWAY_THICKNESS / 2) + 'px';
+                    processRunway.style.width = RUNWAY_THICKNESS + 'px';
                 }
                 processRunway.classList.add('is-ready');
             }
