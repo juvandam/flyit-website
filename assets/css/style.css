@@ -2265,6 +2265,12 @@ a {
     opacity: 0.9;
 }
 
+/* Tapa que interrumpe la línea central justo donde pasa cada par de marcas */
+.process-runway-zone-gap {
+    position: absolute;
+    background: #454a51;
+}
+
 .process-runway.horizontal .process-runway-zone-group {
     top: 0;
     bottom: 0;
@@ -2273,8 +2279,8 @@ a {
 }
 
 .process-runway.horizontal .process-runway-zone {
-    left: -10px;
-    width: 20px;
+    left: -5px;
+    width: 10px;
     height: 5px;
 }
 
@@ -2286,6 +2292,14 @@ a {
     bottom: 2px;
 }
 
+.process-runway.horizontal .process-runway-zone-gap {
+    left: -5px;
+    width: 10px;
+    top: 50%;
+    height: 4px;
+    transform: translateY(-50%);
+}
+
 .process-runway.vertical .process-runway-zone-group {
     left: 0;
     right: 0;
@@ -2294,8 +2308,8 @@ a {
 }
 
 .process-runway.vertical .process-runway-zone {
-    top: -10px;
-    height: 20px;
+    top: -5px;
+    height: 10px;
     width: 5px;
 }
 
@@ -2305,6 +2319,14 @@ a {
 
 .process-runway.vertical .process-runway-zone-b {
     right: 2px;
+}
+
+.process-runway.vertical .process-runway-zone-gap {
+    top: -5px;
+    height: 10px;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
 }
 
 /* Umbral de pista: franjas paralelas (no cruzadas) cerca del paso 1 */
