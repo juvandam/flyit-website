@@ -995,7 +995,7 @@ a {
 .section-pale em {
     color: #2d3748;
 }
-.section-pale a:not(.btn-primary):not(.btn-secondary):not(.btn-card):not(.btn-discreet) {
+.section-pale a:not(.btn-primary):not(.btn-secondary):not(.btn-card):not(.btn-discreet):not(.explore-panel-cta) {
     color: #1a73e8;
 }
 /* Creds-box dentro de section-pale */
@@ -2056,7 +2056,7 @@ a {
     top: 0;
     width: 4px;
     border-radius: 2px;
-    background: #1a5f7a;
+    background: #c9a06a;
     transition: top 0.45s cubic-bezier(0.65, 0, 0.35, 1), height 0.45s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
@@ -2123,6 +2123,8 @@ a {
     margin-bottom: 14px;
     font-family: var(--font-heading);
     font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .explore-panel-body p {
@@ -2140,11 +2142,13 @@ a {
     padding: 14px 32px;
     border-radius: 4px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    border: 1px solid #c9a06a;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .explore-panel-cta:hover {
-    background: #1a5f7a;
+    background: #c9a06a;
+    color: #1a2b3c;
 }
 
 @media (max-width: 900px) {
@@ -2183,10 +2187,10 @@ a {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #1a5f7a;
+    color: #a3763f;
     margin-bottom: 14px;
     padding: 5px 14px;
-    border: 1px solid rgba(26, 95, 122, 0.25);
+    border: 1px solid rgba(163, 118, 63, 0.3);
     border-radius: 999px;
 }
 
@@ -2211,10 +2215,11 @@ a {
 .process-runway {
     position: absolute;
     z-index: 0;
-    background: linear-gradient(180deg, #5b6672, #434c55);
+    background: linear-gradient(180deg, #2b2f36, #16181c);
+    border: 2px solid #c9a06a;
     border-radius: 4px;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.35);
-    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.45);
+    overflow: visible;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -2230,8 +2235,8 @@ a {
 
 .process-runway.horizontal::before {
     top: 50%;
-    left: 4px;
-    right: 4px;
+    left: 6px;
+    right: 6px;
     height: 2px;
     transform: translateY(-50%);
     background: repeating-linear-gradient(90deg, #fff 0 14px, transparent 14px 28px);
@@ -2239,11 +2244,48 @@ a {
 
 .process-runway.vertical::before {
     left: 50%;
-    top: 4px;
-    bottom: 4px;
+    top: 6px;
+    bottom: 6px;
     width: 2px;
     transform: translateX(-50%);
     background: repeating-linear-gradient(180deg, #fff 0 14px, transparent 14px 28px);
+}
+
+.process-runway-cap {
+    position: absolute;
+    background: #c9a06a;
+}
+
+.process-runway.horizontal .process-runway-cap {
+    top: -1px;
+    bottom: -1px;
+    width: 12px;
+}
+
+.process-runway.horizontal .process-runway-cap-start {
+    left: -10px;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+.process-runway.horizontal .process-runway-cap-end {
+    right: -10px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.process-runway.vertical .process-runway-cap {
+    left: -1px;
+    right: -1px;
+    height: 12px;
+}
+
+.process-runway.vertical .process-runway-cap-start {
+    top: -10px;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+
+.process-runway.vertical .process-runway-cap-end {
+    bottom: -10px;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
 
 .process-step {
@@ -2261,12 +2303,12 @@ a {
     align-items: center;
     justify-content: center;
     background: #fff;
-    border: 2px solid #1a5f7a;
+    border: 2px solid #a3763f;
     border-radius: 50%;
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 800;
-    color: #1a5f7a;
+    color: #a3763f;
 }
 
 .process-step-body h3 {
@@ -2289,8 +2331,8 @@ a {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #1a5f7a;
-    background: rgba(26, 95, 122, 0.08);
+    color: #a3763f;
+    background: rgba(163, 118, 63, 0.1);
     padding: 5px 12px;
     border-radius: 999px;
 }
