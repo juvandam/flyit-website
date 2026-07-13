@@ -34,6 +34,19 @@
       ],
       "role": "owner",
       "status": "active"
+    },
+    {
+      "id": "nate-hodges-cirrus-sr22",
+      "name": "Nate Hodges",
+      "phone": "(559) 328-0751",
+      "location": "North Fork, California",
+      "country": "USA",
+      "aircraft": [
+        "cirrus-sr22-g5-import"
+      ],
+      "role": "owner",
+      "status": "active",
+      "source": "https://www.controller.com/listing/for-sale/258027125/2015-cirrus-sr22-g5-piston-single-aircraft"
     }
   ]
 }

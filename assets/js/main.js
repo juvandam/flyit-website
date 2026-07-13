@@ -158,6 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     { value: '340', text: '340' },
                     { value: 'citation xls', text: 'Citation XLS' }
                 ],
+                'cirrus': [
+                    { value: 'sr22', text: 'SR22' }
+                ],
                 'beechcraft': [
                     { value: 'king air 250', text: 'King Air 250' }
                 ],

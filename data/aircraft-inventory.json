@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-06-30T00:00:00Z",
+  "lastUpdated": "2026-07-13T00:00:00Z",
   "aircraft": [
     {
       "id": "cessna-182c-hti",
@@ -168,6 +168,57 @@
       },
       "pageUrl": "c310r-import.html",
       "createdDate": "2026-06-30"
+    },
+    {
+      "id": "cirrus-sr22-g5-import",
+      "model": "Cirrus SR22-G5",
+      "registration": null,
+      "year": 2015,
+      "category": "monomotor piston",
+      "make": "cirrus",
+      "submodel": "SR22-G5",
+      "engine": "Continental IO-550-N",
+      "horsepower": 310,
+      "totalHours": 1521,
+      "engineHours": 1521,
+      "certificateValid": "2027-02",
+      "location": "Fresno, California, USA",
+      "country": "USA",
+      "catalog": "import",
+      "price": {
+        "amount": 550000,
+        "currency": "USD"
+      },
+      "status": "available",
+      "statusBadge": "Para Importar",
+      "description": "Hermoso SR22 2015 con todas las opciones correctas: FIKI, Low Speed ESP, Synthetic Vision Technology (SVT), Aire Acondicionado, neumáticos tubeless, frenos Beringer. Annual completo Feb. 2026 y repack de paracaídas reciente Abr. 2026.",
+      "avionics": [
+        "Cirrus Perspective by Garmin Avionics Suite",
+        "Synthetic Vision Technology (SVT)",
+        "Dual AHRS",
+        "Dual WAAS GPS/Comm/Nav",
+        "Garmin GFC700 Autopilot",
+        "Garmin ADS-B Transponder",
+        "406 MHz ELT",
+        "ChartView (Jeppesen)",
+        "Garmin Active Traffic",
+        "eTAWS Terrain Awareness"
+      ],
+      "page": "cirrus-sr22-import.html",
+      "images": {
+        "main": "assets/images/cirrus-sr22-01.jpg",
+        "hover": "assets/images/cirrus-sr22-02.jpg",
+        "og": "assets/images/cirrus-sr22-og.jpg",
+        "gallery": [
+          "assets/images/cirrus-sr22-01.jpg",
+          "assets/images/cirrus-sr22-02.jpg",
+          "assets/images/cirrus-sr22-03.jpg",
+          "assets/images/cirrus-sr22-04.jpg"
+        ]
+      },
+      "pageUrl": "cirrus-sr22-import.html",
+      "ownerId": "nate-hodges-cirrus-sr22",
+      "createdDate": "2026-07-13"
     }
   ]
 }
