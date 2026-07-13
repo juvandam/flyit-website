@@ -164,7 +164,13 @@ a {
 }
 
 /* Lang Switch */
-.lang-switcher button {
+.lang-switcher {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.lang-switcher button,
+.lang-switcher a {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.3);
     color: #aaa;
@@ -175,8 +181,12 @@ a {
     font-weight: bold;
     border-radius: 2px;
     transition: all var(--transition-speed);
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1;
 }
-.lang-switcher button:hover, .lang-switcher button.active {
+.lang-switcher button:hover, .lang-switcher button.active,
+.lang-switcher a:hover, .lang-switcher a.active {
     background: white;
     color: var(--primary-color);
 }

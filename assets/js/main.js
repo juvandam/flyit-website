@@ -571,8 +571,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (hero && heroTitle && heroSubtitle) {
             const isMobile = window.innerWidth <= 768;
+            const isEnglishPage = window.location.pathname.includes('/en/');
+            const assetPrefix = isEnglishPage ? '../' : '';
 
-            const slides = [
+            const slides = isEnglishPage ? [
+                {
+                    bg: isMobile
+                        ? assetPrefix + 'assets/images/fotos_aeronaves_web/aviacion_privada.jpg'
+                        : assetPrefix + 'assets/images/fotos_aeronaves_web/jet_airplane.jpg',
+                    title: 'Your Aircraft.<br>Our Market.',
+                    text: 'Fly It connects international aircraft owners and brokers with serious buyers in Argentina. We manage the entire import process end to end.'
+                },
+                {
+                    bg: isMobile
+                        ? assetPrefix + 'assets/images/fotos_aeronaves_web/aeronave_turbohelice.jpg'
+                        : assetPrefix + 'assets/images/fotos_aeronaves_web/avion_venta_King.jpg',
+                    title: 'List Your<br>Aircraft With Us',
+                    text: 'Reach serious buyers in Argentina.<br>We handle import, legal and logistics<br>so you don\'t have to.'
+                }
+            ] : [
                 {
                     bg: isMobile
                         ? 'assets/images/fotos_aeronaves_web/aviacion_privada.jpg'
