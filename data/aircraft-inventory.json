@@ -219,6 +219,55 @@
       "pageUrl": "cirrus-sr22-import.html",
       "ownerId": "nate-hodges-cirrus-sr22",
       "createdDate": "2026-07-13"
+    },
+    {
+      "id": "pilatus-pc12-45-import",
+      "model": "Pilatus PC-12/45",
+      "registration": null,
+      "year": 2000,
+      "category": "turbohelice",
+      "make": "pilatus",
+      "submodel": "PC-12/45",
+      "engine": "Pratt & Whitney PT6A-67B",
+      "totalHours": 5614,
+      "totalLandings": 4106,
+      "engineHoursSMOH": 2063,
+      "engineTBO": 3500,
+      "propeller": "Hartzell HC-E4A-3D",
+      "propHoursSMOH": 199,
+      "certificateValid": null,
+      "location": "Visalia, California, USA",
+      "country": "USA",
+      "catalog": "import",
+      "price": {
+        "amount": 3300000,
+        "currency": "USD"
+      },
+      "status": "available",
+      "statusBadge": "Para Importar",
+      "description": "N333PN es un Pilatus PC-12/45 limpio y bien equipado, con base en Visalia, California, disponible también para media propiedad (half ownership). Panel Garmin G600 TXi dual, GTN 750Xi dual, ADS-B, WAAS, LPV y Synthetic Vision Technology (SVT). Exterior e interior en excelente condición.",
+      "avionics": [
+        "Garmin G600 TXi (dual)",
+        "Garmin GTN 750Xi (dual)",
+        "ADS-B",
+        "WAAS",
+        "LPV",
+        "Synthetic Vision Technology (SVT)"
+      ],
+      "page": "pilatus-pc12-import.html",
+      "images": {
+        "main": "assets/images/pilatus-pc12-01.jpg",
+        "hover": "assets/images/pilatus-pc12-02.jpg",
+        "gallery": [
+          "assets/images/pilatus-pc12-01.jpg",
+          "assets/images/pilatus-pc12-02.jpg",
+          "assets/images/pilatus-pc12-03.jpg",
+          "assets/images/pilatus-pc12-04.jpg"
+        ]
+      },
+      "pageUrl": "pilatus-pc12-import.html",
+      "ownerId": "mason-haworth-harvey-aviation",
+      "createdDate": "2026-07-14"
     }
   ]
 }

@@ -47,6 +47,20 @@
       "role": "owner",
       "status": "active",
       "source": "https://www.controller.com/listing/for-sale/258027125/2015-cirrus-sr22-g5-piston-single-aircraft"
+    },
+    {
+      "id": "mason-haworth-harvey-aviation",
+      "name": "Mason Haworth",
+      "company": "Harvey Aviation",
+      "phone": "(559) 328-0713",
+      "location": "Visalia, California",
+      "country": "USA",
+      "aircraft": [
+        "pilatus-pc12-45-import"
+      ],
+      "role": "seller",
+      "status": "active",
+      "source": "https://www.controller.com/listing/for-sale/253095443/2000-pilatus-pc-12-slash-45-turboprop-aircraft"
     }
   ]
 }

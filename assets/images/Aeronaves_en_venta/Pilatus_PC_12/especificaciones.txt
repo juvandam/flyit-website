@@ -1,0 +1,47 @@
+2000 PILATUS PC-12/45
+Fuente: https://www.controller.com/listing/for-sale/253095443/2000-pilatus-pc-12-slash-45-turboprop-aircraft
+Fuente adicional: https://www.aircraft.com/aircraft/253095443/n333pn-2000-pilatus-pc-12-slash-45
+
+PRECIO: USD $3,300,000
+
+UBICACIÓN: Visalia, California (Based at KVIS)
+Disponible para media propiedad (half ownership)
+
+VENDEDOR: Harvey Aviation — Contacto: Mason Haworth — (559) 328-0713 — Visalia, California
+
+DESCRIPCIÓN:
+N333PN es un PC12/45 limpio y bien equipado, ubicado en Visalia, CA, disponible para media propiedad. Cuenta con un excelente panel Garmin. Exterior e interior en excelente condición.
+
+--- GENERAL ---
+Año: 2000
+Fabricante: PILATUS
+Modelo: PC-12/45
+Condición: Usado
+Matrícula: N333PN
+Base: KVIS
+
+--- AIRFRAME ---
+Horas totales: 5,614
+Aterrizajes totales: 4,106
+
+--- MOTOR ---
+Motor: PRATT & WHITNEY PT6A-67B
+Horas de motor: 2,063 SMOH (desde overhaul mayor)
+TBO del motor: 3,500 h
+Notas: 585.6 horas desde "Hot Section", completado en Jun. 2021. Overhaul mayor completado en Ago. 2014.
+
+--- HÉLICE ---
+Fabricante: HARTZELL
+Modelo: HC-E4A-3D
+Horas de hélice: 199 SMOH
+Notas: Overhaul completado en Nov. 2024
+
+--- AVIÓNICA ---
+Primary Flight Display 1: GARMIN G600 TXI
+Primary Flight Display 2: GARMIN G600 TXI
+GPS 1: GARMIN GTN 750XI
+GPS 2: GARMIN GTN 750XI
+ADS-B: Sí
+WAAS: Sí
+LPV: Sí
+SVT (Synthetic Vision Technology): Sí

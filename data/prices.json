@@ -24,6 +24,11 @@
       "amount": 550000,
       "currency": "USD",
       "lastUpdated": "2026-07-13"
+    },
+    "pilatus-pc12-45-import": {
+      "amount": 3300000,
+      "currency": "USD",
+      "lastUpdated": "2026-07-14"
     }
   },
   "cessna-340-cx-bvc-uruguay": {
