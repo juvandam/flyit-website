@@ -61,6 +61,20 @@
       "role": "seller",
       "status": "active",
       "source": "https://www.controller.com/listing/for-sale/253095443/2000-pilatus-pc-12-slash-45-turboprop-aircraft"
+    },
+    {
+      "id": "gary-newhard-exclusive-aircraft",
+      "name": "Gary Newhard",
+      "company": "Exclusive Aircraft Sales",
+      "phone": "(952) 250-7817",
+      "location": "Eden Prairie, Minnesota",
+      "country": "USA",
+      "aircraft": [
+        "kingair-b200-import"
+      ],
+      "role": "seller",
+      "status": "active",
+      "source": "https://www.controller.com/listing/for-sale/256403121/2003-beechcraft-king-air-b200-turboprop-aircraft"
     }
   ]
 }

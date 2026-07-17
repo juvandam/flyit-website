@@ -29,6 +29,12 @@
       "amount": 3300000,
       "currency": "USD",
       "lastUpdated": "2026-07-14"
+    },
+    "kingair-b200-import": {
+      "amount": null,
+      "currency": "USD",
+      "note": "Consultar (Call for price)",
+      "lastUpdated": "2026-07-17"
     }
   },
   "cessna-340-cx-bvc-uruguay": {

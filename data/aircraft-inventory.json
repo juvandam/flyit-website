@@ -268,6 +268,62 @@
       "pageUrl": "pilatus-pc12-import.html",
       "ownerId": "mason-haworth-harvey-aviation",
       "createdDate": "2026-07-14"
+    },
+    {
+      "id": "kingair-b200-import",
+      "model": "Beechcraft King Air B200",
+      "registration": "N23MN",
+      "year": 2003,
+      "category": "turbohelice",
+      "make": "beechcraft",
+      "submodel": "King Air B200",
+      "serialNumber": "BB-1836",
+      "engines": "2x Pratt & Whitney PT6A-42",
+      "totalHours": 9249.5,
+      "engineHoursLeftSOH": 1083,
+      "engineHoursRightSOH": 1073,
+      "engineTBO": 3600,
+      "certificateValid": null,
+      "location": "Fargo, North Dakota, USA",
+      "country": "USA",
+      "catalog": "import",
+      "price": {
+        "amount": null,
+        "currency": "USD",
+        "note": "Consultar (Call for price)"
+      },
+      "status": "available",
+      "statusBadge": "Para Importar",
+      "description": "King Air B200 listo para trabajar, con base en Fargo, North Dakota. Panel Collins ProLine II completo (dual EFIS-84), TCAS, EGPWS, ADS-B Out. Pintura e interior renovados en 2019 por Rose Aircraft. Abierto a ofertas y permutas.",
+      "avionics": [
+        "Collins EFIS-84 ProLine II (dual)",
+        "Collins APS-65 Autopilot",
+        "Dual Collins VHF-22C / VIR-32",
+        "Dual Collins TDR-94D, ADS-B Out",
+        "Collins WXR-270 Radar",
+        "Collins TCAS 4000",
+        "Honeywell Mark VI EGPWS",
+        "Garmin GNS 400 (WAAS)"
+      ],
+      "page": "kingair-b200-import.html",
+      "images": {
+        "main": "assets/images/kingair-b200-01.jpg",
+        "hover": "assets/images/kingair-b200-02.jpg",
+        "og": "assets/images/kingair-b200-og.jpg",
+        "gallery": [
+          "assets/images/kingair-b200-01.jpg",
+          "assets/images/kingair-b200-02.jpg",
+          "assets/images/kingair-b200-03.jpg",
+          "assets/images/kingair-b200-04.jpg",
+          "assets/images/kingair-b200-05.jpg",
+          "assets/images/kingair-b200-06.jpg",
+          "assets/images/kingair-b200-07.jpg",
+          "assets/images/kingair-b200-08.jpg"
+        ]
+      },
+      "pageUrl": "kingair-b200-import.html",
+      "ownerId": "gary-newhard-exclusive-aircraft",
+      "createdDate": "2026-07-17"
     }
   ]
 }

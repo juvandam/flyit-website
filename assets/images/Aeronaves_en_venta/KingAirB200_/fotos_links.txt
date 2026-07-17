@@ -1,0 +1,11 @@
+FOTOS - 2003 BEECHCRAFT KING AIR B200 (N23MN)
+
+El listing tiene 9 fotos en la galería. Mismo problema de siempre: solo pude extraer la URL de la foto principal (las demás cargan por JavaScript).
+
+Foto principal (alta resolución):
+https://media.sandhills.com/img.axd?id=11023566989&wid=4326165471&sz=Max&checksum=9RC2Xat%2bmmsvXpJpaei0icaDDFsqpZDtxgvlsQuxqPg%3d
+
+Para las 8 fotos restantes:
+1. Entrá al listing: https://www.controller.com/listing/for-sale/256403121/2003-beechcraft-king-air-b200-turboprop-aircraft
+2. Click derecho sobre cada foto de la galería > "Guardar imagen como..."
+3. Subilas acá al chat y te las dejo procesadas (blur de matrícula N23MN + cualquier logo/marca de agua).
