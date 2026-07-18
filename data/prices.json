@@ -31,9 +31,8 @@
       "lastUpdated": "2026-07-14"
     },
     "kingair-b200-import": {
-      "amount": null,
+      "amount": 2200000,
       "currency": "USD",
-      "note": "Consultar (Call for price)",
       "lastUpdated": "2026-07-17"
     }
   },

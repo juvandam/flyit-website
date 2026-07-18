@@ -288,9 +288,8 @@
       "country": "USA",
       "catalog": "import",
       "price": {
-        "amount": null,
-        "currency": "USD",
-        "note": "Consultar (Call for price)"
+        "amount": 2200000,
+        "currency": "USD"
       },
       "status": "available",
       "statusBadge": "Para Importar",
