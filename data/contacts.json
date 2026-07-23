@@ -75,6 +75,21 @@
       "role": "seller",
       "status": "active",
       "source": "https://www.controller.com/listing/for-sale/256403121/2003-beechcraft-king-air-b200-turboprop-aircraft"
+    },
+    {
+      "id": "hank-gibson-texas-top-aviation",
+      "name": "Hank Gibson",
+      "company": "Texas Top Aviation",
+      "phone": "(512) 270-1298",
+      "location": "New Braunfels, Texas",
+      "country": "USA",
+      "additionalContact": "Ryne Bergren (información adicional y libros de a bordo digitales)",
+      "aircraft": [
+        "cirrus-vision-jet-sf50-import"
+      ],
+      "role": "seller",
+      "status": "active",
+      "source": "https://www.controller.com/listing/for-sale/254249887/2025-cirrus-vision-sf50-g2-plus-jet-aircraft"
     }
   ]
 }

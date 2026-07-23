@@ -323,6 +323,75 @@
       "pageUrl": "kingair-b200-import.html",
       "ownerId": "gary-newhard-exclusive-aircraft",
       "createdDate": "2026-07-17"
+    },
+    {
+      "id": "cirrus-vision-jet-sf50-import",
+      "model": "Cirrus Vision SF50-G2+",
+      "registration": "N876TM",
+      "year": 2025,
+      "category": "jets",
+      "make": "cirrus",
+      "submodel": "SF50-G2+",
+      "serialNumber": "0641",
+      "engine": "Williams FJ33-5A",
+      "engineThrust": "1,846 lb",
+      "totalHours": 203,
+      "hobbsHours": 256,
+      "cycles": 182,
+      "capsValid": "2035",
+      "certificateValid": "2027-04",
+      "location": "Daytona Beach, Florida, USA",
+      "country": "USA",
+      "catalog": "import",
+      "price": {
+        "amount": 3550000,
+        "currency": "USD"
+      },
+      "status": "available",
+      "statusBadge": "Para Importar",
+      "description": "Vision Jet G2+ casi nuevo, N876TM, con todo el equipamiento de un G3 (WiFi, SafeReturn, AutoThrottle, CAPS, Emergency Descent Mode, Enhanced Hot and High Performance, FADEC), más TV abatible y entretenimiento en asientos traseros. Primer annual programado para abril 2026. CAPS vence en 2035. JetStream pago hasta agosto de 2027.",
+      "avionics": [
+        "Cirrus Perspective Touch+ by Garmin",
+        "Garmin GFC 700 Autopilot (3 ejes)",
+        "Garmin AutoThrottle",
+        "Electronic Stability Protection (ESP)",
+        "3x Garmin GTC touchscreen",
+        "Garmin GWX 8000 Radar",
+        "TAWS-B",
+        "Doble GTX 345R ADS-B In/Out",
+        "Garmin SVT",
+        "Jeppesen ChartView",
+        "Cirrus IQ",
+        "Sirius XM Weather and Radio"
+      ],
+      "page": "cirrus-vision-jet-import.html",
+      "images": {
+        "main": "assets/images/cirrus-vision-jet-main.jpg",
+        "hover": "assets/images/cirrus-vision-jet-hover.jpg",
+        "og": "assets/images/cirrus-vision-jet-og.jpg",
+        "gallery": [
+          "assets/images/cirrus-vision-jet-01.jpg",
+          "assets/images/cirrus-vision-jet-02.jpg",
+          "assets/images/cirrus-vision-jet-03.jpg",
+          "assets/images/cirrus-vision-jet-04.jpg",
+          "assets/images/cirrus-vision-jet-05.jpg",
+          "assets/images/cirrus-vision-jet-06.jpg",
+          "assets/images/cirrus-vision-jet-07.jpg",
+          "assets/images/cirrus-vision-jet-08.jpg",
+          "assets/images/cirrus-vision-jet-09.jpg",
+          "assets/images/cirrus-vision-jet-10.jpg",
+          "assets/images/cirrus-vision-jet-11.jpg",
+          "assets/images/cirrus-vision-jet-12.jpg",
+          "assets/images/cirrus-vision-jet-13.jpg",
+          "assets/images/cirrus-vision-jet-14.jpg",
+          "assets/images/cirrus-vision-jet-15.jpg",
+          "assets/images/cirrus-vision-jet-16.jpg",
+          "assets/images/cirrus-vision-jet-17.jpg"
+        ]
+      },
+      "pageUrl": "cirrus-vision-jet-import.html",
+      "ownerId": "hank-gibson-texas-top-aviation",
+      "createdDate": "2026-07-22"
     }
   ]
 }

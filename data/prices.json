@@ -34,6 +34,11 @@
       "amount": 2200000,
       "currency": "USD",
       "lastUpdated": "2026-07-17"
+    },
+    "cirrus-vision-jet-sf50-import": {
+      "amount": 3550000,
+      "currency": "USD",
+      "lastUpdated": "2026-07-22"
     }
   },
   "cessna-340-cx-bvc-uruguay": {
