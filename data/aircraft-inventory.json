@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-07-13T00:00:00Z",
+  "lastUpdated": "2026-10-02T00:00:00Z",
   "aircraft": [
     {
       "id": "cessna-182c-hti",
@@ -20,8 +20,9 @@
         "amount": 90000,
         "currency": "USD"
       },
-      "status": "available",
-      "statusBadge": "Dueño directo",
+      "status": "sold",
+      "statusBadge": "Vendida",
+      "soldDate": "2026-10-02",
       "description": "Excelente aeronave monomotor de carga y pasajeros. Motor Continental de 230 HP en óptimas condiciones. Aviónica moderna con equipamiento Garmin. Ubicado en Buenos Aires.",
       "avionics": [
         "Garmin G5",
