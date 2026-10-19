@@ -8,25 +8,35 @@
 #   ./scripts/indexnow.sh https://www.flyit.com.ar/mooney-m20c.html  # pinga una URL
 #   ./scripts/indexnow.sh url1 url2 url3            # pinga varias URLs
 #
-# Requisitos: curl, (python3 opcional para parsear sitemap)
+# Compatible con bash 3.2 (macOS por defecto).
 
-set -euo pipefail
+set -eu
 
 HOST="www.flyit.com.ar"
 KEY="8a7656f4a995918d4aff5df868b4b383ec1f161b447e7217a24c623cc5bbd2a7"
 KEY_LOCATION="https://${HOST}/${KEY}.txt"
 ENDPOINT="https://api.indexnow.org/IndexNow"
 
-# Si no pasaron URLs como argumentos, extraer del sitemap.xml
+# Carpeta del script → raíz del repo
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+REPO_ROOT="$( cd "${SCRIPT_DIR}/.." && pwd )"
+
+URLS=()
+
 if [ "$#" -eq 0 ]; then
-  SITEMAP="$(dirname "$0")/../sitemap.xml"
-  if [ ! -f "$SITEMAP" ]; then
-    echo "ERROR: no se encontró sitemap.xml y no se pasaron URLs" >&2
+  SITEMAP="${REPO_ROOT}/sitemap.xml"
+  if [ ! -f "${SITEMAP}" ]; then
+    echo "ERROR: no se encontró ${SITEMAP} y no se pasaron URLs" >&2
     exit 1
   fi
-  mapfile -t URLS < <(grep -oE '<loc>[^<]+</loc>' "$SITEMAP" | sed -e 's|<loc>||' -e 's|</loc>||')
+  # Compatible con bash 3.2: usamos while-read en vez de mapfile
+  while IFS= read -r line; do
+    URLS+=("$line")
+  done < <(grep -oE '<loc>[^<]+</loc>' "${SITEMAP}" | sed -e 's|<loc>||' -e 's|</loc>||')
 else
-  URLS=("$@")
+  for u in "$@"; do
+    URLS+=("$u")
+  done
 fi
 
 if [ "${#URLS[@]}" -eq 0 ]; then
@@ -61,7 +71,7 @@ HTTP_CODE=$(curl -s -o /tmp/indexnow-response.txt -w "%{http_code}" \
 
 echo "---"
 echo "HTTP ${HTTP_CODE}"
-case "$HTTP_CODE" in
+case "${HTTP_CODE}" in
   200|202) echo "✅ OK: URLs aceptadas por IndexNow" ;;
   400) echo "⚠️  400: formato inválido" ;;
   403) echo "⚠️  403: clave no encontrada en ${KEY_LOCATION}" ;;
