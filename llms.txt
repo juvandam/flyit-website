@@ -1,0 +1,33 @@
+# Fly It Aviation
+
+> Fly It es una empresa argentina especializada en aviación general y ejecutiva. Ofrecemos venta, importación door-to-door y administración profesional de aeronaves (monomotores pistón, bimotores, turbohélices y jets). Base operativa en el Hangar 5, aeródromo de Morón, Buenos Aires, Argentina. Contacto: info@flyit.com.ar | WhatsApp +54 9 11 5812-0277.
+
+## Servicios
+
+- [Venta de aeronaves en Argentina](https://www.flyit.com.ar/aeronaves.html): Catálogo exclusivo de aeronaves en venta dentro de Argentina — Cessna, Mooney, Beechcraft, Embraer, Piper.
+- [Importación de aeronaves](https://www.flyit.com.ar/importacion.html): Proceso llave en mano door-to-door desde EE.UU., Europa y Uruguay. Inspección, logística, nacionalización, matriculación ante ANAC.
+- [Administración de aeronaves](https://www.flyit.com.ar/administracion.html): Gestión integral de mantenimiento, documentación, tripulaciones y operación para propietarios.
+- [Vende tu aeronave](https://www.flyit.com.ar/vender.html): Publicá tu aeronave con nosotros y accedé a nuestra red de compradores.
+
+## Aeronaves destacadas en venta (Argentina)
+
+- [Cessna 172L LV-JXC — 1971 — USD 120.000](https://www.flyit.com.ar/cessna-172l.html): Lycoming O-320 150HP, 20hs DURG. Hélice McCauley 20hs DURG. Autonomía 8:10hs. JPI EDM-730, Bendix King KX 175B, King KT-76 modo C, LED Whelen, pintura e interior nuevos.
+- [Mooney M20C LV-JXK — 1970 — USD 190.000](https://www.flyit.com.ar/mooney-m20c.html): Lycoming 180HP. 5600 TTAF, 1600hs disp. motor. Garmin 430 + TruTrack Autopilot 2 ejes, ADS-B IN/OUT, modificaciones aerodinámicas 201 (cowl, windshield, wing root/tip). Premio MAPA 1992 Best of Series.
+- [Cessna 150J LV-JXB — 1969 — VENDIDA](https://www.flyit.com.ar/cessna-150j.html): Aviónica Narco MK12D + Icom IC-A200. Transponder King KT76. Interior nuevo, luces LED Whelen. (Operación cerrada.)
+
+## Catálogo de importación
+
+- [Catálogo general de importación](https://www.flyit.com.ar/importar-catalogo.html): Aeronaves disponibles para importar a Argentina.
+- [Cessna 310R](https://www.flyit.com.ar/c310r-import.html): Bimotor pistón para importar.
+- [Cessna 340 Uruguay](https://www.flyit.com.ar/c340-uruguay.html): Bimotor presurizado en Uruguay.
+- [Cessna 182C](https://www.flyit.com.ar/cessna-182c-hti.html): Monomotor pistón.
+- [Cirrus Vision Jet](https://www.flyit.com.ar/cirrus-vision-jet-import.html): Jet personal unimotor.
+- [Beechcraft King Air B200](https://www.flyit.com.ar/kingair-b200-import.html): Turbohélice bimotor.
+- [Pilatus PC-12](https://www.flyit.com.ar/pilatus-pc12-import.html): Turbohélice monomotor.
+
+## Preguntas frecuentes
+
+- **¿Dónde opera Fly It?** Hangar 5, Aeródromo de Morón, Buenos Aires, Argentina.
+- **¿Importan aeronaves desde Estados Unidos?** Sí, somos especialistas en importación door-to-door desde EE.UU., Europa y Uruguay con nacionalización y matriculación completa ante ANAC.
+- **¿Representan al propietario o cobran comisión al comprador?** Trabajamos del lado del comprador en importación y del lado del vendedor en consignación. Operaciones directas dueño-a-comprador también disponibles.
+- **¿Cómo contacto a Fly It?** WhatsApp +54 9 11 5812-0277 o info@flyit.com.ar.

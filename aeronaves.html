@@ -9,8 +9,19 @@
     <!-- Open Graph SEO -->
     <meta property="og:title" content="Catálogo de Aeronaves en Venta | Fly It">
     <meta property="og:description" content="Inventario exclusivo de jets y turboprops en venta en Argentina y el exterior.">
-    <meta property="og:image" content="assets/images/cessna.png">
+    <meta property="og:image" content="https://www.flyit.com.ar/assets/images/cessna.png">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.flyit.com.ar/aeronaves.html">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Fly It">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aeronaves en Venta en Argentina | Fly It">
+    <meta name="twitter:description" content="Catálogo exclusivo de jets, turboprops y aviones a pistón en venta en Argentina.">
+    <meta name="twitter:image" content="https://www.flyit.com.ar/assets/images/cessna.png">
+    <link rel="canonical" href="https://www.flyit.com.ar/aeronaves.html">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="geo.region" content="AR-B">
+    <meta name="geo.placename" content="Buenos Aires">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -21,6 +32,55 @@
     <link rel="apple-touch-icon" href="assets/images/logo_flyit.svg">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/logo_flyit.svg">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/logo_flyit.svg">
+
+    <!-- Structured Data: Catálogo + Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.flyit.com.ar/" },
+            { "@type": "ListItem", "position": 2, "name": "Aeronaves en Venta", "item": "https://www.flyit.com.ar/aeronaves.html" }
+          ]
+        },
+        {
+          "@type": "CollectionPage",
+          "name": "Aeronaves en Venta en Argentina",
+          "description": "Catálogo exclusivo de aeronaves en venta en Argentina: jets ejecutivos, turbohélices, bimotor y monomotor pistón.",
+          "url": "https://www.flyit.com.ar/aeronaves.html",
+          "inLanguage": "es-AR",
+          "isPartOf": { "@id": "https://www.flyit.com.ar/#website" },
+          "mainEntity": {
+            "@type": "ItemList",
+            "name": "Aeronaves disponibles en Argentina",
+            "numberOfItems": 3,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://www.flyit.com.ar/cessna-172l.html",
+                "name": "Cessna 172L LV-JXC — 1971"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://www.flyit.com.ar/mooney-m20c.html",
+                "name": "Mooney M20C LV-JXK — 1970"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://www.flyit.com.ar/cessna-150j.html",
+                "name": "Cessna 150J LV-JXB — 1969 (vendida)"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 

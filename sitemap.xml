@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://www.flyit.com.ar/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Catálogo principal -->
+  <url>
+    <loc>https://www.flyit.com.ar/aeronaves.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/catalogo.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/importar-catalogo.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Servicios -->
+  <url>
+    <loc>https://www.flyit.com.ar/importacion.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/administracion.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/vender.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/importar.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Aeronaves en venta (Argentina) -->
+  <url>
+    <loc>https://www.flyit.com.ar/cessna-172l.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.flyit.com.ar/assets/images/Aeronaves_en_venta/C172_JXC/C172_exterior2.jpg</image:loc>
+      <image:title>Cessna 172L LV-JXC 1971 en venta</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/mooney-m20c.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.flyit.com.ar/assets/images/Aeronaves_en_venta/Mooney_JXK/Mooney_exterior_volando3.jpg</image:loc>
+      <image:title>Mooney M20C LV-JXK 1970 en venta</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/cessna-150j.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <image:image>
+      <image:loc>https://www.flyit.com.ar/assets/images/Aeronaves_en_venta/C150J_JXB/Cessna150j_lv_jxb (2).jpeg</image:loc>
+      <image:title>Cessna 150J LV-JXB 1969 (vendida)</image:title>
+    </image:image>
+  </url>
+
+  <!-- Aeronaves para importar -->
+  <url>
+    <loc>https://www.flyit.com.ar/c310r-import.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/c340-uruguay.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/cessna-182c-hti.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/cirrus-vision-jet-import.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/kingair-b200-import.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.flyit.com.ar/pilatus-pc12-import.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

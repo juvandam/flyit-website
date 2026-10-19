@@ -26,6 +26,14 @@
     <meta name="twitter:description" content="Expertos en aviación corporativa en Argentina. Catálogo exclusivo de aeronaves en venta, importación e administración profesional.">
     <meta name="twitter:image" content="https://www.flyit.com.ar/assets/images/flyit-og.jpg">
     <meta name="twitter:site" content="@flyit.argentina">
+    <!-- Canonical + indexing -->
+    <link rel="canonical" href="https://www.flyit.com.ar/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="Fly It Aviation">
+    <meta name="geo.region" content="AR-B">
+    <meta name="geo.placename" content="Buenos Aires">
+    <meta name="language" content="Spanish">
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/logo_flyit.svg">
     <link rel="apple-touch-icon" href="assets/images/logo_flyit.svg">
@@ -41,6 +49,137 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Structured Data: Organization + LocalBusiness + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.flyit.com.ar/#organization",
+          "name": "Fly It Aviation",
+          "alternateName": "Fly It",
+          "url": "https://www.flyit.com.ar/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.flyit.com.ar/assets/images/logo_flyit.svg",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://www.flyit.com.ar/assets/images/flyit-og.jpg",
+          "description": "Expertos en aviación corporativa y general en Argentina. Venta, importación door-to-door y administración profesional de aeronaves.",
+          "foundingLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "AR",
+              "addressRegion": "Buenos Aires",
+              "addressLocality": "Morón"
+            }
+          },
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+54-9-11-5812-0277",
+              "contactType": "sales",
+              "areaServed": ["AR", "UY", "CL", "PY", "BR"],
+              "availableLanguage": ["Spanish", "English"],
+              "email": "info@flyit.com.ar"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/flyit.argentina/",
+            "https://wa.me/+5491158120277"
+          ],
+          "knowsAbout": [
+            "Venta de aeronaves",
+            "Importación de aviones",
+            "Administración de aeronaves",
+            "Cessna",
+            "Mooney",
+            "Beechcraft",
+            "Piper",
+            "Embraer",
+            "Pilatus",
+            "Cirrus",
+            "Aviación ejecutiva",
+            "Jets privados",
+            "Turbohélices",
+            "Monomotor pistón",
+            "Bimotor pistón"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.flyit.com.ar/#localbusiness",
+          "name": "Fly It Aviation",
+          "image": "https://www.flyit.com.ar/assets/images/flyit-og.jpg",
+          "url": "https://www.flyit.com.ar/",
+          "telephone": "+54-9-11-5812-0277",
+          "email": "info@flyit.com.ar",
+          "priceRange": "USD 50.000 – USD 10.000.000",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hangar 5, Aeródromo de Morón",
+            "addressLocality": "Morón",
+            "addressRegion": "Buenos Aires",
+            "addressCountry": "AR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -34.6734,
+            "longitude": -58.6428
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Argentina" },
+            { "@type": "Country", "name": "Uruguay" },
+            { "@type": "Country", "name": "Chile" },
+            { "@type": "Country", "name": "Paraguay" },
+            { "@type": "Country", "name": "Brasil" }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.flyit.com.ar/#website",
+          "url": "https://www.flyit.com.ar/",
+          "name": "Fly It Aviation",
+          "description": "Venta e importación de aeronaves en Argentina",
+          "publisher": { "@id": "https://www.flyit.com.ar/#organization" },
+          "inLanguage": "es-AR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.flyit.com.ar/aeronaves.html?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.flyit.com.ar/#webpage",
+          "url": "https://www.flyit.com.ar/",
+          "name": "Fly It | Venta e Importación de Aeronaves Ejecutivas en Argentina",
+          "isPartOf": { "@id": "https://www.flyit.com.ar/#website" },
+          "about": { "@id": "https://www.flyit.com.ar/#organization" },
+          "inLanguage": "es-AR",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.flyit.com.ar/assets/images/flyit-og.jpg"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>

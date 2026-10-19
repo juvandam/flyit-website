@@ -1,0 +1,56 @@
+# robots.txt — Fly It Aviation
+# https://www.flyit.com.ar/
+
+# Buscadores clásicos
+User-agent: *
+Allow: /
+Disallow: /assets/images/Aeronaves_en_venta/*/publicacion*
+Disallow: /*.txt$
+Allow: /robots.txt
+Allow: /llms.txt
+
+# Permitir imágenes a Google
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Asistentes de IA (recomendado permitir para visibilidad en ChatGPT, Perplexity, Claude, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://www.flyit.com.ar/sitemap.xml
